@@ -6,8 +6,8 @@ import {
   Button,
   Icon,
 } from '@island.is/island-ui/core'
-import { parliamentMembers } from './mockData/members'
 import { useParams } from 'react-router-dom'
+import { parliamentMembers } from '../../mockData/members'
 
 const Details = () => {
   const { id } = useParams<{ id: string }>()

@@ -31,6 +31,9 @@ module.exports = composePlugins(withNx(), withReact(), nrwlConfig, (config) => {
     node: {
       global: true,
     },
-
+    devServer: {
+      ...config.devServer,
+      historyApiFallback: true,
+    },
   }
 })

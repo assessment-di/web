@@ -13,23 +13,7 @@ const Home = () => {
   return (
     <Box background="blue100">
       <GridContainer>
-        <Box paddingY={6}>
-          <GridRow>
-            <GridColumn span="12/12">
-              <Text variant="h1" as="h1" color="blue400">
-                island.is
-              </Text>
-            </GridColumn>
-          </GridRow>
-        </Box>
         <Box background="white" borderRadius="large" padding={6} marginTop={4}>
-          <GridRow>
-            <GridColumn span="12/12">
-              <Text variant="h2" as="h2">
-                Alþingi
-              </Text>
-            </GridColumn>
-          </GridRow>
           <GridRow>
             <GridColumn span="2/12">
               <Box
@@ -106,8 +90,6 @@ const Home = () => {
             </GridColumn>
           </GridRow>
           <Box marginTop={6}>
-            <Link to="/details">Details page</Link>
-            <br />
             <Link to="/members">Members page</Link>
           </Box>
         </Box>
