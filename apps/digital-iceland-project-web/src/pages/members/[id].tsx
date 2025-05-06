@@ -29,21 +29,6 @@ const Details = () => {
     <Box paddingY={6}>
       <GridContainer>
         <Box display="flex" style={{ gap: 32 }}>
-          <Box
-            background="blue100"
-            borderRadius="large"
-            padding={4}
-            style={{ width: 180, minHeight: 400 }}
-            marginRight={6}
-            display="flex"
-            flexDirection="column"
-            alignItems="flexStart"
-          >
-            <Text variant="h4" as="h3" color="blue400">
-              Menu?
-            </Text>
-          </Box>
-
           <Box flexGrow={1}>
             <Box
               background="white"
@@ -131,7 +116,10 @@ const Details = () => {
             </Box>
 
             <Accordion>
-              <AccordionItem id="parliamentary-career" label="Parliamentary career">
+              <AccordionItem
+                id="parliamentary-career"
+                label="Parliamentary career"
+              >
                 <Text>{member.parliamentaryCareer}</Text>
               </AccordionItem>
               <AccordionItem id="title" label="Title">
@@ -167,7 +155,10 @@ const Details = () => {
                   )}
               </AccordionItem>
               {member.ministerialCareer && member.ministerialCareer.length > 0 && (
-                <AccordionItem id="ministerial-career" label="Ministerial career">
+                <AccordionItem
+                  id="ministerial-career"
+                  label="Ministerial career"
+                >
                   <ul>
                     {member.ministerialCareer.map((position) => (
                       <li key={position}>
