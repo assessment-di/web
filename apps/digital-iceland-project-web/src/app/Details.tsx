@@ -61,7 +61,7 @@ const Details = () => {
                   <img
                     src={member.image}
                     alt={member.name}
-                    style={{ width: 120, height: 120, borderRadius: '50%' }}
+                    style={{ width: 120, height: 120, borderRadius: '50%', objectFit: 'cover' }}
                   />
                 ) : (
                   <div
