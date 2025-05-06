@@ -28,7 +28,7 @@ const Details = () => {
       <GridContainer>
         <Box display="flex" style={{ gap: 32 }}>
           <Box
-            background="white"
+            background="blue100"
             borderRadius="large"
             padding={4}
             style={{ width: 180, minHeight: 400 }}
