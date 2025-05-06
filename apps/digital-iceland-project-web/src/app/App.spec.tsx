@@ -21,7 +21,7 @@ describe('App', () => {
       </BrowserRouter>,
     )
     expect(
-      getByText(/Welcome digital-iceland-project-crossteam/gi),
+      getByText(/Welcome digital-iceland-project-web/gi),
     ).toBeTruthy()
   })
 })
