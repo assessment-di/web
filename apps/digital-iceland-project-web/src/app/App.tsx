@@ -1,17 +1,9 @@
 'use client'
-import { Routes, Route, Link } from 'react-router-dom'
-import Details from './Details'
-import Home from './Home'
-import Members from './Members'
+import { BrowserRouter, Routes } from 'react-router-dom'
+import { renderRoutes } from './routes'
 
-export const App = () => {
-  return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/details" element={<Details />} />
-      <Route path="/members" element={<Members />} />
-    </Routes>
-  )
+const App = () => {
+  return <Routes>{renderRoutes()}</Routes>
 }
 
 export default App
