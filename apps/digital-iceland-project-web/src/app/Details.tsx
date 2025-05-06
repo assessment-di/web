@@ -3,6 +3,8 @@ import {
   Text,
   GridContainer,
   Stack,
+  Button,
+  Icon,
 } from '@island.is/island-ui/core'
 import { parliamentMembers } from './mockData/members'
 import { useParams } from 'react-router-dom'
@@ -24,104 +26,147 @@ const Details = () => {
   return (
     <Box background="blue100" paddingY={6}>
       <GridContainer>
-        <Stack space={4}>
-          <Box display="flex" alignItems="center" style={{ gap: '16px' }}>
-            {member.image ? (
-              <img
-                src={member.image}
-                alt={member.name}
-                style={{ width: 120, height: 120, borderRadius: '50%' }}
-              />
-            ) : (
-              <div
-                style={{
-                  width: 120,
-                  height: 120,
-                  borderRadius: '50%',
-                  background: '#eee',
-                }}
-              />
-            )}
-            <Box>
-              <Text variant="h1" as="h1" color="blue400">
-                {member.name}
+        <Box display="flex" style={{ gap: 32 }}>
+          {/* Sidebar */}
+          <Box
+            background="white"
+            borderRadius="large"
+            padding={4}
+            style={{ width: 180, minHeight: 400 }}
+            marginRight={6}
+            display="flex"
+            flexDirection="column"
+            alignItems="flexStart"
+          >
+            <Text variant="h4" as="h3" color="blue400">
+              Menu?
+            </Text>
+          </Box>
+
+          {/* Main Content */}
+          <Box flexGrow={1}>
+            {/* Profile Card */}
+            <Box
+              background="white"
+              borderRadius="large"
+              padding={4}
+              display="flex"
+              alignItems="center"
+              justifyContent="spaceBetween"
+              marginBottom={6}
+              style={{ gap: 24 }}
+            >
+              <Box display="flex" alignItems="center" style={{ gap: 24 }}>
+                {member.image ? (
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    style={{ width: 120, height: 120, borderRadius: '50%' }}
+                  />
+                ) : (
+                  <div
+                    style={{
+                      width: 120,
+                      height: 120,
+                      borderRadius: '50%',
+                      background: '#eee',
+                    }}
+                  />
+                )}
+                <Box>
+                  <Text variant="h2" as="h1">
+                    {member.name}
+                  </Text>
+                  <Stack space={1}>
+                    <Text>Title <b>{member.title}</b></Text>
+                    <Text>Ministry <b>{member.ministry}</b></Text>
+                    <Text>Party <b>{member.party}</b></Text>
+                    <Text>Date of birth <b>{member.dateOfBirth}</b></Text>
+                  </Stack>
+                  <Box display="flex" alignItems="center" style={{ gap: 16, marginTop: 8 }}>
+                    <a href={`mailto:${member.email}`} style={{ color: '#0061ff' }}>
+                      <Icon icon="mail" type="outline" />
+                    </a>
+                    <a href={`tel:${member.phone.replace(/\s/g, '')}`} style={{ color: '#0061ff' }}>
+                      <Icon icon="call" type="outline" />
+                    </a>
+                    {member.linkedin && (
+                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: '#0061ff' }}>
+                        <Icon icon="link" type="outline" />
+                      </a>
+                    )}
+                  </Box>
+                </Box>
+              </Box>
+              <Button icon="share" variant="ghost" size="small">
+                Share profile
+              </Button>
+            </Box>
+
+            {/* Parliamentary career */}
+            <Box marginBottom={4}>
+              <Text variant="h3" as="h2" marginBottom={2}>
+                Parliamentary career
               </Text>
+              <Text>{member.parliamentaryCareer}</Text>
+            </Box>
+
+            {/* Title */}
+            <Box marginBottom={2}>
               <Text variant="h3" as="h2">
-                {member.party}
+                Title
               </Text>
             </Box>
-          </Box>
 
-          <Box>
-            <Text variant="h2" as="h2" marginBottom={2}>
-              Parliamentary Career
-            </Text>
-            <Text>{member.parliamentaryCareer}</Text>
-          </Box>
-
-          <Box>
-            <Text variant="h2" as="h2" marginBottom={2}>
-              Contact Information
-            </Text>
-            <Stack space={2}>
-              <Text>Email: {member.email}</Text>
-              <Text>Phone: {member.phone}</Text>
-            </Stack>
-          </Box>
-
-          <Box>
-            <Text variant="h2" as="h2" marginBottom={2}>
-              Constituency
-            </Text>
-            <Text>{member.constituency}</Text>
-          </Box>
-
-          <Box>
-            <Text variant="h2" as="h2" marginBottom={2}>
-              Term
-            </Text>
-            <Text>
-              {member.termStart} - {member.termEnd}
-            </Text>
-          </Box>
-
-          <Box>
-            <Text variant="h2" as="h2" marginBottom={2}>
-              Current Committees
-            </Text>
-            <Stack space={1}>
-              {member.committees.map((committee) => (
-                <Text key={committee}>{committee}</Text>
-              ))}
-            </Stack>
-          </Box>
-
-          {member.previousCommittees && member.previousCommittees.length > 0 && (
-            <Box>
-              <Text variant="h2" as="h2" marginBottom={2}>
-                Previous Committees
+            {/* Committees */}
+            <Box marginBottom={4}>
+              <Text variant="h4" as="h3" marginBottom={2}>
+                Committees
               </Text>
-              <Stack space={1}>
-                {member.previousCommittees.map((committee) => (
-                  <Text key={committee}>{committee}</Text>
-                ))}
-              </Stack>
+              <Box marginBottom={2}>
+                <Text variant="default">Present committees</Text>
+                <ul style={{ marginTop: 8 }}>
+                  {(member.presentCommittees && member.presentCommittees.length > 0
+                    ? member.presentCommittees
+                    : member.committees || []
+                  ).map((committee) => (
+                    <li key={committee}>
+                      <Text>{committee}</Text>
+                    </li>
+                  ))}
+                </ul>
+              </Box>
+              {member.previousCommittees && member.previousCommittees.length > 0 && (
+                <Box>
+                  <Text variant="default">Previous committees</Text>
+                  <ul style={{ marginTop: 8 }}>
+                    {member.previousCommittees.map((committee) => (
+                      <li key={committee}>
+                        <Text>{committee}</Text>
+                      </li>
+                    ))}
+                  </ul>
+                </Box>
+              )}
             </Box>
-          )}
 
-          {member.ministerialCareer && member.ministerialCareer.length > 0 && (
-            <Box>
-              <Text variant="h2" as="h2" marginBottom={2}>
-                Ministerial Career
-              </Text>
-              <Stack space={1}>
-                {member.ministerialCareer.map((position) => (
-                  <Text key={position}>{position}</Text>
-                ))}
-              </Stack>
-            </Box>
-          )}
-        </Stack>
+            {/* Ministerial career */}
+            {member.ministerialCareer && member.ministerialCareer.length > 0 && (
+              <Box marginBottom={4}>
+                <Text variant="h4" as="h3" marginBottom={2}>
+                  Ministerial career
+                </Text>
+                <ul>
+                  {member.ministerialCareer.map((position) => (
+                    <li key={position}>
+                      <Text>{position}</Text>
+                    </li>
+                  ))}
+                </ul>
+              </Box>
+            )}
+          </Box>
+        </Box>
       </GridContainer>
     </Box>
   )
