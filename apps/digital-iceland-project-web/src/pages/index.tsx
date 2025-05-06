@@ -8,6 +8,7 @@ import {
   Stack,
 } from '@island.is/island-ui/core'
 import Link from 'next/link'
+import StreamingVideo from '../components/StreamingVideo'
 
 const Home = () => {
   return (
@@ -50,6 +51,7 @@ const Home = () => {
                   marginY={2}
                   style={{ minHeight: 160 }}
                 />
+                <StreamingVideo />
                 <Stack space={2}>
                   <Text variant="h5" as="h4" color="blue400">
                     Fundir og heimsóknir
