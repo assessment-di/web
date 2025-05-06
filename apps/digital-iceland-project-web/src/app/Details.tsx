@@ -27,7 +27,6 @@ const Details = () => {
     <Box background="blue100" paddingY={6}>
       <GridContainer>
         <Box display="flex" style={{ gap: 32 }}>
-          {/* Sidebar */}
           <Box
             background="white"
             borderRadius="large"
@@ -43,9 +42,7 @@ const Details = () => {
             </Text>
           </Box>
 
-          {/* Main Content */}
           <Box flexGrow={1}>
-            {/* Profile Card */}
             <Box
               background="white"
               borderRadius="large"
@@ -61,7 +58,12 @@ const Details = () => {
                   <img
                     src={member.image}
                     alt={member.name}
-                    style={{ width: 120, height: 120, borderRadius: '50%', objectFit: 'cover' }}
+                    style={{
+                      width: 120,
+                      height: 120,
+                      borderRadius: '50%',
+                      objectFit: 'cover',
+                    }}
                   />
                 ) : (
                   <div
@@ -78,20 +80,43 @@ const Details = () => {
                     {member.name}
                   </Text>
                   <Stack space={1}>
-                    <Text>Title <b>{member.title}</b></Text>
-                    <Text>Ministry <b>{member.ministry}</b></Text>
-                    <Text>Party <b>{member.party}</b></Text>
-                    <Text>Date of birth <b>{member.dateOfBirth}</b></Text>
+                    <Text>
+                      Title <b>{member.title}</b>
+                    </Text>
+                    <Text>
+                      Ministry <b>{member.ministry}</b>
+                    </Text>
+                    <Text>
+                      Party <b>{member.party}</b>
+                    </Text>
+                    <Text>
+                      Date of birth <b>{member.dateOfBirth}</b>
+                    </Text>
                   </Stack>
-                  <Box display="flex" alignItems="center" style={{ gap: 16, marginTop: 8 }}>
-                    <a href={`mailto:${member.email}`} style={{ color: '#0061ff' }}>
+                  <Box
+                    display="flex"
+                    alignItems="center"
+                    style={{ gap: 16, marginTop: 8 }}
+                  >
+                    <a
+                      href={`mailto:${member.email}`}
+                      style={{ color: '#0061ff' }}
+                    >
                       <Icon icon="mail" type="outline" />
                     </a>
-                    <a href={`tel:${member.phone.replace(/\s/g, '')}`} style={{ color: '#0061ff' }}>
+                    <a
+                      href={`tel:${member.phone.replace(/\s/g, '')}`}
+                      style={{ color: '#0061ff' }}
+                    >
                       <Icon icon="call" type="outline" />
                     </a>
                     {member.linkedin && (
-                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: '#0061ff' }}>
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: '#0061ff' }}
+                      >
                         <Icon icon="link" type="outline" />
                       </a>
                     )}
@@ -126,7 +151,8 @@ const Details = () => {
               <Box marginBottom={2}>
                 <Text variant="default">Present committees</Text>
                 <ul style={{ marginTop: 8 }}>
-                  {(member.presentCommittees && member.presentCommittees.length > 0
+                  {(member.presentCommittees &&
+                  member.presentCommittees.length > 0
                     ? member.presentCommittees
                     : member.committees || []
                   ).map((committee) => (
@@ -136,18 +162,19 @@ const Details = () => {
                   ))}
                 </ul>
               </Box>
-              {member.previousCommittees && member.previousCommittees.length > 0 && (
-                <Box>
-                  <Text variant="default">Previous committees</Text>
-                  <ul style={{ marginTop: 8 }}>
-                    {member.previousCommittees.map((committee) => (
-                      <li key={committee}>
-                        <Text>{committee}</Text>
-                      </li>
-                    ))}
-                  </ul>
-                </Box>
-              )}
+              {member.previousCommittees &&
+                member.previousCommittees.length > 0 && (
+                  <Box>
+                    <Text variant="default">Previous committees</Text>
+                    <ul style={{ marginTop: 8 }}>
+                      {member.previousCommittees.map((committee) => (
+                        <li key={committee}>
+                          <Text>{committee}</Text>
+                        </li>
+                      ))}
+                    </ul>
+                  </Box>
+                )}
             </Box>
 
             {/* Ministerial career */}
