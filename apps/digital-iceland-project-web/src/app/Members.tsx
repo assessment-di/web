@@ -7,24 +7,7 @@ import {
   Body,
   Data,
 } from '@island.is/air-discount-scheme-web/components/Table'
-
-const members = [
-  {
-    name: 'Alma D. Möller',
-    party: 'The Social Democratic Alliance',
-    image: 'https://www.althingi.is/media/althingismenn/Alma-D-Moller-2021.jpg',
-  },
-  {
-    name: 'Jon Jonsson',
-    party: 'Independence Party',
-    image: '',
-  },
-  {
-    name: 'Maria Sigurdardottir',
-    party: 'Left-Green Movement',
-    image: '',
-  },
-]
+import { parliamentMembers } from './mockData/members'
 
 const Members = () => {
   return (
@@ -39,11 +22,12 @@ const Members = () => {
               <HeadData>Photo</HeadData>
               <HeadData>Name</HeadData>
               <HeadData>Party</HeadData>
+              <HeadData>Constituency</HeadData>
             </Row>
           </Head>
           <Body>
-            {members.map((member, idx) => (
-              <Row key={idx}>
+            {parliamentMembers.map((member) => (
+              <Row key={member.id}>
                 <Data>
                   {member.image ? (
                     <img
@@ -64,6 +48,7 @@ const Members = () => {
                 </Data>
                 <Data>{member.name}</Data>
                 <Data>{member.party}</Data>
+                <Data>{member.constituency}</Data>
               </Row>
             ))}
           </Body>
