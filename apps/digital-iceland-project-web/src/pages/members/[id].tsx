@@ -5,6 +5,8 @@ import {
   Stack,
   Button,
   Icon,
+  Accordion,
+  AccordionItem,
 } from '@island.is/island-ui/core'
 import { useParams } from 'react-router-dom'
 import { parliamentMembers } from '../../mockData/members'
@@ -128,70 +130,54 @@ const Details = () => {
               </Button>
             </Box>
 
-            {/* Parliamentary career */}
-            <Box marginBottom={4}>
-              <Text variant="h3" as="h2" marginBottom={2}>
-                Parliamentary career
-              </Text>
-              <Text>{member.parliamentaryCareer}</Text>
-            </Box>
-
-            {/* Title */}
-            <Box marginBottom={2}>
-              <Text variant="h3" as="h2">
-                Title
-              </Text>
-            </Box>
-
-            {/* Committees */}
-            <Box marginBottom={4}>
-              <Text variant="h4" as="h3" marginBottom={2}>
-                Committees
-              </Text>
-              <Box marginBottom={2}>
-                <Text variant="default">Present committees</Text>
-                <ul style={{ marginTop: 8 }}>
-                  {(member.presentCommittees &&
-                  member.presentCommittees.length > 0
-                    ? member.presentCommittees
-                    : member.committees || []
-                  ).map((committee) => (
-                    <li key={committee}>
-                      <Text>{committee}</Text>
-                    </li>
-                  ))}
-                </ul>
-              </Box>
-              {member.previousCommittees &&
-                member.previousCommittees.length > 0 && (
-                  <Box>
-                    <Text variant="default">Previous committees</Text>
-                    <ul style={{ marginTop: 8 }}>
-                      {member.previousCommittees.map((committee) => (
-                        <li key={committee}>
-                          <Text>{committee}</Text>
-                        </li>
-                      ))}
-                    </ul>
-                  </Box>
-                )}
-            </Box>
-
-            {/* Ministerial career */}
-            {member.ministerialCareer && member.ministerialCareer.length > 0 && (
-              <Box marginBottom={4}>
-                <Text variant="h4" as="h3" marginBottom={2}>
-                  Ministerial career
-                </Text>
-                <ul>
-                  {member.ministerialCareer.map((position) => (
-                    <li key={position}>
-                      <Text>{position}</Text>
-                    </li>
-                  ))}
-                </ul>
-              </Box>
-            )}
+            <Accordion>
+              <AccordionItem id="parliamentary-career" label="Parliamentary career">
+                <Text>{member.parliamentaryCareer}</Text>
+              </AccordionItem>
+              <AccordionItem id="title" label="Title">
+                <Text>{member.title}</Text>
+              </AccordionItem>
+              <AccordionItem id="committees" label="Committees">
+                <Box marginBottom={2}>
+                  <Text variant="default">Present committees</Text>
+                  <ul style={{ marginTop: 8 }}>
+                    {(member.presentCommittees &&
+                    member.presentCommittees.length > 0
+                      ? member.presentCommittees
+                      : member.committees || []
+                    ).map((committee) => (
+                      <li key={committee}>
+                        <Text>{committee}</Text>
+                      </li>
+                    ))}
+                  </ul>
+                </Box>
+                {member.previousCommittees &&
+                  member.previousCommittees.length > 0 && (
+                    <Box>
+                      <Text variant="default">Previous committees</Text>
+                      <ul style={{ marginTop: 8 }}>
+                        {member.previousCommittees.map((committee) => (
+                          <li key={committee}>
+                            <Text>{committee}</Text>
+                          </li>
+                        ))}
+                      </ul>
+                    </Box>
+                  )}
+              </AccordionItem>
+              {member.ministerialCareer && member.ministerialCareer.length > 0 && (
+                <AccordionItem id="ministerial-career" label="Ministerial career">
+                  <ul>
+                    {member.ministerialCareer.map((position) => (
+                      <li key={position}>
+                        <Text>{position}</Text>
+                      </li>
+                    ))}
+                  </ul>
+                </AccordionItem>
+              )}
+            </Accordion>
           </Box>
         </Box>
       </GridContainer>
