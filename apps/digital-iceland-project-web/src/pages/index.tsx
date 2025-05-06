@@ -9,6 +9,7 @@ import {
 } from '@island.is/island-ui/core'
 import Link from 'next/link'
 import StreamingVideo from '../components/StreamingVideo'
+import Timetable from '../components/Timetable'
 
 const Home = () => {
   return (
@@ -88,44 +89,21 @@ const Home = () => {
 
       <GridContainer>
         <Box background="white" borderRadius="large" padding={6} marginTop={4}>
-          <GridRow>
-            <GridColumn span="10/12">
-              <Box marginTop={4}>
-                <StreamingVideo />
-                <Stack space={2}>
-                  <Box borderRadius="large" padding={3}>
-                    <Text variant="h5" as="h5">
-                      Þriðjudag 6. mai
-                    </Text>
-                    <Stack space={1}>
-                      <Text>
-                        Kl. 09:00 <IslandLink href="#">Halda áfram</IslandLink>
-                      </Text>
-                      <Text>
-                        Kl. 09:00 <IslandLink href="#">Halda áfram</IslandLink>
-                      </Text>
-                      <Text>
-                        Kl. 09:00 <IslandLink href="#">Halda áfram</IslandLink>
-                      </Text>
-                      <Text>
-                        Kl. 09:00 <IslandLink href="#">Halda áfram</IslandLink>
-                      </Text>
-                      <Text>
-                        Kl. 10:30 <IslandLink href="#">Halda áfram</IslandLink>
-                      </Text>
-                      <Text>
-                        Kl. 13:30 <IslandLink href="#">Halda áfram</IslandLink>
-                      </Text>
-                    </Stack>
-                    <Box marginTop={2}>
-                      <Text>Now casting</Text>
-                      <Text fontWeight="semiBold">Stortingets 35. sesjon</Text>
-                    </Box>
-                  </Box>
-                </Stack>
+          <Box marginTop={4}>
+            <Box
+              display="flex"
+              flexDirection="row"
+              style={{ gap: '32px' }}
+              justifyContent="spaceBetween"
+            >
+              <Box style={{ flex: 1 }}>
+                <Timetable />
               </Box>
-            </GridColumn>
-          </GridRow>
+              <Box style={{ flex: 2 }}>
+                <StreamingVideo />
+              </Box>
+            </Box>
+          </Box>
         </Box>
       </GridContainer>
     </Box>
