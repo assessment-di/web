@@ -24,7 +24,7 @@ const Details = () => {
   }
 
   return (
-    <Box background="blue100" paddingY={6}>
+    <Box paddingY={6}>
       <GridContainer>
         <Box display="flex" style={{ gap: 32 }}>
           <Box

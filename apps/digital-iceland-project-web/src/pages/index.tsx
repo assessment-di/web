@@ -7,17 +7,16 @@ import {
   Link as IslandLink,
   Stack,
 } from '@island.is/island-ui/core'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 const Home = () => {
   return (
-    <Box background="blue100">
+    <Box>
       <GridContainer>
         <Box background="white" borderRadius="large" padding={6} marginTop={4}>
           <GridRow>
             <GridColumn span="2/12">
               <Box
-                background="blue200"
                 borderRadius="full"
                 display="flex"
                 alignItems="center"
@@ -46,7 +45,6 @@ const Home = () => {
                   Útsending
                 </Text>
                 <Box
-                  background="blue100"
                   borderRadius="large"
                   height="full"
                   marginY={2}
@@ -56,7 +54,7 @@ const Home = () => {
                   <Text variant="h5" as="h4" color="blue400">
                     Fundir og heimsóknir
                   </Text>
-                  <Box background="blue100" borderRadius="large" padding={3}>
+                  <Box borderRadius="large" padding={3}>
                     <Text variant="h5" as="h5">
                       Þriðjudag 6. mai
                     </Text>
@@ -90,7 +88,7 @@ const Home = () => {
             </GridColumn>
           </GridRow>
           <Box marginTop={6}>
-            <Link to="/members">Members page</Link>
+            <Link href="/members">Members page</Link>
           </Box>
         </Box>
       </GridContainer>

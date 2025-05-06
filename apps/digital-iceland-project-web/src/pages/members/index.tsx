@@ -1,10 +1,10 @@
 import { Box, GridContainer, Text } from '@island.is/island-ui/core'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { parliamentMembers } from '../../mockData/members'
 
 const Members = () => {
   return (
-    <Box background="blue100" paddingY={6}>
+    <Box paddingY={6}>
       <GridContainer>
         <Box background="white" borderRadius="large" padding={4}>
           <Text variant="h2" as="h1" marginBottom={4}>
@@ -14,7 +14,7 @@ const Members = () => {
             {parliamentMembers.map((member) => (
               <Link
                 key={member.id}
-                to={`/members/${member.id}`}
+                href={`/members/${member.id}`}
                 style={{ textDecoration: 'none', color: 'inherit' }}
               >
                 <Box
