@@ -13,49 +13,86 @@ import StreamingVideo from '../components/StreamingVideo'
 const Home = () => {
   return (
     <Box>
+      <Box position="relative" width="full" style={{ height: 400 }}>
+        <img
+          src="https://www.althingi.is/media/althingishusid/21315-281-Edit3.jpg"
+          alt="Althingi Parliament"
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            zIndex: 2,
+          }}
+        />
+        <Box
+          position="absolute"
+          top={0}
+          left={10}
+          right={0}
+          bottom={0}
+          display="flex"
+          alignItems="center"
+          style={{ zIndex: 3 }}
+        >
+          <GridContainer>
+            <GridRow>
+              <GridColumn span="6/12">
+                <Box
+                  style={{
+                    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+                  }}
+                >
+                  <Text
+                    variant="h2"
+                    color="white"
+                    marginBottom={2}
+                    fontWeight="semiBold"
+                  >
+                    Althingi
+                  </Text>
+                </Box>
+                <Box
+                  style={{
+                    textShadow: '1px 1px 3px rgba(0, 0, 0, 0.5)',
+                  }}
+                >
+                  <Box
+                    borderRadius="full"
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    width="full"
+                    height="full"
+                    style={{ maxWidth: 120, maxHeight: 120 }}
+                  >
+                    <img
+                      src="assets/althingi-logo.png"
+                      alt="Althingi Logo"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'contain',
+                        padding: '8px',
+                      }}
+                    />
+                  </Box>
+                </Box>
+              </GridColumn>
+            </GridRow>
+          </GridContainer>
+        </Box>
+      </Box>
+
       <GridContainer>
         <Box background="white" borderRadius="large" padding={6} marginTop={4}>
           <GridRow>
-            <GridColumn span="2/12">
-              <Box
-                borderRadius="full"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                width="full"
-                height="full"
-                marginTop={4}
-                marginBottom={4}
-                style={{ maxWidth: 80, maxHeight: 80 }}
-              >
-                <img
-                  src="assets/althingi-logo.png"
-                  alt="Althingi Logo"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'contain',
-                    padding: '8px',
-                  }}
-                />
-              </Box>
-            </GridColumn>
             <GridColumn span="10/12">
               <Box marginTop={4}>
-                <Text variant="h3" as="h3">
-                  Útsending
-                </Text>
-                <Box
-                  borderRadius="large"
-                  height="full"
-                  marginY={2}
-                  style={{ minHeight: 160 }}
-                />
                 <StreamingVideo />
                 <Stack space={2}>
-                  <Text variant="h5" as="h4" color="blue400">
-                    Fundir og heimsóknir
-                  </Text>
                   <Box borderRadius="large" padding={3}>
                     <Text variant="h5" as="h5">
                       Þriðjudag 6. mai
@@ -89,9 +126,6 @@ const Home = () => {
               </Box>
             </GridColumn>
           </GridRow>
-          <Box marginTop={6}>
-            <Link href="/members">Members page</Link>
-          </Box>
         </Box>
       </GridContainer>
     </Box>

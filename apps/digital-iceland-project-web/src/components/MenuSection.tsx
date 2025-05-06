@@ -35,8 +35,8 @@ const MenuSection: React.FC<MenuSectionProps> = ({
         {title}
       </Text>
       <Box marginTop={2}>
-        {items.map((item) => (
-          <Box key={item.href} marginBottom={2}>
+        {items.map((item, index) => (
+          <Box key={index} marginBottom={2}>
             <a
               href={item.href}
               style={{ color: linkColor, textDecoration: 'none' }}
