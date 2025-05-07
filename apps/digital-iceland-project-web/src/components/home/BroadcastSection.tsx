@@ -1,5 +1,5 @@
 import { Box, Text, Link as IslandLink } from '@island.is/island-ui/core'
-import { SimpleVideoPlayer } from '../SimpleVideoPlayer/SimpleVideoPlayer'
+import { SimpleVideoPlayer } from '../videoPlayer/SimpleVideoPlayer'
 
 export const BroadcastSection = () => {
   return (

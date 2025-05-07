@@ -14,7 +14,7 @@ import BreadCrumbs from './BreadCrumbs'
 import SidebarMenu from './menu/SidebarMenu'
 import { mainMenu, extraMenu } from '../mockData/menu'
 import AlthingiLogo from './AlthingiLogo'
-import Legislation from '../pages/Legislation'
+import Legislation from '../pages/legislation'
 
 const App = () => {
   return (

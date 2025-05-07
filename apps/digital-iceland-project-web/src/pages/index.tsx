@@ -1,6 +1,6 @@
 import { Box, GridContainer, CategoryCard, GridRow, GridColumn, Text } from '@island.is/island-ui/core'
 import WebReader from '../components/WebReader'
-import { SimpleVideoPlayer } from '../components/SimpleVideoPlayer/SimpleVideoPlayer'
+import { SimpleVideoPlayer } from '../components/videoPlayer/SimpleVideoPlayer'
 import { SearchSection } from '../components/home/SearchSection'
 import { TabsSection } from '../components/home/TabsSection'
 import { BroadcastSection } from '../components/home/BroadcastSection'

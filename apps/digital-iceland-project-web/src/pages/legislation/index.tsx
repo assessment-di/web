@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { Box, Text, Stack } from '@island.is/island-ui/core'
-import { mockLaws } from '../mockData/legislation'
-import WebReader from '../components/WebReader'
-import { LegislationSearch } from '../components/legislation/LegislationSearch'
-import { LegislationFilters } from '../components/legislation/LegislationFilters'
-import { LegislationTable } from '../components/legislation/LegislationTable'
-import { LegislationPagination } from '../components/legislation/LegislationPagination'
+import { mockLaws } from '../../mockData/legislation'
+import WebReader from '../../components/WebReader'
+import { LegislationSearch } from '../../components/legislation/LegislationSearch'
+import { LegislationFilters } from '../../components/legislation/LegislationFilters'
+import { LegislationTable } from '../../components/legislation/LegislationTable'
+import { LegislationPagination } from '../../components/legislation/LegislationPagination'
 
 const Legislation = () => {
   const [search, setSearch] = useState('')
@@ -46,14 +46,18 @@ const Legislation = () => {
               </Text>
             </Box>
 
-            <Box 
-              background="white" 
-              padding={[3, 4]} 
+            <Box
+              background="white"
+              padding={[3, 4]}
               borderRadius="large"
               boxShadow="subtle"
             >
               <Stack space={3}>
-                <Box display="flex" flexDirection={['column', 'row']} alignItems={['stretch', 'center']}>
+                <Box
+                  display="flex"
+                  flexDirection={['column', 'row']}
+                  alignItems={['stretch', 'center']}
+                >
                   <Box marginBottom={[3, 0]} width="full">
                     <LegislationSearch value={search} onChange={setSearch} />
                   </Box>
@@ -68,11 +72,7 @@ const Legislation = () => {
                   </Box>
                 </Box>
 
-                <Box 
-                  background="white" 
-                  borderRadius="large"
-                  overflow="hidden"
-                >
+                <Box background="white" borderRadius="large" overflow="hidden">
                   <LegislationTable laws={paginatedLaws} />
                 </Box>
 
@@ -81,7 +81,10 @@ const Legislation = () => {
                   totalPages={totalPages}
                   onPageChange={setPage}
                   startIndex={startIndex}
-                  endIndex={Math.min(startIndex + itemsPerPage, filteredLaws.length)}
+                  endIndex={Math.min(
+                    startIndex + itemsPerPage,
+                    filteredLaws.length,
+                  )}
                   totalItems={filteredLaws.length}
                 />
               </Stack>
