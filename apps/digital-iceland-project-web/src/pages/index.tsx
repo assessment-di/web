@@ -117,10 +117,10 @@ const Home = () => {
               </Box>
             </Box>
             <Box display={['none', 'none', 'block']}>
-              <img
-                src="/assets/althingi-illustration.svg"
-                alt="Althingi illustration"
-                style={{ width: '100%' }}
+              <SimpleVideoPlayer
+                controls={false}
+                url="https://videos.ctfassets.net/8k0h54kbe6bj/6evxh8D2Pt6nrSJa2F0KQH/bd0867a88663f70c1b211fbc86f122ac/vor2022-desktop.mp4"
+                title="Althingi video"
               />
             </Box>
           </Box>
