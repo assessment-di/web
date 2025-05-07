@@ -17,14 +17,14 @@ module.exports = composePlugins(withNx(), withReact(), nrwlConfig, (config) => {
   config.resolve.fallback = {
     ...config.resolve.fallback,
     fs: false,
-    // "zlib_bindings": false,
-    process: require.resolve("process/browser"),
-    zlib: require.resolve("browserify-zlib"),
-    stream: require.resolve("stream-browserify"),
-    util: require.resolve("util"),
-    buffer: require.resolve("buffer"),
-    asset: require.resolve("assert"),
-  };
+    // zlib_bindings: false,
+    process: require.resolve('process/browser'),
+    zlib: require.resolve('browserify-zlib'),
+    stream: require.resolve('stream-browserify'),
+    util: require.resolve('util'),
+    buffer: require.resolve('buffer'),
+    asset: require.resolve('assert'),
+  }
 
   return {
     ...config,
