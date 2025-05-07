@@ -10,6 +10,7 @@ import {
 } from '@island.is/island-ui/core'
 import { useParams } from 'react-router-dom'
 import { parliamentMembers } from '../../mockData/members'
+import WebReader from '../../components/WebReader/WebReader'
 
 const Details = () => {
   const { id } = useParams<{ id: string }>()
@@ -29,6 +30,7 @@ const Details = () => {
     <GridContainer>
       <Box display="flex">
         <Box flexGrow={1}>
+          <WebReader readId="member-details" language="en" />
           <Box
             background="white"
             borderRadius="large"
@@ -39,6 +41,7 @@ const Details = () => {
             justifyContent="spaceBetween"
             marginBottom={6}
             style={{ gap: 24 }}
+            id="member-details"
           >
             <Box display="flex" alignItems="center" style={{ gap: 24 }}>
               {member.image ? (
