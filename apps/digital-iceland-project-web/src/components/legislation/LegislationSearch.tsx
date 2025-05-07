@@ -9,7 +9,7 @@ export const LegislationSearch = ({
     <Input
       name="search"
       value={value}
-      placeholder="Search legislation"
+      placeholder="Leita í lögum"
       onChange={(e) => onChange(e.target.value)}
       size="md"
       icon={{ name: 'search' }}

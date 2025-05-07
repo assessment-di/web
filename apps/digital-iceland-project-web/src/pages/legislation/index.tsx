@@ -9,7 +9,7 @@ import { LegislationPagination } from '../../components/legislation/LegislationP
 
 const Legislation = () => {
   const [search, setSearch] = useState('')
-  const [status, setStatus] = useState({ label: 'All', value: 'all' })
+  const [status, setStatus] = useState({ label: 'Allt', value: 'all' })
   const [page, setPage] = useState(1)
   const itemsPerPage = 10
 

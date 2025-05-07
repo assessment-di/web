@@ -2,10 +2,10 @@ import { Select, Inline } from '@island.is/island-ui/core'
 import { LegislationFiltersProps } from '../../types/legislation'
 
 const statusOptions = [
-  { label: 'All', value: 'all' },
-  { label: '1st discussion', value: '1st' },
-  { label: 'Committee opinion', value: 'committee' },
-  { label: 'Law', value: 'law' },
+  { label: 'Allt', value: 'all' },
+  { label: '1. umræða', value: '1. umræða' },
+  { label: 'Nefndarálit', value: 'Nefndarálit' },
+  { label: 'Lög', value: 'Lög' },
 ]
 
 export const LegislationFilters = ({
@@ -15,7 +15,7 @@ export const LegislationFilters = ({
   return (
     <Inline space={2} align="right" justifyContent="flexStart">
       <Select
-        label="Status"
+        label="Staða"
         name="status"
         size="sm"
         value={status}

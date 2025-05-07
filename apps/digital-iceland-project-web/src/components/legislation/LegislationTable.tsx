@@ -7,11 +7,11 @@ export const LegislationTable = ({ laws }: LegislationTableProps) => {
     <Table.Table>
       <Table.Head>
         <Table.Row>
-          <Table.HeadData>Case No.</Table.HeadData>
-          <Table.HeadData>Date</Table.HeadData>
-          <Table.HeadData>Title</Table.HeadData>
-          <Table.HeadData>Proposer</Table.HeadData>
-          <Table.HeadData>Status</Table.HeadData>
+          <Table.HeadData>Málsnúmer</Table.HeadData>
+          <Table.HeadData>Dagsetning</Table.HeadData>
+          <Table.HeadData>Titill</Table.HeadData>
+          <Table.HeadData>Frumkvæðismaður</Table.HeadData>
+          <Table.HeadData>Staða</Table.HeadData>
         </Table.Row>
       </Table.Head>
       <Table.Body>

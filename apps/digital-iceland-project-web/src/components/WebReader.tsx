@@ -40,13 +40,14 @@ const WebReader: FC<WebReaderProps> = ({
   }, [])
 
   useEffect(() => {
-    const lang = language === 'is' ? 'is_is' : 'en_uk'
+    const lang = language === 'is' ? 'is' : 'en'
 
     let h =
       `https://app-eu.readspeaker.com/cgi-bin/rsent?` +
       `customerid=${CUSTOMER_ID}` +
       `&ver=3.8.7_rev2728-wr` +
-      `&wrc=2014018964`
+      `&wrc=2014018964` +
+      `&lang=${lang}`
 
     if (readId) {
       h += `&readid=${readId}`
