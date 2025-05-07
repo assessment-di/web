@@ -10,10 +10,12 @@ import {
 import Link from 'next/link'
 import StreamingVideo from '../components/StreamingVideo'
 import Timetable from '../components/Timetable'
+import WebReader from '../components/WebReader/WebReader'
 
 const Home = () => {
   return (
     <Box>
+      <WebReader readId="main-content" />
       <Box position="relative" width="full" style={{ height: 400 }}>
         <img
           src="https://www.althingi.is/media/althingishusid/21315-281-Edit3.jpg"
@@ -87,7 +89,7 @@ const Home = () => {
         </Box>
       </Box>
 
-      <GridContainer>
+      <GridContainer id="main-content">
         <Box background="white" borderRadius="large" padding={6} marginTop={4}>
           <Box marginTop={4}>
             <Box

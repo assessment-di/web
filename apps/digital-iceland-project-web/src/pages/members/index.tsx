@@ -1,11 +1,19 @@
 import { Box, GridContainer, Text } from '@island.is/island-ui/core'
 import Link from 'next/link'
 import { parliamentMembers } from '../../mockData/members'
+import WebReader from '../../components/WebReader/WebReader'
 
 const Members = () => {
   return (
     <GridContainer>
-      <Box background="white" borderRadius="large" padding={4} paddingTop={0}>
+      <WebReader readId="members-content" />
+      <Box
+        background="white"
+        borderRadius="large"
+        padding={4}
+        paddingTop={0}
+        id="members-content"
+      >
         <Text variant="h2" as="h1" marginBottom={4}>
           Members
         </Text>
