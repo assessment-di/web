@@ -13,8 +13,8 @@ import Details from '../pages/members/[id]'
 import BreadCrumbs from './BreadCrumbs'
 import SidebarMenu from './SidebarMenu'
 import { mainMenu, extraMenu } from '../mockData/menu'
-import Legislation from '../pages/Legislation'
 import AlthingiLogo from './AlthingiLogo'
+import Legislation from '../pages/Legislation'
 
 const App = () => {
   return (
