@@ -1,7 +1,7 @@
 import { Box, GridContainer, Text } from '@island.is/island-ui/core'
-import Link from 'next/link'
 import { parliamentMembers } from '../../mockData/members'
 import WebReader from '../../components/WebReader'
+import { MemberCard } from '../../components/members/MemberCard'
 
 const Members = () => {
   return (
@@ -19,48 +19,7 @@ const Members = () => {
         </Text>
         <Box display="flex" flexDirection="column" style={{ gap: 16 }}>
           {parliamentMembers.map((member) => (
-            <Link
-              key={member.id}
-              href={`/members/${member.id}`}
-              style={{ textDecoration: 'none', color: 'inherit' }}
-            >
-              <Box
-                background="blue100"
-                borderRadius="large"
-                padding={3}
-                display="flex"
-                alignItems="center"
-                style={{ gap: 16 }}
-              >
-                {member.image ? (
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    style={{
-                      width: 60,
-                      height: 60,
-                      borderRadius: '50%',
-                      objectFit: 'cover',
-                    }}
-                  />
-                ) : (
-                  <div
-                    style={{
-                      width: 60,
-                      height: 60,
-                      borderRadius: '50%',
-                      background: '#eee',
-                    }}
-                  />
-                )}
-                <Box>
-                  <Text variant="h4" as="h2">
-                    {member.name}
-                  </Text>
-                  <Text>{member.title}</Text>
-                </Box>
-              </Box>
-            </Link>
+            <MemberCard key={member.id} member={member} />
           ))}
         </Box>
       </Box>

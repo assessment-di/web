@@ -1,4 +1,11 @@
-import { Box, Tabs, Text, Stack, Link as IslandLink, Tag } from '@island.is/island-ui/core'
+import {
+  Box,
+  Tabs,
+  Text,
+  Stack,
+  Link as IslandLink,
+  Tag,
+} from '@island.is/island-ui/core'
 import { useState } from 'react'
 import { agendaItems } from '../../mockData/home'
 
@@ -59,7 +66,7 @@ export const TabsSection = () => {
   )
 
   const agendaContent = (
-    <Box background="blue100" borderRadius="large" padding={6}>
+    <Box background="blue100" borderRadius="large" padding={2}>
       <Text variant="h3" as="h2" marginBottom={1}>
         Agenda of the 35th Parliamentary Session
       </Text>
@@ -68,17 +75,18 @@ export const TabsSection = () => {
       </Text>
       <Box>
         {agendaItems.map((item, idx) => (
-          <Box
-            key={idx}
-            display="flex"
-            alignItems="flexStart"
-            marginBottom={3}
-          >
+          <Box key={idx} display="flex" alignItems="flexStart" marginBottom={3}>
             <Box
               borderRadius="full"
-              background={idx === 2 || idx === 3 || idx === 4 ? 'purple100' : 'blue100'}
-              color={idx === 2 || idx === 3 || idx === 4 ? 'purple400' : 'blue400'}
-              borderColor={idx === 2 || idx === 3 || idx === 4 ? 'purple400' : 'blue400'}
+              background={
+                idx === 2 || idx === 3 || idx === 4 ? 'purple100' : 'blue100'
+              }
+              color={
+                idx === 2 || idx === 3 || idx === 4 ? 'purple400' : 'blue400'
+              }
+              borderColor={
+                idx === 2 || idx === 3 || idx === 4 ? 'purple400' : 'blue400'
+              }
               borderWidth="standard"
               borderStyle="solid"
               display="flex"
@@ -123,7 +131,7 @@ export const TabsSection = () => {
   )
 
   return (
-    <Box background="white" borderRadius="large" padding={6} marginTop={6}>
+    <Box background="white" borderRadius="large" marginTop={2}>
       <Tabs
         label="Timetable Tabs"
         tabs={[
@@ -144,4 +152,4 @@ export const TabsSection = () => {
       />
     </Box>
   )
-} 
+}
