@@ -25,7 +25,36 @@ const App = () => {
       <GridContainer>
         <GridRow>
           <GridColumn span="3/12">
-            <SidebarMenu mainMenu={mainMenu} extraMenu={extraMenu} />
+            <Box
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              width="full"
+              flexDirection="column"
+            >
+              <Box
+                borderRadius="full"
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                width="full"
+                height="full"
+                paddingBottom={2}
+                style={{ maxWidth: 120, maxHeight: 120 }}
+              >
+                <img
+                  src="assets/althingi-logo.png"
+                  alt="Althingi Logo"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'contain',
+                    padding: '8px',
+                  }}
+                />
+              </Box>
+              <SidebarMenu mainMenu={mainMenu} extraMenu={extraMenu} />
+            </Box>
           </GridColumn>
           <GridColumn span="9/12">
             <Routes>
