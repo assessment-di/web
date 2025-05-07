@@ -82,7 +82,7 @@ const Home = () => {
                 Legislation is the main task of Althingi, which also has an
                 extensive supervisory role
               </Text>
-              <Box marginBottom={1}>
+              <Box marginBottom={2}>
                 <Input
                   name="search"
                   icon={{ name: 'search' }}
@@ -95,19 +95,21 @@ const Home = () => {
                   onChange={(e) => setSearchValue(e.target.value)}
                 />
               </Box>
-              <Box display="flex" flexWrap="wrap">
+              <Box display="flex" flexWrap="wrap" style={{ gap: 8 }}>
                 {searchSuggestions.map((suggestion, idx) => (
                   <Box
                     key={suggestion}
+                    background="blue100"
+                    borderRadius="large"
                     paddingY={1}
-                    paddingX={1}
+                    paddingX={3}
                     display="flex"
                     alignItems="center"
                     justifyContent="center"
                     style={{ cursor: 'pointer' }}
                     onClick={() => setSearchValue(suggestion)}
                   >
-                    <Text color="blue400" fontWeight="semiBold">
+                    <Text color="blue400" fontWeight="semiBold" variant="small">
                       {suggestion}
                     </Text>
                   </Box>
