@@ -30,9 +30,7 @@ export interface RelatedDocument {
 }
 
 export interface LegislationFiltersProps {
-  period: { label: string; value: string }
   status: { label: string; value: string }
-  onPeriodChange: (period: { label: string; value: string }) => void
   onStatusChange: (status: { label: string; value: string }) => void
 }
 

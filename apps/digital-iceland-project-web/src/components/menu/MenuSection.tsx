@@ -78,7 +78,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({
         onClick={handleToggle}
         style={
           isMobile
-            ? { cursor: 'pointer', minHeight: 64 }
+            ? { cursor: 'pointer', minHeight: 20 }
             : { cursor: 'default' }
         }
       >
@@ -124,14 +124,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({
           </span>
         )}
       </Box>
-      {isMobile && (
-        <div
-          style={{
-            borderTop: '2px solid #eaf0fb',
-            margin: '16px -32px 0 -32px',
-          }}
-        />
-      )}
+
       {(!isMobile || open) && (
         <Box
           marginTop={2}
@@ -141,31 +134,43 @@ const MenuSection: React.FC<MenuSectionProps> = ({
                   position: 'absolute',
                   left: 0,
                   right: 0,
-                  background: '#ffffff',
+                  background: backgroundColor,
                   zIndex: 10,
-                  borderRadius: '0 0 16px 16px',
-                  padding: '16px 32px 24px 32px',
-                  boxShadow: '0 8px 24px 0 rgba(50, 102, 227, 0.12)',
-                  border: '1px solid #eaf0fb',
-                  borderTop: 'none',
+                  borderRadius: 16,
+                  padding: '16px 0 24px 0',
+                  boxShadow: '0 4px 24px 0 rgba(50, 102, 227, 0.08)',
+                  border: '2px solid #3266E3',
                   marginTop: '8px',
                 }
               : {}
           }
         >
           {items.map((item, index) => (
-            <Box key={index} marginBottom={2}>
+            <Box key={index} marginBottom={2} paddingX={4}>
               <a
                 href={item.href}
                 style={
                   isMobile
-                    ? { color: '#3266E3', textDecoration: 'none' }
+                    ? {
+                        color: '#3266E3',
+                        textDecoration: 'none',
+                        fontWeight: item.label === title ? 'bold' : 'normal',
+                        fontSize: 18,
+                        display: 'block',
+                        padding: '4px 0',
+                      }
                     : { color: linkColor, textDecoration: 'none' }
                 }
               >
                 <Text
                   color={isMobile ? 'blue400' : undefined}
-                  fontWeight={isMobile ? 'regular' : undefined}
+                  fontWeight={
+                    isMobile
+                      ? item.label === title
+                        ? 'semiBold'
+                        : 'regular'
+                      : undefined
+                  }
                 >
                   {item.label}
                 </Text>
