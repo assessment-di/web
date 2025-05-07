@@ -28,6 +28,7 @@ const Legislation = () => {
   const [period, setPeriod] = useState(legislationPeriods[0])
   const [status, setStatus] = useState(statusOptions[0])
   const [page, setPage] = useState(1)
+  const itemsPerPage = 10
 
   const filteredLaws = mockLaws.filter((law) => {
     const matchesSearch = law.title.toLowerCase().includes(search.toLowerCase()) ||
@@ -39,6 +40,10 @@ const Legislation = () => {
     return matchesSearch && matchesStatus
   })
 
+  const totalPages = Math.ceil(filteredLaws.length / itemsPerPage)
+  const startIndex = (page - 1) * itemsPerPage
+  const paginatedLaws = filteredLaws.slice(startIndex, startIndex + itemsPerPage)
+
   return (
     <Box paddingY={6} paddingX={2} background="blue100">
       <Text variant="h1" as="h1" marginBottom={3}>
@@ -49,7 +54,10 @@ const Legislation = () => {
           name="search"
           value={search}
           placeholder="Search legislation"
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => {
+            setSearch(e.target.value)
+            setPage(1) // Reset to first page on search
+          }}
           size="md"
         />
         <Select
@@ -66,7 +74,10 @@ const Legislation = () => {
           size="sm"
           value={status}
           options={statusOptions}
-          onChange={(opt) => opt && setStatus(opt)}
+          onChange={(opt) => {
+            opt && setStatus(opt)
+            setPage(1) // Reset to first page on status change
+          }}
         />
       </Inline>
       <Table.Table>
@@ -80,7 +91,7 @@ const Legislation = () => {
           </Table.Row>
         </Table.Head>
         <Table.Body>
-          {filteredLaws.map((row, i) => (
+          {paginatedLaws.map((row, i) => (
             <Table.Row key={i}>
               <Table.Data>{row.caseNumber}</Table.Data>
               <Table.Data>{row.date}</Table.Data>
@@ -106,7 +117,7 @@ const Legislation = () => {
       </Table.Table>
       <Box display="flex" justifyContent="flexEnd" marginTop={3}>
         <Pagination
-          totalPages={47}
+          totalPages={totalPages}
           page={page}
           renderLink={(pageNum, className, children) => (
             <button
@@ -121,7 +132,7 @@ const Legislation = () => {
         />
       </Box>
       <Text variant="small" color="dark400" marginTop={2}>
-        Showing 1-10 out of 470
+        Showing {startIndex + 1}-{Math.min(startIndex + itemsPerPage, filteredLaws.length)} out of {filteredLaws.length}
       </Text>
     </Box>
   )
