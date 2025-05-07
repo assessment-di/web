@@ -14,6 +14,7 @@ import BreadCrumbs from './BreadCrumbs'
 import SidebarMenu from './SidebarMenu'
 import { mainMenu, extraMenu } from '../mockData/menu'
 import Legislation from '../pages/Legislation'
+import AlthingiLogo from './AlthingiLogo'
 
 const App = () => {
   return (
@@ -32,27 +33,7 @@ const App = () => {
               width="full"
               flexDirection="column"
             >
-              <Box
-                borderRadius="full"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                width="full"
-                height="full"
-                paddingBottom={2}
-                style={{ maxWidth: 120, maxHeight: 120 }}
-              >
-                <img
-                  src="assets/althingi-logo.png"
-                  alt="Althingi Logo"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'contain',
-                    padding: '8px',
-                  }}
-                />
-              </Box>
+              <AlthingiLogo />
               <SidebarMenu mainMenu={mainMenu} extraMenu={extraMenu} />
             </Box>
           </GridColumn>
