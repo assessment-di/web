@@ -1,3 +1,31 @@
+export const mockMeetings = [
+  {
+    time: '09:00',
+    title: 'Finance Committee meeting',
+    href: '#',
+  },
+  {
+    time: '09:00',
+    title: 'Constitutional and Supervisory Committee meeting',
+    href: '#',
+  },
+  {
+    time: '09:00',
+    title: 'Welfare Committee meeting',
+    href: '#',
+  },
+  {
+    time: '09:00',
+    title: 'Democracy event in Kvos - Breiðholt School',
+    href: '#',
+  },
+  {
+    time: '10:30',
+    title: 'Parliament session',
+    href: '#',
+  },
+]
+
 export const agendaItems = [
   {
     title: 'Parliamentary work',
