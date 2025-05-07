@@ -8,9 +8,9 @@ import {
   Stack,
 } from '@island.is/island-ui/core'
 import Link from 'next/link'
-import StreamingVideo from '../components/StreamingVideo'
 import Timetable from '../components/Timetable'
 import WebReader from '../components/WebReader/WebReader'
+import { SimpleVideoPlayer } from '../components/SimpleVideoPlayer/SimpleVideoPlayer'
 
 const Home = () => {
   return (
@@ -102,7 +102,10 @@ const Home = () => {
                 <Timetable />
               </Box>
               <Box style={{ flex: 2 }}>
-                <StreamingVideo />
+                <SimpleVideoPlayer
+                  url="https://www.youtube.com/watch?v=YjkLqcRmL0M"
+                  title="Althingi"
+                />
               </Box>
             </Box>
           </Box>
