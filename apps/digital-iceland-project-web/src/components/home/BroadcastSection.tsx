@@ -30,19 +30,19 @@ export const BroadcastSection = () => {
             marginRight={2}
           >
             <Text color="red600" fontWeight="semiBold" variant="small">
-              Live
+              Beint
             </Text>
           </Box>
           <Text variant="h5" as="h3">
-            Broadcast
+            Útsending
           </Text>
         </Box>
         <Text>
-          The next parliamentary session will be on Wednesday, May 7 at 15:00
+          Næsta þingsetning verður á miðvikudaginn 7. maí klukkan 15:00
         </Text>
         <Box marginTop={2} display="flex" style={{ gap: 16 }}>
-          <IslandLink href="#">Other broadcast options</IslandLink>
-          <IslandLink href="#">Recordings</IslandLink>
+          <IslandLink href="#">Aðrar útsendingarmöguleikar</IslandLink>
+          <IslandLink href="#">Upptökur</IslandLink>
         </Box>
       </Box>
     </Box>

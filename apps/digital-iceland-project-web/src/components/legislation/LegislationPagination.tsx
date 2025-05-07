@@ -32,7 +32,7 @@ export const LegislationPagination = ({
         />
       </Box>
       <Text variant="small" color="dark400" marginTop={2}>
-        Showing {startIndex + 1}-{endIndex} out of {totalItems}
+        Sýni {startIndex + 1}-{endIndex} af {totalItems}
       </Text>
     </>
   )

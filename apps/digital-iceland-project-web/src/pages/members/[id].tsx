@@ -14,7 +14,7 @@ const Details = () => {
     return (
       <Box paddingY={6}>
         <GridContainer>
-          <Text>Member not found</Text>
+          <Text>Þingmaður fannst ekki</Text>
         </GridContainer>
       </Box>
     )
@@ -38,18 +38,18 @@ const Details = () => {
           <Accordion>
             <AccordionItem
               id="parliamentary-career"
-              label="Parliamentary career"
+              label="Þingferill"
             >
               <Text>{member.parliamentaryCareer}</Text>
             </AccordionItem>
-            <AccordionItem id="title" label="Title">
+            <AccordionItem id="title" label="Titill">
               <Text>{member.title}</Text>
             </AccordionItem>
-            <AccordionItem id="committees" label="Committees">
+            <AccordionItem id="committees" label="Nefndir">
               <MemberCommittees member={member} />
             </AccordionItem>
             {member.ministerialCareer && member.ministerialCareer.length > 0 && (
-              <AccordionItem id="ministerial-career" label="Ministerial career">
+              <AccordionItem id="ministerial-career" label="Ráðherraferill">
                 <MemberMinisterialCareer member={member} />
               </AccordionItem>
             )}

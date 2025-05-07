@@ -15,7 +15,7 @@ const Members = () => {
         id="members-content"
       >
         <Text variant="h2" as="h1" marginBottom={4}>
-          Members
+          Þingmenn
         </Text>
         <Box display="flex" flexDirection="column" style={{ gap: 16 }}>
           {parliamentMembers.map((member) => (

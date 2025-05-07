@@ -2,9 +2,9 @@ import { Breadcrumbs, Box } from '@island.is/island-ui/core'
 import { useLocation } from 'react-router-dom'
 
 const breadcrumbSegmentMap: Record<string, string> = {
-  '': 'Home',
-  members: 'Members',
-  details: 'Details',
+  '': 'Heim',
+  members: 'Þingmenn',
+  details: 'Nánar',
 }
 
 const capitalize = (word: string) => {

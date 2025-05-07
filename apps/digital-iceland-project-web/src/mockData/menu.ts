@@ -1,20 +1,20 @@
 export const mainMenu = [
-  { label: 'Legislation', href: '/legislation' },
-  { label: 'Members of Parliament', href: '/members' },
-  { label: 'Committees', href: '/' },
-  { label: 'International work', href: '/' },
-  { label: 'Law archive', href: '/' },
-  { label: 'Parliament resolutions', href: '/' },
-  { label: 'About Parliament', href: '/' },
+  { label: 'Löggjöf', href: '/legislation' },
+  { label: 'Þingmenn', href: '/members' },
+  { label: 'Nefndir', href: '/' },
+  { label: 'Alþjóðavinna', href: '/' },
+  { label: 'Lögaskrá', href: '/' },
+  { label: 'Þingsályktanir', href: '/' },
+  { label: 'Um Alþingi', href: '/' },
 ]
 
 export const extraMenu = [
   {
-    label: 'Right of appeal due to parental or maternity leave',
+    label: 'Réttur til kæru vegna foreldra- eða fæðingarorlofs',
     href: '/',
   },
   {
-    label: 'Employee rights during parental leave',
+    label: 'Réttindi starfsmanna á foreldraorlofi',
     href: '/',
   },
 ]

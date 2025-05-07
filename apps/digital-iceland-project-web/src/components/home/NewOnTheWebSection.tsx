@@ -3,59 +3,59 @@ import { Box, Text, GridRow, GridColumn, CategoryCard } from '@island.is/island-
 const NewOnTheWebSection = () => (
   <Box marginTop={8} marginBottom={8}>
     <Text as="h2" variant="h2" marginBottom={4}>
-      New on the web
+      Nýtt á vefnum
     </Text>
     <GridRow>
       <GridColumn span={['12/12', '6/12', '4/12']} paddingBottom={3}>
         <CategoryCard
-          heading="Announcements"
-          text="Latest news and important updates from the government."
-          tags={[{ label: 'News' }]}
+          heading="Tilkynningar"
+          text="Nýjustu fréttir og mikilvægar uppfærslur frá stjórnvöldum."
+          tags={[{ label: 'Fréttir' }]}
           colorScheme="blue"
           href="#"
         />
       </GridColumn>
       <GridColumn span={['12/12', '6/12', '4/12']} paddingBottom={3}>
         <CategoryCard
-          heading="Laws & Resolutions"
-          text="Recent laws, legal changes, and parliamentary resolutions."
-          tags={[{ label: 'Law' }]}
+          heading="Lög og ályktanir"
+          text="Nýleg lög, lagabreytingar og þingsályktanir."
+          tags={[{ label: 'Lög' }]}
           colorScheme="purple"
           href="#"
         />
       </GridColumn>
       <GridColumn span={['12/12', '6/12', '4/12']} paddingBottom={3}>
         <CategoryCard
-          heading="Speeches"
-          text="Official speeches and statements from public officials."
-          tags={[{ label: 'Speech' }]}
+          heading="Ræður"
+          text="Opinberar ræður og yfirlýsingar frá embættismönnum."
+          tags={[{ label: 'Ræða' }]}
           colorScheme="red"
           href="#"
         />
       </GridColumn>
       <GridColumn span={['12/12', '6/12', '4/12']} paddingBottom={3}>
         <CategoryCard
-          heading="Parliamentary Documents"
-          text="Access to parliamentary documents and records."
-          tags={[{ label: 'Documents' }]}
+          heading="Þingskjöl"
+          text="Aðgangur að þingskjölum og skrám."
+          tags={[{ label: 'Skjöl' }]}
           colorScheme="blue"
           href="#"
         />
       </GridColumn>
       <GridColumn span={['12/12', '6/12', '4/12']} paddingBottom={3}>
         <CategoryCard
-          heading="Cases"
-          text="Browse and search for parliamentary cases."
-          tags={[{ label: 'Cases' }]}
+          heading="Mál"
+          text="Skoða og leita að þingsmálum."
+          tags={[{ label: 'Mál' }]}
           colorScheme="purple"
           href="#"
         />
       </GridColumn>
       <GridColumn span={['12/12', '6/12', '4/12']} paddingBottom={3}>
         <CategoryCard
-          heading="Events"
-          text="Upcoming and past events related to the parliament."
-          tags={[{ label: 'Events' }]}
+          heading="Viðburðir"
+          text="Kommandi og liðnir viðburðir tengdir þinginu."
+          tags={[{ label: 'Viðburðir' }]}
           colorScheme="red"
           href="#"
         />

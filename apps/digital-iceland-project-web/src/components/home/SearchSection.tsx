@@ -12,7 +12,7 @@ interface SearchResult {
   link: string
 }
 
-const searchSuggestions = ['Health', 'Alma', 'Arna', 'Climate']
+const searchSuggestions = ['Alma', 'Arna', 'Loftslag']
 
 export const SearchSection = () => {
   const [searchValue, setSearchValue] = useState('')
@@ -66,16 +66,16 @@ export const SearchSection = () => {
   return (
     <Box style={{ position: 'relative', width: '100%' }}>
       <Text variant="h1" as="h1" marginBottom={2}>
-        Althingi
+        Alþingi
       </Text>
       <Text marginBottom={4} color="dark400" variant="default">
-        Legislation is the main task of Althingi, which also has an extensive supervisory role
+        Löggjöf er aðalverkefni Alþingis, sem hefur einnig umfangsmikið eftirlit
       </Text>
       <Box marginBottom={2}>
         <Input
           name="search"
           icon={{ name: 'search' }}
-          placeholder="Search Althingi"
+          placeholder="Leita á Alþingi"
           size="md"
           backgroundColor="blue"
           autoComplete="off"
@@ -118,7 +118,7 @@ export const SearchSection = () => {
                       </Text>
                     )}
                     <Text color="blue400" variant="small">
-                      {result.type === 'law' ? 'Legislation' : 'Member of Parliament'}
+                      {result.type === 'law' ? 'Löggjöf' : 'Þingmaður'}
                     </Text>
                   </Box>
                 </Link>
@@ -149,4 +149,4 @@ export const SearchSection = () => {
       </Box>
     </Box>
   )
-} 
+}

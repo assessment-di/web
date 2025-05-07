@@ -19,8 +19,8 @@ interface SidebarMenuProps {
 const SidebarMenu: React.FC<SidebarMenuProps> = ({
   mainMenu,
   extraMenu,
-  mainTitle = 'Menu',
-  extraTitle = 'Related Content',
+  mainTitle = 'Valmynd',
+  extraTitle = 'Tengt efni',
   mainMenuColor = '#1b4c9a',
   extraMenuColor = '#6a1bbd',
 }) => {

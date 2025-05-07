@@ -1,67 +1,67 @@
 export const mockMeetings = [
   {
     time: '09:00',
-    title: 'Finance Committee meeting',
+    title: 'Fundanefndarfundur',
     href: '#',
   },
   {
     time: '09:00',
-    title: 'Constitutional and Supervisory Committee meeting',
+    title: 'Stjórnskipunar- og eftirlitsnefndarfundur',
     href: '#',
   },
   {
     time: '09:00',
-    title: 'Welfare Committee meeting',
+    title: 'Velferðarnefndarfundur',
     href: '#',
   },
   {
     time: '09:00',
-    title: 'Democracy event in Kvos - Breiðholt School',
+    title: 'Lýðræðishátíð í Kvos - Breiðholtsskóla',
     href: '#',
   },
   {
     time: '10:30',
-    title: 'Parliament session',
+    title: 'Þingsetning',
     href: '#',
   },
 ]
 
 export const agendaItems = [
   {
-    title: 'Parliamentary work',
-    link: { label: 'Speakers list', href: '#' },
+    title: 'Þingvinna',
+    link: { label: 'Ræðulisti', href: '#' },
     description: null,
   },
   {
-    title: 'Fishing fee (catch value in the calculation base)',
+    title: 'Fiskigjald (veiðigildi í reikningsgrunni)',
     link: null,
     description:
-      'Case 351, bill from the Minister of Fisheries. — Continuation of 1st debate. ',
-    extraLink: { label: 'Speakers list', href: '#' },
+      'Mál 351, frumvarp frá sjávarútvegsráðherra. — Halda áfram 1. umræðu.',
+    extraLink: { label: 'Ræðulisti', href: '#' },
   },
   {
     title:
-      'Environmental assessment of projects and plans (EES rules alignment)',
+      'Umhverfismat verkefna og áætlana (samræming EES-reglna)',
     link: null,
     description:
-      'Case 129, bill from the Minister for the Environment, Energy and Climate. — 2nd debate.',
+      'Mál 129, frumvarp frá umhverfis- og auðlindaráðherra. — 2. umræða.',
     bold: true,
   },
   {
     title:
-      'Planning of sea and coastal areas and planning laws (regional council, etc.)',
+      'Skipulag sjávar og strandsvæða og skipulagslög (héraðsráð o.fl.)',
     link: null,
     description:
-      'Case 147, bill from the Minister of Social Affairs and Housing. — 2nd debate.',
+      'Mál 147, frumvarp frá félags- og húsnæðisráðherra. — 2. umræða.',
     bold: true,
     underline: true,
   },
   {
     title:
-      'Resolution no. 317/2023 on amendment to Annex II to the EEA Agreement etc. (technical regulations, standards, tests and certification, etc.)',
+      'Ályktun nr. 317/2023 um breytingu á II. viðauka við EES-samninginn o.fl. (tæknilegar reglur, staðlar, prófanir og vottun o.fl.)',
     link: null,
     description:
-      'Case 124, parliamentary resolution from the Minister for Foreign Affairs. — Further debate.',
+      'Mál 124, þingsályktun frá utanríkisráðherra. — Frekari umræða.',
     bold: true,
   },
 ]

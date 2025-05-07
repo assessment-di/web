@@ -39,10 +39,10 @@ const Legislation = () => {
           <Stack space={4}>
             <Box>
               <Text variant="h1" as="h1" color="blue600">
-                Legislation
+                Löggjöf
               </Text>
               <Text variant="intro" color="dark400" marginTop={2}>
-                Browse and search through current legislation and proposals
+                Skoðaðu og leitaðu í núverandi löggjöf og tillögum
               </Text>
             </Box>
 

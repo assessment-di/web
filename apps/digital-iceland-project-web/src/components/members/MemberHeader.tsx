@@ -54,16 +54,16 @@ export const MemberHeader = ({ member }: MemberHeaderProps) => {
           </Text>
           <Stack space={1}>
             <Text>
-              Title <b>{member.title}</b>
+              Titill <b>{member.title}</b>
             </Text>
             <Text>
-              Ministry <b>{member.ministry}</b>
+              Ráðuneyti <b>{member.ministry}</b>
             </Text>
             <Text>
-              Party <b>{member.party}</b>
+              Flokkur <b>{member.party}</b>
             </Text>
             <Text>
-              Date of birth <b>{member.dateOfBirth}</b>
+              Fæðingardagur <b>{member.dateOfBirth}</b>
             </Text>
           </Stack>
           <Box
@@ -100,7 +100,7 @@ export const MemberHeader = ({ member }: MemberHeaderProps) => {
           variant="ghost" 
           size="small"
         >
-          Share profile
+          Deila prófíli
         </Button>
       </Box>
     </Box>

@@ -9,16 +9,16 @@ export const TabsSection = () => {
   return (
     <Box background="white" borderRadius="large" marginTop={6}>
       <Tabs
-        label="Timetable Tabs"
+        label="Dagskrárflipar"
         tabs={[
           {
             id: 'meetings',
-            label: 'Meetings and visits',
+            label: 'Fundir og heimsóknir',
             content: <MeetingsTab />,
           },
           {
             id: 'agenda',
-            label: 'Agenda',
+            label: 'Dagskrá',
             content: <AgendaTab />,
           },
         ]}

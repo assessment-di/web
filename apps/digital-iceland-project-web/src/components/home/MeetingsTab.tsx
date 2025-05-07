@@ -12,7 +12,7 @@ export const MeetingsTab = () => {
         marginBottom={5}
       >
         <Text variant="h3" as="h2" marginBottom={0}>
-          Wednesday, May 7
+          Miðvikudagur, 7. maí
         </Text>
         <Box style={{ fontSize: 18 }}>
           <Tag variant="mint" outlined>

@@ -13,7 +13,7 @@ export const MemberCommittees = ({ member }: MemberCommitteesProps) => {
   return (
     <>
       <Box marginBottom={2}>
-        <Text variant="default">Present committees</Text>
+        <Text variant="default">Núverandi nefndir</Text>
         <ul style={{ marginTop: 8 }}>
           {presentCommittees.map((committee) => (
             <li key={committee}>
@@ -24,7 +24,7 @@ export const MemberCommittees = ({ member }: MemberCommitteesProps) => {
       </Box>
       {member.previousCommittees && member.previousCommittees.length > 0 && (
         <Box>
-          <Text variant="default">Previous committees</Text>
+          <Text variant="default">Fyrri nefndir</Text>
           <ul style={{ marginTop: 8 }}>
             {member.previousCommittees.map((committee) => (
               <li key={committee}>

@@ -2,30 +2,30 @@ export const mockLaws = [
   {
     caseNumber: '1',
     date: '15.03.2024',
-    title: 'Act amending the Act on Healthcare Professionals',
+    title: 'Lög um breytingu á lögum um heilbrigðisstarfsmenn',
     subtitle:
-      '(regarding authorization to provide certain types of work to healthcare institution staff)',
+      '(um heimild til að veita ákveðnar gerðir starfa starfsmönnum heilbrigðisstofnana)',
     proposer: 'Bjarni Benediktsson',
-    status: '1st discussion',
-    description: 'This bill proposes amendments to the Act on Healthcare Professionals to streamline the process of authorizing certain types of work for healthcare institution staff. The changes aim to improve efficiency in healthcare service delivery while maintaining high standards of patient care.',
+    status: '1. umræða',
+    description: 'Þetta frumvarp leggur til breytingar á lögum um heilbrigðisstarfsmenn til að skilvirkja ferlið við að veita heimildir fyrir ákveðnum gerðum starfa fyrir starfsmenn heilbrigðisstofnana. Breytingarnar miða að því að bæta skilvirkni í þjónustu heilbrigðisgeirans en viðhalda háum gæðum í umönnun sjúklinga.',
     originalDocumentUrl: 'https://www.althingi.is/altext/152/s/0001.html',
     history: [
       {
         date: '15.03.2024',
-        event: 'First reading in Parliament',
-        description: 'The bill was introduced and referred to the Welfare Committee'
+        event: 'Fyrsta lestur á Alþingi',
+        description: 'Frumvarpið var kynnt og vísað til velferðarnefndar'
       }
     ],
     committees: [
       {
-        name: 'Welfare Committee',
-        status: 'Under review',
+        name: 'Velferðarnefnd',
+        status: 'Í yfirferð',
         deadline: '01.04.2024'
       }
     ],
     relatedDocuments: [
       {
-        title: 'Original Act on Healthcare Professionals',
+        title: 'Upprunaleg lög um heilbrigðisstarfsmenn',
         url: 'https://www.althingi.is/lagas/nuna/2012088.html'
       }
     ]
@@ -33,29 +33,29 @@ export const mockLaws = [
   {
     caseNumber: '2',
     date: '14.03.2024',
-    title: 'Act on Climate Change',
-    subtitle: '(regarding implementation of Paris Agreement commitments)',
+    title: 'Lög um loftslagsbreytingar',
+    subtitle: '(um framkvæmd skuldbindinga Parísarsamkomulagsins)',
     proposer: 'Þórdís Kolbrún R. Gylfadóttir',
-    status: 'Committee opinion',
-    description: 'This bill establishes a comprehensive framework for Iceland\'s climate change mitigation and adaptation efforts, implementing the country\'s commitments under the Paris Agreement. It includes specific targets for greenhouse gas emissions reduction and adaptation measures.',
+    status: 'Nefndarálit',
+    description: 'Þetta frumvarp setur upp heildstætt rammverk fyrir loftslagsmál á Íslandi, bæði fyrir minnkun og aðlögun, og framkvæmir skuldbindingar landsins samkvæmt Parísarsamkomulaginu. Það felur í sér sérstök markmið um minnkun gróðurhúsalofttegunda og aðlögunaraðgerðir.',
     originalDocumentUrl: 'https://www.althingi.is/altext/152/s/0002.html',
     history: [
       {
         date: '14.03.2024',
-        event: 'First reading completed',
-        description: 'Bill referred to the Environment and Communications Committee'
+        event: 'Fyrsta lestur lokið',
+        description: 'Frumvarpið vísað til umhverfis- og samgöngunefndar'
       }
     ],
     committees: [
       {
-        name: 'Environment and Communications Committee',
-        status: 'Reviewing',
+        name: 'Umhverfis- og samgöngunefnd',
+        status: 'Í yfirferð',
         deadline: '15.04.2024'
       }
     ],
     relatedDocuments: [
       {
-        title: 'Paris Agreement Implementation Plan',
+        title: 'Framkvæmdaáætlun Parísarsamkomulagsins',
         url: 'https://www.althingi.is/altext/152/s/0002.html#G'
       }
     ]
@@ -63,29 +63,29 @@ export const mockLaws = [
   {
     caseNumber: '3',
     date: '13.03.2024',
-    title: 'Act on Digital Services',
-    subtitle: '(regarding implementation of EU Digital Services Act)',
+    title: 'Lög um stafræna þjónustu',
+    subtitle: '(um innleiðingu stafræna þjónustulaga ESB)',
     proposer: 'Áslaug Arna Sigurbjörnsdóttir',
-    status: 'Law',
-    description: 'This bill implements the EU Digital Services Act in Icelandic law, establishing new rules for digital service providers and online platforms. It includes provisions for content moderation, transparency requirements, and user protection measures.',
+    status: 'Lög',
+    description: 'Þetta frumvarp innleiðir stafræna þjónustulög ESB í íslenskan rétt og setur upp nýjar reglur fyrir veitendur stafrænna þjónustu og stafrænar vettvangssíður. Það felur í sér ákvæði um eftirlit með efni, kröfur um gagnsæi og verndarráðstafanir fyrir notendur.',
     originalDocumentUrl: 'https://www.althingi.is/altext/152/s/0003.html',
     history: [
       {
         date: '13.03.2024',
-        event: 'Final reading',
-        description: 'Bill passed with amendments'
+        event: 'Endanleg lestur',
+        description: 'Frumvarpið samþykkt með breytingum'
       }
     ],
     committees: [
       {
-        name: 'Economic Affairs and Trade Committee',
-        status: 'Completed',
+        name: 'Atvinnuvega- og viðskiptanefnd',
+        status: 'Lokið',
         deadline: '13.03.2024'
       }
     ],
     relatedDocuments: [
       {
-        title: 'EU Digital Services Act',
+        title: 'Stafræn þjónustulög ESB',
         url: 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R2065'
       }
     ]
@@ -93,29 +93,29 @@ export const mockLaws = [
   {
     caseNumber: '4',
     date: '12.03.2024',
-    title: 'Act on Housing Development',
-    subtitle: '(regarding affordable housing initiatives)',
+    title: 'Lög um húsnæðisþróun',
+    subtitle: '(um húsnæðisáætlanir fyrir hagkvæmt húsnæði)',
     proposer: 'Guðmundur Ingi Guðbrandsson',
-    status: '1st discussion',
-    description: 'This bill introduces measures to increase the supply of affordable housing, including new funding mechanisms for housing development and reforms to the planning system. It aims to address housing shortages in urban areas.',
+    status: '1. umræða',
+    description: 'Þetta frumvarp kynnir ráðstafanir til að auka framboð á hagkvæmu húsnæði, þar á meðal nýjar fjármögnunaraðferðir fyrir húsnæðisþróun og umbætur á skipulagskerfinu. Það miðar að því að leysa vandamál með húsnæðisskort í þéttbýli.',
     originalDocumentUrl: 'https://www.althingi.is/altext/152/s/0004.html',
     history: [
       {
         date: '12.03.2024',
-        event: 'First reading',
-        description: 'Bill introduced to Parliament'
+        event: 'Fyrsta lestur',
+        description: 'Frumvarpið kynnt á Alþingi'
       }
     ],
     committees: [
       {
-        name: 'Welfare Committee',
-        status: 'Under review',
+        name: 'Velferðarnefnd',
+        status: 'Í yfirferð',
         deadline: '20.04.2024'
       }
     ],
     relatedDocuments: [
       {
-        title: 'Housing Market Analysis 2024',
+        title: 'Greining á húsnæðismarkaði 2024',
         url: 'https://www.althingi.is/altext/152/s/0004.html#G'
       }
     ]
@@ -123,29 +123,29 @@ export const mockLaws = [
   {
     caseNumber: '5',
     date: '11.03.2024',
-    title: 'Act on Renewable Energy',
-    subtitle: '(regarding expansion of geothermal energy production)',
+    title: 'Lög um endurnýjanlega orku',
+    subtitle: '(um stækkun jarðvarmaorkuframleiðslu)',
     proposer: 'Sigurður Ingi Jóhannsson',
-    status: 'Committee opinion',
-    description: 'This bill proposes significant expansion of geothermal energy production capacity and infrastructure. It includes new investment incentives and streamlined permitting processes for renewable energy projects.',
+    status: 'Nefndarálit',
+    description: 'Þetta frumvarp leggur til umtalsverða stækkun á getu og innviðum jarðvarmaorkuframleiðslu. Það felur í sér nýjar hvata til fjárfestinga og skilvirkara leyfisferli fyrir verkefni með endurnýjanlega orku.',
     originalDocumentUrl: 'https://www.althingi.is/altext/152/s/0005.html',
     history: [
       {
         date: '11.03.2024',
-        event: 'First reading completed',
-        description: 'Referred to Industry and Innovation Committee'
+        event: 'Fyrsta lestur lokið',
+        description: 'Vísað til iðnaðar- og nýsköpunarnefndar'
       }
     ],
     committees: [
       {
-        name: 'Industry and Innovation Committee',
-        status: 'Reviewing',
+        name: 'Iðnaðar- og nýsköpunarnefnd',
+        status: 'Í yfirferð',
         deadline: '25.04.2024'
       }
     ],
     relatedDocuments: [
       {
-        title: 'Geothermal Energy Master Plan',
+        title: 'Aðaláætlun um jarðvarmaorku',
         url: 'https://www.althingi.is/altext/152/s/0005.html#G'
       }
     ]
@@ -153,29 +153,29 @@ export const mockLaws = [
   {
     caseNumber: '6',
     date: '10.03.2024',
-    title: 'Act on Education Reform',
-    subtitle: '(regarding digital learning and remote education)',
+    title: 'Lög um menntauppbygging',
+    subtitle: '(um stafrænt nám og fjarnám)',
     proposer: 'Lilja Dögg Alfreðsdóttir',
-    status: 'Law',
-    description: 'This bill introduces comprehensive reforms to the education system, focusing on digital learning infrastructure and remote education capabilities. It includes provisions for teacher training, digital curriculum development, and equal access to education technology.',
+    status: 'Lög',
+    description: 'Þetta frumvarp kynnir heildstæðar umbætur á menntakerfinu, með áherslu á innviði stafræns náms og getu til fjarnáms. Það felur í sér ákvæði um kennslufræðslu, þróun stafræns námsmats og jafnan aðgang að menntatækni.',
     originalDocumentUrl: 'https://www.althingi.is/altext/152/s/0006.html',
     history: [
       {
         date: '10.03.2024',
-        event: 'Final reading',
-        description: 'Bill passed with majority support'
+        event: 'Endanleg lestur',
+        description: 'Frumvarpið samþykkt með meirihluta'
       }
     ],
     committees: [
       {
-        name: 'Education and Culture Committee',
-        status: 'Completed',
+        name: 'Mennta- og menningarmálanefnd',
+        status: 'Lokið',
         deadline: '10.03.2024'
       }
     ],
     relatedDocuments: [
       {
-        title: 'Digital Education Strategy 2024-2028',
+        title: 'Stafræn menntastefna 2024-2028',
         url: 'https://www.althingi.is/altext/152/s/0006.html#G'
       }
     ]
@@ -183,29 +183,29 @@ export const mockLaws = [
   {
     caseNumber: '7',
     date: '09.03.2024',
-    title: 'Act on Fisheries Management',
-    subtitle: '(regarding sustainable fishing quotas and marine conservation)',
+    title: 'Lög um sjávarútvegsstjórnun',
+    subtitle: '(um sjálfbærar veiðiheimildir og vernd sjávar)',
     proposer: 'Svandís Svavarsdóttir',
-    status: '1st discussion',
-    description: 'This bill proposes significant reforms to Iceland\'s fisheries management system, introducing new sustainable fishing quotas and enhanced marine conservation measures. It includes provisions for ecosystem-based management and protection of vulnerable marine areas.',
+    status: '1. umræða',
+    description: 'Þetta frumvarp leggur til umtalsverðar umbætur á stjórnun sjávarútvegs á Íslandi, með nýjum sjálfbærum veiðiheimildum og auknum verndarráðstöfunum fyrir sjó. Það felur í sér ákvæði um stjórnun byggða á vistkerfi og vernd viðkvæmra sjávarhópa.',
     originalDocumentUrl: 'https://www.althingi.is/altext/152/s/0007.html',
     history: [
       {
         date: '09.03.2024',
-        event: 'First reading',
-        description: 'Bill introduced to Parliament'
+        event: 'Fyrsta lestur',
+        description: 'Frumvarpið kynnt á Alþingi'
       }
     ],
     committees: [
       {
-        name: 'Environment and Communications Committee',
-        status: 'Under review',
+        name: 'Umhverfis- og samgöngunefnd',
+        status: 'Í yfirferð',
         deadline: '30.04.2024'
       }
     ],
     relatedDocuments: [
       {
-        title: 'Marine Ecosystem Assessment 2024',
+        title: 'Matsáætlun sjávarlífríkis 2024',
         url: 'https://www.althingi.is/altext/152/s/0007.html#G'
       }
     ]
@@ -213,29 +213,29 @@ export const mockLaws = [
   {
     caseNumber: '8',
     date: '08.03.2024',
-    title: 'Act on Public Transportation',
-    subtitle: '(regarding electric vehicle infrastructure and public transit)',
+    title: 'Lög um almenningssamgöngur',
+    subtitle: '(um innviði fyrir rafbíla og almenningssamgöngur)',
     proposer: 'Sigurður Ingi Jóhannsson',
-    status: 'Committee opinion',
-    description: 'This bill establishes a comprehensive framework for the development of electric vehicle infrastructure and public transportation systems. It includes funding mechanisms for charging stations, public transit improvements, and incentives for electric vehicle adoption.',
+    status: 'Nefndarálit',
+    description: 'Þetta frumvarp setur upp heildstætt rammverk fyrir þróun innviða fyrir rafbíla og almenningssamgöngur. Það felur í sér fjármögnun fyrir hleðslustöðvar, umbætur á almenningssamgöngum og hvata til að taka upp rafbíla.',
     originalDocumentUrl: 'https://www.althingi.is/altext/152/s/0008.html',
     history: [
       {
         date: '08.03.2024',
-        event: 'First reading completed',
-        description: 'Referred to Transport and Local Government Committee'
+        event: 'Fyrsta lestur lokið',
+        description: 'Vísað til samgöngu- og sveitarstjórnarmálanefndar'
       }
     ],
     committees: [
       {
-        name: 'Transport and Local Government Committee',
-        status: 'Reviewing',
+        name: 'Samgöngu- og sveitarstjórnarmálanefnd',
+        status: 'Í yfirferð',
         deadline: '15.04.2024'
       }
     ],
     relatedDocuments: [
       {
-        title: 'Transport Infrastructure Development Plan',
+        title: 'Þróunaráætlun samgönguinnviða',
         url: 'https://www.althingi.is/altext/152/s/0008.html#G'
       }
     ]
@@ -243,29 +243,29 @@ export const mockLaws = [
   {
     caseNumber: '9',
     date: '07.03.2024',
-    title: 'Act on Cultural Heritage',
-    subtitle: '(regarding preservation of historical sites and artifacts)',
+    title: 'Lög um menningarminjar',
+    subtitle: '(um vernd sögulegra staða og minja)',
     proposer: 'Lilja Dögg Alfreðsdóttir',
-    status: 'Law',
-    description: 'This bill strengthens the protection and preservation of Iceland\'s cultural heritage, including historical sites, artifacts, and intangible cultural heritage. It introduces new funding mechanisms and establishes stricter regulations for heritage site management.',
+    status: 'Lög',
+    description: 'Þetta frumvarp styrkir vernd og varðveislu menningarminja á Íslandi, þar á meðal sögulegra staða, minja og óefnislegs menningararfs. Það kynnir nýjar fjármögnunaraðferðir og setur strangari reglur um stjórnun minjastaða.',
     originalDocumentUrl: 'https://www.althingi.is/altext/152/s/0009.html',
     history: [
       {
         date: '07.03.2024',
-        event: 'Final reading',
-        description: 'Bill passed unanimously'
+        event: 'Endanleg lestur',
+        description: 'Frumvarpið samþykkt'
       }
     ],
     committees: [
       {
-        name: 'Education and Culture Committee',
-        status: 'Completed',
+        name: 'Mennta- og menningarmálanefnd',
+        status: 'Lokið',
         deadline: '07.03.2024'
       }
     ],
     relatedDocuments: [
       {
-        title: 'Cultural Heritage Inventory 2024',
+        title: 'Menningarminjaráætlun 2024-2028',
         url: 'https://www.althingi.is/altext/152/s/0009.html#G'
       }
     ]
