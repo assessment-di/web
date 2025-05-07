@@ -29,6 +29,16 @@ const Legislation = () => {
   const [status, setStatus] = useState(statusOptions[0])
   const [page, setPage] = useState(1)
 
+  const filteredLaws = mockLaws.filter((law) => {
+    const matchesSearch = law.title.toLowerCase().includes(search.toLowerCase()) ||
+      law.subtitle.toLowerCase().includes(search.toLowerCase()) ||
+      law.proposer.toLowerCase().includes(search.toLowerCase())
+    
+    const matchesStatus = status.value === 'all' || law.status === status.label
+
+    return matchesSearch && matchesStatus
+  })
+
   return (
     <Box paddingY={6} paddingX={2} background="blue100">
       <Text variant="h1" as="h1" marginBottom={3}>
@@ -70,7 +80,7 @@ const Legislation = () => {
           </Table.Row>
         </Table.Head>
         <Table.Body>
-          {mockLaws.map((row, i) => (
+          {filteredLaws.map((row, i) => (
             <Table.Row key={i}>
               <Table.Data>{row.caseNumber}</Table.Data>
               <Table.Data>{row.date}</Table.Data>
