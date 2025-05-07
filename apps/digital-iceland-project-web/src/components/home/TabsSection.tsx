@@ -131,7 +131,7 @@ export const TabsSection = () => {
   )
 
   return (
-    <Box background="white" borderRadius="large" marginTop={2}>
+    <Box background="white" borderRadius="large" marginTop={6}>
       <Tabs
         label="Timetable Tabs"
         tabs={[
