@@ -1,5 +1,5 @@
 export const mainMenu = [
-  { label: 'Parliament sessions and cases', href: '/' },
+  { label: 'Legislation', href: '/legislation' },
   { label: 'Members of Parliament', href: '/members' },
   { label: 'Committees', href: '/' },
   { label: 'International work', href: '/' },

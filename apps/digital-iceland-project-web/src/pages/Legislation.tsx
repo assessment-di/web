@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import {
   Box,
-  Stack,
   Text,
   Input,
   Select,
   Pagination,
+  Inline,
   Table,
 } from '@island.is/island-ui/core'
 import Link from 'next/link'
@@ -34,7 +34,7 @@ const Legislation = () => {
       <Text variant="h1" as="h1" marginBottom={3}>
         Legislation
       </Text>
-      <Stack space={2} align="center">
+      <Inline space={2} align="right" justifyContent="flexStart">
         <Input
           name="search"
           value={search}
@@ -58,7 +58,7 @@ const Legislation = () => {
           options={statusOptions}
           onChange={(opt) => opt && setStatus(opt)}
         />
-      </Stack>
+      </Inline>
       <Table.Table>
         <Table.Head>
           <Table.Row>
@@ -75,7 +75,10 @@ const Legislation = () => {
               <Table.Data>{row.caseNumber}</Table.Data>
               <Table.Data>{row.date}</Table.Data>
               <Table.Data>
-                <Link href={`/legislation/${row.caseNumber}`} style={{ color: '#0061FF' }}>
+                <Link
+                  href={`/legislation/${row.caseNumber}`}
+                  style={{ color: '#0061FF' }}
+                >
                   {row.title}{' '}
                   {row.subtitle && (
                     <span style={{ color: '#6D6D6D', fontWeight: 400 }}>
