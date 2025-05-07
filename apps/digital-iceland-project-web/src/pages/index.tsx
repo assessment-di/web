@@ -9,7 +9,7 @@ import {
 } from '@island.is/island-ui/core'
 import Link from 'next/link'
 import Timetable from '../components/Timetable'
-import WebReader from '../components/WebReader/WebReader'
+import WebReader from '../components/WebReader'
 import { SimpleVideoPlayer } from '../components/SimpleVideoPlayer/SimpleVideoPlayer'
 
 const Home = () => {

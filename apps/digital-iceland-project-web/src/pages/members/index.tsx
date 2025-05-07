@@ -1,7 +1,7 @@
 import { Box, GridContainer, Text } from '@island.is/island-ui/core'
 import Link from 'next/link'
 import { parliamentMembers } from '../../mockData/members'
-import WebReader from '../../components/WebReader/WebReader'
+import WebReader from '../../components/WebReader'
 
 const Members = () => {
   return (

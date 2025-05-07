@@ -10,7 +10,7 @@ import {
 } from '@island.is/island-ui/core'
 import { useParams } from 'react-router-dom'
 import { parliamentMembers } from '../../mockData/members'
-import WebReader from '../../components/WebReader/WebReader'
+import WebReader from '../../components/WebReader'
 
 const Details = () => {
   const { id } = useParams<{ id: string }>()
