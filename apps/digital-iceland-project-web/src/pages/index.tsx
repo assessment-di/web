@@ -4,54 +4,17 @@ import {
   Input,
   Tabs,
   Tag,
-  Button,
   Text,
   Stack,
   Link as IslandLink,
 } from '@island.is/island-ui/core'
 import WebReader from '../components/WebReader'
 import { SimpleVideoPlayer } from '../components/SimpleVideoPlayer/SimpleVideoPlayer'
-import React, { useState } from 'react'
-
-const agendaItems = [
-  {
-    title: 'Parliamentary work',
-    link: { label: 'Speakers list', href: '#' },
-    description: null,
-  },
-  {
-    title: 'Fishing fee (catch value in the calculation base)',
-    link: null,
-    description:
-      'Case 351, bill from the Minister of Fisheries. — Continuation of 1st debate. ',
-    extraLink: { label: 'Speakers list', href: '#' },
-  },
-  {
-    title:
-      'Environmental assessment of projects and plans (EES rules alignment)',
-    link: null,
-    description:
-      'Case 129, bill from the Minister for the Environment, Energy and Climate. — 2nd debate.',
-    bold: true,
-  },
-  {
-    title:
-      'Planning of sea and coastal areas and planning laws (regional council, etc.)',
-    link: null,
-    description:
-      'Case 147, bill from the Minister of Social Affairs and Housing. — 2nd debate.',
-    bold: true,
-    underline: true,
-  },
-  {
-    title:
-      'Resolution no. 317/2023 on amendment to Annex II to the EEA Agreement etc. (technical regulations, standards, tests and certification, etc.)',
-    link: null,
-    description:
-      'Case 124, parliamentary resolution from the Minister for Foreign Affairs. — Further debate.',
-    bold: true,
-  },
-]
+import { useState, useEffect } from 'react'
+import { agendaItems } from '../mockData/home'
+import { mockLaws } from '../mockData/legislation'
+import { parliamentMembers } from '../mockData/members'
+import Link from 'next/link'
 
 const searchSuggestions = [
   'Law collection',
@@ -60,9 +23,66 @@ const searchSuggestions = [
   'Budget 2024',
 ]
 
+interface SearchResult {
+  type: 'law' | 'member'
+  id: string
+  title: string
+  subtitle?: string
+  link: string
+}
+
 const Home = () => {
   const [activeTab, setActiveTab] = useState('meetings')
   const [searchValue, setSearchValue] = useState('')
+  const [searchResults, setSearchResults] = useState<SearchResult[]>([])
+  const [showResults, setShowResults] = useState(false)
+
+  useEffect(() => {
+    if (searchValue.length > 0) {
+      const results: SearchResult[] = []
+
+      // Search in laws
+      mockLaws.forEach((law) => {
+        if (
+          law.title.toLowerCase().includes(searchValue.toLowerCase()) ||
+          law.subtitle?.toLowerCase().includes(searchValue.toLowerCase()) ||
+          law.proposer.toLowerCase().includes(searchValue.toLowerCase())
+        ) {
+          results.push({
+            type: 'law',
+            id: law.caseNumber,
+            title: law.title,
+            subtitle: law.subtitle,
+            link: `/legislation/${law.caseNumber}`,
+          })
+        }
+      })
+
+      // Search in members
+      parliamentMembers.forEach((member) => {
+        if (
+          member.name.toLowerCase().includes(searchValue.toLowerCase()) ||
+          member.title.toLowerCase().includes(searchValue.toLowerCase()) ||
+          member.party.toLowerCase().includes(searchValue.toLowerCase())
+        ) {
+          results.push({
+            type: 'member',
+            id: member.id,
+            title: member.name,
+            subtitle: member.title,
+            link: `/members/${member.id}`,
+          })
+        }
+      })
+
+      setSearchResults(results)
+      setShowResults(true)
+    } else {
+      setSearchResults([])
+      setShowResults(false)
+    }
+  }, [searchValue])
+
   return (
     <Box>
       <WebReader readId="main-content" />
@@ -74,7 +94,7 @@ const Home = () => {
             alignItems="center"
             style={{ gap: 24 }}
           >
-            <Box>
+            <Box style={{ position: 'relative', width: '100%' }}>
               <Text variant="h1" as="h1" marginBottom={2}>
                 Althingi
               </Text>
@@ -94,6 +114,51 @@ const Home = () => {
                   value={searchValue}
                   onChange={(e) => setSearchValue(e.target.value)}
                 />
+                {showResults && searchResults.length > 0 && (
+                  <Box
+                    background="white"
+                    borderRadius="large"
+                    padding={2}
+                    marginTop={1}
+                    style={{
+                      position: 'absolute',
+                      width: '100%',
+                      zIndex: 1,
+                      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                    }}
+                  >
+                    <Stack space={2}>
+                      {searchResults.map((result) => (
+                        <Link
+                          key={`${result.type}-${result.id}`}
+                          href={result.link}
+                          style={{ textDecoration: 'none', color: 'inherit' }}
+                        >
+                          <Box
+                            padding={2}
+                            background="blue100"
+                            borderRadius="large"
+                            style={{ cursor: 'pointer' }}
+                          >
+                            <Text variant="h5" as="h3" marginBottom={1}>
+                              {result.title}
+                            </Text>
+                            {result.subtitle && (
+                              <Text color="dark400" variant="small">
+                                {result.subtitle}
+                              </Text>
+                            )}
+                            <Text color="blue400" variant="small">
+                              {result.type === 'law'
+                                ? 'Legislation'
+                                : 'Member of Parliament'}
+                            </Text>
+                          </Box>
+                        </Link>
+                      ))}
+                    </Stack>
+                  </Box>
+                )}
               </Box>
               <Box display="flex" flexWrap="wrap" style={{ gap: 8 }}>
                 {searchSuggestions.map((suggestion, idx) => (
