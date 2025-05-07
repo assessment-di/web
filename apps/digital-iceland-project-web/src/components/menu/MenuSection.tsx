@@ -141,11 +141,14 @@ const MenuSection: React.FC<MenuSectionProps> = ({
                   position: 'absolute',
                   left: 0,
                   right: 0,
-                  background: backgroundColor,
+                  background: '#ffffff',
                   zIndex: 10,
                   borderRadius: '0 0 16px 16px',
-                  padding: '0 32px 24px 32px',
-                  boxShadow: '0 4px 24px 0 rgba(50, 102, 227, 0.08)',
+                  padding: '16px 32px 24px 32px',
+                  boxShadow: '0 8px 24px 0 rgba(50, 102, 227, 0.12)',
+                  border: '1px solid #eaf0fb',
+                  borderTop: 'none',
+                  marginTop: '8px',
                 }
               : {}
           }

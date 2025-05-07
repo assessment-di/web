@@ -28,9 +28,9 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
     <Box>
       <Box
         display="flex"
-        flexDirection={['column', 'row']}
-        columnGap={[0, 3]}
-        rowGap={[3, 0]}
+        flexDirection={['row', 'row', 'column']}
+        columnGap={[3, 3, 0]}
+        rowGap={[0, 0, 3]}
       >
         <Box width="full">
           <MenuSection
