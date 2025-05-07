@@ -22,8 +22,16 @@ const Details = () => {
 
   return (
     <GridContainer>
-      <Box display="flex">
-        <Box flexGrow={1}>
+      <Box 
+        display="flex" 
+        flexDirection={['column', 'column', 'row']}
+        width="full"
+        paddingX={[2, 2, 0]}
+      >
+        <Box 
+          flexGrow={1}
+          width="full"
+        >
           <WebReader readId="member-details" language="en" />
           <MemberHeader member={member} />
 

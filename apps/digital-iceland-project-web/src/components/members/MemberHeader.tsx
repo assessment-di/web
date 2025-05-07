@@ -10,16 +10,23 @@ export const MemberHeader = ({ member }: MemberHeaderProps) => {
     <Box
       background="white"
       borderRadius="large"
-      padding={4}
+      padding={[3, 3, 4]}
       paddingTop={0}
       display="flex"
-      alignItems="center"
+      flexDirection={['column', 'column', 'row']}
+      alignItems={['flexStart', 'flexStart', 'center']}
       justifyContent="spaceBetween"
       marginBottom={6}
       style={{ gap: 24 }}
       id="member-details"
     >
-      <Box display="flex" alignItems="center" style={{ gap: 24 }}>
+      <Box 
+        display="flex" 
+        flexDirection={['column', 'column', 'row']}
+        alignItems={['center', 'center', 'flexStart']}
+        style={{ gap: 24 }}
+        width="full"
+      >
         {member.image ? (
           <img
             src={member.image}
@@ -41,7 +48,7 @@ export const MemberHeader = ({ member }: MemberHeaderProps) => {
             }}
           />
         )}
-        <Box>
+        <Box width="full">
           <Text variant="h2" as="h1">
             {member.name}
           </Text>
@@ -62,6 +69,7 @@ export const MemberHeader = ({ member }: MemberHeaderProps) => {
           <Box
             display="flex"
             alignItems="center"
+            justifyContent={['center', 'center', 'flexStart']}
             style={{ gap: 16, marginTop: 8 }}
           >
             <a href={`mailto:${member.email}`} style={{ color: '#0061ff' }}>
@@ -86,9 +94,15 @@ export const MemberHeader = ({ member }: MemberHeaderProps) => {
           </Box>
         </Box>
       </Box>
-      <Button icon="share" variant="ghost" size="small">
-        Share profile
-      </Button>
+      <Box display="flex" justifyContent={['center', 'center', 'flexStart']}>
+        <Button 
+          icon="share" 
+          variant="ghost" 
+          size="small"
+        >
+          Share profile
+        </Button>
+      </Box>
     </Box>
   )
 } 
