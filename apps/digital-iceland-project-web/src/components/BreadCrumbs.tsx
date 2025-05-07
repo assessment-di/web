@@ -2,7 +2,7 @@ import { Box, Text } from '@island.is/island-ui/core'
 import { Link, useLocation } from 'react-router-dom'
 
 const breadcrumbSegmentMap: Record<string, string> = {
-  '': 'Ísland.is',
+  '': 'Home',
   members: 'Members',
   details: 'Details',
 }
@@ -28,19 +28,25 @@ const BreadCrumbs = () => {
   const location = useLocation()
   const crumbs = getBreadcrumbs(location.pathname)
 
+  if (crumbs.length <= 1) {
+    return null
+  }
+
   return (
-    <Box display="flex" alignItems="center" paddingY={3} paddingX={6}>
+    <Box display="flex" alignItems="center" paddingTop={1} paddingBottom={3} paddingX={6}>
       {crumbs.map((crumb, idx) => (
         <Box
           key={crumb.path}
           display="flex"
           alignItems="center"
-          style={idx !== 0 ? { margin: '0 8px' } : {}}
+          marginLeft={idx !== 0 ? 2 : 0}
         >
           {idx !== 0 && (
-            <Text color="blue400" fontWeight="semiBold" aria-hidden="true">
-              •
-            </Text>
+            <Box paddingX={1}>
+              <Text color="blue400" fontWeight="semiBold" aria-hidden="true">
+                •
+              </Text>
+            </Box>
           )}
           {idx === crumbs.length - 1 ? (
             <Box
@@ -48,6 +54,7 @@ const BreadCrumbs = () => {
               borderRadius="large"
               paddingX={3}
               paddingY={1}
+              marginLeft={idx !== 0 ? 2 : 0}
             >
               <Text color="blue400" fontWeight="semiBold">
                 {crumb.label}
@@ -61,6 +68,7 @@ const BreadCrumbs = () => {
                 fontWeight: 600,
                 textDecoration: 'none',
                 fontSize: 20,
+                marginLeft: idx !== 0 ? 8 : 0,
               }}
             >
               {crumb.label}
