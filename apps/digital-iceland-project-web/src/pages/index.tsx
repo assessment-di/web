@@ -36,6 +36,39 @@ const timetableData = [
   },
 ]
 
+const agendaItems = [
+  {
+    title: 'Parliamentary work',
+    link: { label: 'Speakers list', href: '#' },
+    description: null,
+  },
+  {
+    title: 'Fishing fee (catch value in the calculation base)',
+    link: null,
+    description: 'Case 351, bill from the Minister of Fisheries. — Continuation of 1st debate. ',
+    extraLink: { label: 'Speakers list', href: '#' },
+  },
+  {
+    title: 'Environmental assessment of projects and plans (EES rules alignment)',
+    link: null,
+    description: 'Case 129, bill from the Minister for the Environment, Energy and Climate. — 2nd debate.',
+    bold: true,
+  },
+  {
+    title: 'Planning of sea and coastal areas and planning laws (regional council, etc.)',
+    link: null,
+    description: 'Case 147, bill from the Minister of Social Affairs and Housing. — 2nd debate.',
+    bold: true,
+    underline: true,
+  },
+  {
+    title: 'Resolution no. 317/2023 on amendment to Annex II to the EEA Agreement etc. (technical regulations, standards, tests and certification, etc.)',
+    link: null,
+    description: 'Case 124, parliamentary resolution from the Minister for Foreign Affairs. — Further debate.',
+    bold: true,
+  },
+]
+
 const Home = () => {
   const [activeTab, setActiveTab] = useState('meetings')
   return (
@@ -67,8 +100,69 @@ const Home = () => {
             <Tabs
               label="Timetable Tabs"
               tabs={[
-                { id: 'meetings', label: 'Meetings and visits', content: null },
-                { id: 'agenda', label: 'Agenda', content: null },
+                {
+                  id: 'meetings',
+                  label: 'Meetings and visits',
+                  content: null,
+                },
+                {
+                  id: 'agenda',
+                  label: 'Agenda',
+                  content: (
+                    <Box background="blue100" borderRadius="large" padding={6}>
+                      <Text variant="h3" as="h2" marginBottom={1}>
+                        Agenda of the 35th Parliamentary Session
+                      </Text>
+                      <Text color="dark400" marginBottom={2}>
+                        Tuesday, May 6, session started at 13:30
+                      </Text>
+                      <Box>
+                        {agendaItems.map((item, idx) => (
+                          <Box key={idx} display="flex" alignItems="flexStart" marginBottom={3}>
+                            <Box
+                              borderRadius="full"
+                              background={idx === 2 || idx === 3 || idx === 4 ? 'purple100' : 'blue100'}
+                              color={idx === 2 || idx === 3 || idx === 4 ? 'purple400' : 'blue400'}
+                              borderColor={idx === 2 || idx === 3 || idx === 4 ? 'purple400' : 'blue400'}
+                              borderWidth="standard"
+                              borderStyle="solid"
+                              display="flex"
+                              alignItems="center"
+                              justifyContent="center"
+                              marginRight={3}
+                              style={{ minWidth: 32, minHeight: 32 }}
+                            >
+                              <Text variant="h5" as="span">{idx + 1}</Text>
+                            </Box>
+                            <Box flexGrow={1}>
+                              <Text
+                                as="div"
+                                fontWeight={item.bold ? 'semiBold' : 'regular'}
+                                variant="h5"
+                                marginBottom={1}
+                              >
+                                {item.underline ? <u>{item.title}</u> : item.title}
+                              </Text>
+                              {item.link && (
+                                <IslandLink href={item.link.href}><u>{item.link.label}</u></IslandLink>
+                              )}
+                              {item.description && (
+                                <Text as="div" color="dark400" marginBottom={1}>{item.description}{' '}
+                                  {item.extraLink && (
+                                    <IslandLink href={item.extraLink.href}><u>{item.extraLink.label}</u></IslandLink>
+                                  )}
+                                </Text>
+                              )}
+                            </Box>
+                          </Box>
+                        ))}
+                      </Box>
+                      <Box marginTop={2}>
+                        <IslandLink href="#" color="blue400"><u>Show more</u></IslandLink>
+                      </Box>
+                    </Box>
+                  ),
+                },
               ]}
               selected={activeTab}
               onChange={setActiveTab}
