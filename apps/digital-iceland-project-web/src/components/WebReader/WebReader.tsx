@@ -41,16 +41,12 @@ const WebReader: FC<WebReaderProps> = ({
 
   useEffect(() => {
     const lang = language === 'is' ? 'is_is' : 'en_uk'
-    const currentUrl = encodeURIComponent(window.location.href)
-    const timestamp = new Date().getTime()
 
     let h =
-      `//app-eu.readspeaker.com/cgi-bin/rsent?` +
+      `https://app-eu.readspeaker.com/cgi-bin/rsent?` +
       `customerid=${CUSTOMER_ID}` +
-      `&lang=${lang}` +
-      `&url=${currentUrl}` +
-      `&timestamp=${timestamp}` +
-      `&ver=3.8.7_rev2728-wr`
+      `&ver=3.8.7_rev2728-wr` +
+      `&wrc=2014018964`
 
     if (readId) {
       h += `&readid=${readId}`
