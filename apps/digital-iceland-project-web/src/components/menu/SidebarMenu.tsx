@@ -26,22 +26,31 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
 }) => {
   return (
     <Box>
-      <Box marginBottom={3}>
-        <MenuSection
-          items={mainMenu}
-          title={mainTitle}
-          linkColor={mainMenuColor}
-          titleVariant="h4"
-          backgroundColor="blue100"
-        />
+      <Box
+        display="flex"
+        flexDirection={['column', 'row']}
+        columnGap={[0, 3]}
+        rowGap={[3, 0]}
+      >
+        <Box width="full">
+          <MenuSection
+            items={mainMenu}
+            title={mainTitle}
+            linkColor={mainMenuColor}
+            titleVariant="h4"
+            backgroundColor="blue100"
+          />
+        </Box>
+        <Box width="full">
+          <MenuSection
+            items={extraMenu}
+            title={extraTitle}
+            titleVariant="medium"
+            linkColor={extraMenuColor}
+            backgroundColor="purple100"
+          />
+        </Box>
       </Box>
-      <MenuSection
-        items={extraMenu}
-        title={extraTitle}
-        linkColor={extraMenuColor}
-        titleVariant="eyebrow"
-        backgroundColor="purple100"
-      />
     </Box>
   )
 }
