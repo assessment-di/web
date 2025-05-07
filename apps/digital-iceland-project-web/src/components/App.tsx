@@ -25,19 +25,20 @@ const App = () => {
       <BreadCrumbs />
       <GridContainer>
         <GridRow>
-          <GridColumn span="3/12">
+          <GridColumn span={['12/12', '12/12', '3/12']}>
             <Box
               display="flex"
               justifyContent="center"
               alignItems="center"
               width="full"
               flexDirection="column"
+              marginBottom={[4, 4, 0]}
             >
               <AlthingiLogo />
               <SidebarMenu mainMenu={mainMenu} extraMenu={extraMenu} />
             </Box>
           </GridColumn>
-          <GridColumn span="9/12">
+          <GridColumn span={['12/12', '12/12', '9/12']}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/members" element={<Members />} />
