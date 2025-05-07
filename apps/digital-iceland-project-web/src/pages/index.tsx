@@ -53,50 +53,81 @@ const agendaItems = [
   },
 ]
 
+const searchSuggestions = [
+  'Law collection',
+  'Bills',
+  'Members of Parliament',
+  'Budget 2024',
+]
+
 const Home = () => {
   const [activeTab, setActiveTab] = useState('meetings')
+  const [searchValue, setSearchValue] = useState('')
   return (
     <Box>
       <WebReader readId="main-content" />
       <GridContainer id="main-content">
         <Box marginTop={4}>
-          <Text variant="h1" as="h1">
-            Althingi
-          </Text>
-          <Text marginBottom={2} color="dark400" variant="default">
-            Legislation is the main task of Althingi, which also has an
-            extensive supervisory role
-          </Text>
-          <Box marginBottom={3}>
-            <Input
-              name="search"
-              icon={{ name: 'search' }}
-              placeholder="Search Althingi"
-              size="md"
-              backgroundColor="blue"
-              autoComplete="off"
-            />
-          </Box>
           <Box
             display="flex"
-            flexWrap="wrap"
-            marginBottom={3}
-            style={{ gap: 8 }}
+            flexDirection={['column', 'row']}
+            alignItems="center"
+            style={{ gap: 24 }}
           >
-            <Button variant="ghost" size="default">
-              Law collection
-            </Button>
-            <Button variant="ghost" size="default">
-              Bills
-            </Button>
-            <Button variant="ghost" size="default">
-              Members of Parliament
-            </Button>
-            <Button variant="ghost" size="default">
-              Budget 2024
-            </Button>
+            <Box>
+              <Text variant="h1" as="h1" marginBottom={2}>
+                Althingi
+              </Text>
+              <Text marginBottom={4} color="dark400" variant="default">
+                Legislation is the main task of Althingi, which also has an
+                extensive supervisory role
+              </Text>
+              <Box marginBottom={1}>
+                <Input
+                  name="search"
+                  icon={{ name: 'search' }}
+                  placeholder="Search Althingi"
+                  size="md"
+                  backgroundColor="blue"
+                  autoComplete="off"
+                  inputMode="search"
+                  value={searchValue}
+                  onChange={(e) => setSearchValue(e.target.value)}
+                />
+              </Box>
+              <Box display="flex" flexWrap="wrap">
+                {searchSuggestions.map((suggestion, idx) => (
+                  <Box
+                    key={suggestion}
+                    paddingY={1}
+                    paddingX={1}
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => setSearchValue(suggestion)}
+                  >
+                    <Text color="blue400" fontWeight="semiBold">
+                      {suggestion}
+                    </Text>
+                  </Box>
+                ))}
+              </Box>
+            </Box>
+            <Box display={['none', 'none', 'block']}>
+              <img
+                src="/assets/althingi-illustration.svg"
+                alt="Althingi illustration"
+                style={{ width: '100%' }}
+              />
+            </Box>
           </Box>
-          <Box background="white" borderRadius="large" padding={6}>
+          <Box
+            background="white"
+            borderRadius="large"
+            padding={6}
+            marginTop={6}
+          >
             <Tabs
               label="Timetable Tabs"
               tabs={[
