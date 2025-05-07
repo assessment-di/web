@@ -16,12 +16,7 @@ import { mockLaws } from '../mockData/legislation'
 import { parliamentMembers } from '../mockData/members'
 import Link from 'next/link'
 
-const searchSuggestions = [
-  'Law collection',
-  'Bills',
-  'Members of Parliament',
-  'Budget 2024',
-]
+const searchSuggestions = ['Health', 'Alma', 'Arna', 'Climate']
 
 interface SearchResult {
   type: 'law' | 'member'
@@ -41,7 +36,6 @@ const Home = () => {
     if (searchValue.length > 0) {
       const results: SearchResult[] = []
 
-      // Search in laws
       mockLaws.forEach((law) => {
         if (
           law.title.toLowerCase().includes(searchValue.toLowerCase()) ||
@@ -58,7 +52,6 @@ const Home = () => {
         }
       })
 
-      // Search in members
       parliamentMembers.forEach((member) => {
         if (
           member.name.toLowerCase().includes(searchValue.toLowerCase()) ||
