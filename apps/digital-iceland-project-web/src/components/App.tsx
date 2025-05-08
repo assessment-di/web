@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import {
   Box,
   GridContainer,
@@ -48,6 +48,7 @@ const App = () => {
           <GridColumn span={['12/12', '12/12', '9/12']}>
             <BreadCrumbs />
             <Routes>
+              <Route path="/" element={<Navigate to="/is" replace />} />
               <Route path="/:language" element={<Home />} />
               <Route path="/:language/members" element={<Members />} />
               <Route path="/:language/members/:id" element={<Details />} />
