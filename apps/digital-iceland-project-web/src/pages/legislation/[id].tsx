@@ -11,7 +11,9 @@ import LegislationSubscribe from '../../components/legislation/LegislationSubscr
 
 const LawDetails = () => {
   const { id } = useParams<{ id: string }>()
-  const law = id ? mockLaws.find((l) => l.caseNumber === id.toString()) : undefined
+  const law = id
+    ? mockLaws.find((l) => l.caseNumber === id.toString())
+    : undefined
 
   if (!law) {
     return (
@@ -22,7 +24,12 @@ const LawDetails = () => {
   }
 
   return (
-    <Box background="blue100" style={{ minHeight: '100vh' }} paddingY={[8, 10, 12]} paddingX={[2, 3, 4]}>
+    <Box
+      background="blue100"
+      style={{ minHeight: '100vh' }}
+      paddingY={[8, 10, 12]}
+      paddingX={[2, 3, 4]}
+    >
       <WebReader readId="law-details" language="is" />
       <Box width="full" margin="auto" style={{ maxWidth: '900px' }}>
         <Box
@@ -34,7 +41,12 @@ const LawDetails = () => {
           paddingX={[4, 8, 10]}
         >
           <Stack space={8}>
-            <Box display="flex" flexDirection={["column", "row"]} justifyContent="spaceBetween" alignItems={["flexStart", "flexStart"]}>
+            <Box
+              display="flex"
+              flexDirection={['column', 'column', 'row']}
+              justifyContent="spaceBetween"
+              alignItems={['flexStart', 'flexStart', 'flexStart']}
+            >
               <Box flexGrow={1}>
                 <LegislationHeader
                   title={law.title}
@@ -46,13 +58,26 @@ const LawDetails = () => {
                   relatedDocuments={law.relatedDocuments}
                 />
               </Box>
-              <Box style={{ minWidth: 320, maxWidth: 320 }} marginTop={[4, 0, 0]} marginLeft={[0, 8, 8]}>
+              <Box
+                style={{ minWidth: 320, maxWidth: 320 }}
+                marginTop={[4, 0, 0]}
+                marginLeft={[0, 8, 8]}
+              >
                 <LegislationStepper status={law.status} />
               </Box>
             </Box>
 
             <Box marginTop={6}>
-              <span style={{ fontWeight: 600, fontSize: 24, marginBottom: 16, display: 'block' }}>1. umræða</span>
+              <span
+                style={{
+                  fontWeight: 600,
+                  fontSize: 24,
+                  marginBottom: 16,
+                  display: 'block',
+                }}
+              >
+                1. umræða
+              </span>
               <LegislationDocumentsTable
                 date={law.date}
                 originalDocumentUrl={law.originalDocumentUrl}
@@ -61,8 +86,20 @@ const LawDetails = () => {
             </Box>
 
             <Box marginTop={6}>
-              <span style={{ fontWeight: 500, fontSize: 20, marginBottom: 16, display: 'block' }}>Umræða í þingsal</span>
-              <LegislationDebateTable history={law.history} lawTitle={law.title} />
+              <span
+                style={{
+                  fontWeight: 500,
+                  fontSize: 20,
+                  marginBottom: 16,
+                  display: 'block',
+                }}
+              >
+                Umræða í þingsal
+              </span>
+              <LegislationDebateTable
+                history={law.history}
+                lawTitle={law.title}
+              />
             </Box>
 
             <Accordion>
