@@ -59,7 +59,7 @@ export const AgendaTab = () => {
                   )}
                 </Text>
                 {item.link && (
-                  <LinkV2 href={item.link.href}>
+                  <LinkV2 href={`/${language}${item.link.href}`}>
                     <u>{item.link.label[language]}</u>
                   </LinkV2>
                 )}
@@ -67,7 +67,7 @@ export const AgendaTab = () => {
                   <Text as="div" color="dark400" marginBottom={1}>
                     {item.description[language]}{' '}
                     {item.extraLink && (
-                      <LinkV2 href={item.extraLink.href}>
+                      <LinkV2 href={`/${language}${item.extraLink.href}`}>
                         <u>{item.extraLink.label[language]}</u>
                       </LinkV2>
                     )}

@@ -10,6 +10,7 @@ import {
 } from '@island.is/island-ui/core'
 import { useLanguage } from '../../contexts/language/LanguageContext'
 import './Header.css'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 const mainLinks = [
   { href: '#', text: 'home.menu.driving' },
@@ -64,9 +65,19 @@ const asideBottomLinks = [
 
 const Header = () => {
   const { language, setLanguage, t } = useLanguage()
+  const navigate = useNavigate()
+  const location = useLocation()
 
   const toggleLanguage = () => {
-    setLanguage(language === 'is' ? 'en' : 'is')
+    const newLanguage = language === 'is' ? 'en' : 'is'
+    setLanguage(newLanguage)
+    const pathParts = location.pathname.split('/')
+    if (pathParts[1] === 'is' || pathParts[1] === 'en') {
+      pathParts[1] = newLanguage
+      navigate(pathParts.join('/') + location.search, { replace: true })
+    } else {
+      navigate(`/${newLanguage}${location.pathname}${location.search}`, { replace: true })
+    }
   }
 
   const translatedMainLinks = mainLinks.map((link) => ({
@@ -99,7 +110,7 @@ const Header = () => {
         rowGap={[3, 0, 0]}
         width="full"
       >
-        <LinkV2 href="/">
+        <LinkV2 href={`/${language}`}>
           <Box
             className="logo-container"
             display="flex"

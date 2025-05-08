@@ -1,6 +1,7 @@
 import { Box, Text } from '@island.is/island-ui/core'
 import { Colors } from '@island.is/island-ui/theme'
 import React, { useState, useEffect } from 'react'
+import { useLanguage } from '../../contexts/language/LanguageContext'
 
 interface MenuItem {
   label: string
@@ -38,6 +39,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({
   const [isMobile, setIsMobile] = useState(
     typeof window !== 'undefined' ? window.innerWidth <= 768 : false,
   )
+  const { language } = useLanguage()
 
   useEffect(() => {
     const handleResize = () => {
@@ -162,7 +164,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({
               width="full"
             >
               <a
-                href={item.href}
+                href={`/${language}${item.href}`}
                 style={
                   isMobile
                     ? {

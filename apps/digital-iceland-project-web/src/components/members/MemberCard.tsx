@@ -1,13 +1,16 @@
 import { Box, LinkV2, Text } from '@island.is/island-ui/core'
 import { Member } from '../../types/member'
+import { useLanguage } from '../../contexts/language/LanguageContext'
 
 type MemberCardProps = {
   member: Member
 }
 
 export const MemberCard = ({ member }: MemberCardProps) => {
+  const { language } = useLanguage()
+
   return (
-    <LinkV2 href={`/members/${member.id}`}>
+    <LinkV2 href={`/${language}/members/${member.id}`}>
       <Box
         background="blue100"
         borderRadius="large"

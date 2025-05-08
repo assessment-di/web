@@ -1,8 +1,11 @@
 import { Box, LinkV2 } from '@island.is/island-ui/core'
+import { useLanguage } from '../contexts/language/LanguageContext'
 
 const AlthingiLogo = () => {
+  const { language } = useLanguage()
+
   return (
-    <LinkV2 href="/">
+    <LinkV2 href={`/${language}`}>
       <Box
         borderRadius="full"
         display="flex"

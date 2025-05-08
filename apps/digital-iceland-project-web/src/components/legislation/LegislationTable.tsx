@@ -1,7 +1,10 @@
 import { Table, Box, Text, LinkV2 } from '@island.is/island-ui/core'
 import { LegislationTableProps } from '../../types/legislation'
+import { useLanguage } from '../../contexts/language/LanguageContext'
 
 export const LegislationTable = ({ laws }: LegislationTableProps) => {
+  const { language } = useLanguage()
+
   return (
     <Table.Table>
       <Table.Head>
@@ -20,7 +23,7 @@ export const LegislationTable = ({ laws }: LegislationTableProps) => {
             <Table.Data>{row.date}</Table.Data>
             <Table.Data>
               <Box style={{ color: '#0061FF' }}>
-                <LinkV2 href={`/legislation/${row.caseNumber}`}>
+                <LinkV2 href={`/${language}/legislation/${row.caseNumber}`}>
                   {row.title}
                   {row.isNew && (
                     <span

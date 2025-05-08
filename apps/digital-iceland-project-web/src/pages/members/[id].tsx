@@ -11,6 +11,7 @@ import WebReader from '../../components/WebReader'
 import { MemberHeader } from '../../components/members/MemberHeader'
 import { MemberCommittees } from '../../components/members/MemberCommittees'
 import { MemberMinisterialCareer } from '../../components/members/MemberMinisterialCareer'
+import MemberMenu from '../../components/members/MemberMenu'
 
 const Details = () => {
   const { id } = useParams<{ id: string }>()
@@ -38,7 +39,7 @@ const Details = () => {
         <Box flexGrow={1} width="full">
           <WebReader readId="member-details" language="en" />
           <MemberHeader member={member} />
-
+          <MemberMenu id={id} />
           <Accordion>
             <AccordionItem id="parliamentary-career" label="Þingferill">
               <Text>{member.parliamentaryCareer}</Text>

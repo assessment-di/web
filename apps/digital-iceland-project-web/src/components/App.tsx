@@ -21,6 +21,7 @@ import Header from './Header/Header'
 import { LanguageProvider } from '../contexts/language/LanguageContext'
 import ParliamentManuals from '../pages/ParliamentManuals'
 import AnnualReports from './annual-reports/AnnualReports'
+import SuggestionsPage from '../pages/members/suggestions'
 
 const App = () => {
   return (
@@ -47,13 +48,26 @@ const App = () => {
           <GridColumn span={['12/12', '12/12', '9/12']}>
             <BreadCrumbs />
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/members" element={<Members />} />
-              <Route path="/members/:id" element={<Details />} />
-              <Route path="/legislation" element={<Legislation />} />
-              <Route path="/legislation/:id" element={<LawDetails />} />
-              <Route path="/parliament-manuals" element={<ParliamentManuals />} />
-              <Route path="/annual-reports" element={<AnnualReports />} />
+              <Route path="/:language" element={<Home />} />
+              <Route path="/:language/members" element={<Members />} />
+              <Route path="/:language/members/:id" element={<Details />} />
+              <Route
+                path="/:language/members/:id/suggestions"
+                element={<SuggestionsPage />}
+              />
+              <Route path="/:language/legislation" element={<Legislation />} />
+              <Route
+                path="/:language/legislation/:id"
+                element={<LawDetails />}
+              />
+              <Route
+                path="/:language/parliament-manuals"
+                element={<ParliamentManuals />}
+              />
+              <Route
+                path="/:language/annual-reports"
+                element={<AnnualReports />}
+              />
             </Routes>
           </GridColumn>
         </GridRow>
