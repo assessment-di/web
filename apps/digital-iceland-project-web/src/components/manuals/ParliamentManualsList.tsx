@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Link, Icon, Typography } from '@island.is/island-ui/core'
+import { Box, LinkV2, Icon, Typography } from '@island.is/island-ui/core'
 
 interface Manual {
   year: number
@@ -18,7 +18,7 @@ const ParliamentManualsList: React.FC<ParliamentManualsListProps> = ({ manuals }
       {manuals.map((manual) => (
         <Box as="li" key={manual.year} marginBottom={2} display="flex" alignItems="center">
           <Box style={{ opacity: manual.disabled ? 0.6 : 1 }}>
-            <Link
+            <LinkV2
               href={manual.url}
               color={manual.disabled ? undefined : 'blue400'}
               underline="normal"
@@ -26,9 +26,9 @@ const ParliamentManualsList: React.FC<ParliamentManualsListProps> = ({ manuals }
               aria-disabled={manual.disabled}
             >
               {manual.title}
-            </Link>
+            </LinkV2>
           </Box>
-          <Icon icon="document" type="outline" color="blue400" />
+          <Icon icon="document" type="outline" color="blue400" aria-label="Skjal" />
         </Box>
       ))}
     </Box>

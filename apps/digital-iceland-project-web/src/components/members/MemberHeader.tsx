@@ -31,7 +31,7 @@ export const MemberHeader = ({ member }: MemberHeaderProps) => {
         {member.image ? (
           <img
             src={member.image}
-            alt={member.name}
+            alt={`Mynd af ${member.name}, ${member.title} í ${member.ministry}`}
             style={{
               width: 180,
               height: 240,
@@ -73,12 +73,13 @@ export const MemberHeader = ({ member }: MemberHeaderProps) => {
             justifyContent={['center', 'center', 'flexStart']}
             style={{ gap: 16, marginTop: 8 }}
           >
-            <a href={`mailto:${member.email}`} style={{ color: '#0061ff' }}>
+            <a href={`mailto:${member.email}`} style={{ color: '#0061ff' }} aria-label="Sendu tölvupóst">
               <Icon icon="mail" type="outline" />
             </a>
             <a
               href={`tel:${member.phone.replace(/\s/g, '')}`}
               style={{ color: '#0061ff' }}
+              aria-label="Hringdu í"
             >
               <Icon icon="call" type="outline" />
             </a>
@@ -88,6 +89,7 @@ export const MemberHeader = ({ member }: MemberHeaderProps) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ color: '#0061ff' }}
+                aria-label="LinkedIn tengill"
               >
                 <Icon icon="link" type="outline" />
               </a>
@@ -96,7 +98,7 @@ export const MemberHeader = ({ member }: MemberHeaderProps) => {
         </Box>
       </Box>
       <Box display="flex" justifyContent={['center', 'center', 'flexStart']}>
-        <Button icon="share" variant="ghost" size="default" nowrap>
+        <Button icon="share" variant="ghost" size="default" nowrap aria-label="Deila prófíli">
           Deila prófíli
         </Button>
       </Box>

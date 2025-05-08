@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Text, Link, Stack } from '@island.is/island-ui/core'
+import { Box, Text, LinkV2, Stack } from '@island.is/island-ui/core'
 
 interface Report {
   year: number
@@ -27,9 +27,9 @@ const AnnualReportsList = ({ reports }: AnnualReportsListProps) => {
             <Text variant="h3" as="h3">
               {report.title}
             </Text>
-            <Link href={report.url} color="blue400" underline="normal">
+            <LinkV2 href={report.url} color="blue400" underline="normal">
               View Report
-            </Link>
+            </LinkV2>
           </Stack>
         </Box>
       ))}

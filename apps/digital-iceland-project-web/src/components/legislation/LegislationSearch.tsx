@@ -13,6 +13,7 @@ export const LegislationSearch = ({
       onChange={(e) => onChange(e.target.value)}
       size="md"
       icon={{ name: 'search' }}
+      aria-label="Leita í lögum"
     />
   )
 }

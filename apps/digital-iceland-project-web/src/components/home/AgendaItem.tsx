@@ -1,4 +1,4 @@
-import { Box, Text, Link as IslandLink } from '@island.is/island-ui/core'
+import { Box, Text, LinkV2 } from '@island.is/island-ui/core'
 
 interface AgendaItemProps {
   item: {
@@ -53,17 +53,17 @@ export const AgendaItem = ({ item, index }: AgendaItemProps) => (
         {item.underline ? <u>{item.title}</u> : item.title}
       </Text>
       {item.link && (
-        <IslandLink href={item.link.href}>
+        <LinkV2 href={item.link.href}>
           <u>{item.link.label}</u>
-        </IslandLink>
+        </LinkV2>
       )}
       {item.description && (
         <Text as="div" color="dark400" marginBottom={1}>
           {item.description}{' '}
           {item.extraLink && (
-            <IslandLink href={item.extraLink.href}>
+            <LinkV2 href={item.extraLink.href}>
               <u>{item.extraLink.label}</u>
-            </IslandLink>
+            </LinkV2>
           )}
         </Text>
       )}

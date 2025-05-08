@@ -1,5 +1,4 @@
-import { Box, Text } from '@island.is/island-ui/core'
-import Link from 'next/link'
+import { Box, LinkV2, Text } from '@island.is/island-ui/core'
 import { Member } from '../../types/member'
 
 type MemberCardProps = {
@@ -8,10 +7,7 @@ type MemberCardProps = {
 
 export const MemberCard = ({ member }: MemberCardProps) => {
   return (
-    <Link
-      href={`/members/${member.id}`}
-      style={{ textDecoration: 'none', color: 'inherit' }}
-    >
+    <LinkV2 href={`/members/${member.id}`}>
       <Box
         background="blue100"
         borderRadius="large"
@@ -23,7 +19,7 @@ export const MemberCard = ({ member }: MemberCardProps) => {
         {member.image ? (
           <img
             src={member.image}
-            alt={member.name}
+            alt={`Mynd af ${member.name}, ${member.title}`}
             style={{
               width: 60,
               height: 60,
@@ -48,6 +44,6 @@ export const MemberCard = ({ member }: MemberCardProps) => {
           <Text>{member.title}</Text>
         </Box>
       </Box>
-    </Link>
+    </LinkV2>
   )
-} 
+}

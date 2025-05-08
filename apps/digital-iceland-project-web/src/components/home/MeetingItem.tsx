@@ -1,4 +1,4 @@
-import { Text, Link as IslandLink } from '@island.is/island-ui/core'
+import { Text, LinkV2 } from '@island.is/island-ui/core'
 import { useLanguage } from '../../contexts/language/LanguageContext'
 
 interface MeetingItemProps {
@@ -15,7 +15,7 @@ export const MeetingItem = ({ time, title, href }: MeetingItemProps) => {
   
   return (
     <Text marginBottom={0}>
-      {time} <IslandLink href={href}>{title[language]}</IslandLink>
+      {time} <LinkV2 href={href}>{title[language]}</LinkV2>
     </Text>
   )
 } 

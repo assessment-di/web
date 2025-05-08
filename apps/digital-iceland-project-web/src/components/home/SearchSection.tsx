@@ -1,5 +1,4 @@
-import { Box, Input, Text, Stack } from '@island.is/island-ui/core'
-import Link from 'next/link'
+import { Box, Input, Text, Stack, LinkV2 } from '@island.is/island-ui/core'
 import { useState, useEffect } from 'react'
 import { mockLaws } from '../../mockData/legislation'
 import { parliamentMembers } from '../../mockData/members'
@@ -20,7 +19,10 @@ interface SearchSectionProps {
 
 const searchSuggestions = ['Alma', 'Arna', 'Loftslag']
 
-export const SearchSection = ({ placeholder, buttonText }: SearchSectionProps) => {
+export const SearchSection = ({
+  placeholder,
+  buttonText,
+}: SearchSectionProps) => {
   const [searchValue, setSearchValue] = useState('')
   const [searchResults, setSearchResults] = useState<SearchResult[]>([])
   const [showResults, setShowResults] = useState(false)
@@ -105,18 +107,9 @@ export const SearchSection = ({ placeholder, buttonText }: SearchSectionProps) =
           >
             <Stack space={2}>
               {searchResults.map((result) => (
-                <Link
-                  key={`${result.type}-${result.id}`}
-                  href={result.link}
-                  style={{ textDecoration: 'none', color: 'inherit' }}
-                >
-                  <Box
-                    padding={2}
-                    background="blue100"
-                    borderRadius="large"
-                    style={{ cursor: 'pointer' }}
-                  >
-                    <Text variant="h5" as="h3" marginBottom={1}>
+                <LinkV2 key={`${result.type}-${result.id}`} href={result.link}>
+                  <Box style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <Text variant="h4" as="h2">
                       {result.title}
                     </Text>
                     {result.subtitle && (
@@ -125,10 +118,12 @@ export const SearchSection = ({ placeholder, buttonText }: SearchSectionProps) =
                       </Text>
                     )}
                     <Text color="blue400" variant="small">
-                      {result.type === 'law' ? t('home.search.resultType.law') : t('home.search.resultType.member')}
+                      {result.type === 'law'
+                        ? t('home.search.resultType.law')
+                        : t('home.search.resultType.member')}
                     </Text>
                   </Box>
-                </Link>
+                </LinkV2>
               ))}
             </Stack>
           </Box>

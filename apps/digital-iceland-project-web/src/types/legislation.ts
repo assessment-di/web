@@ -10,6 +10,7 @@ export interface Law {
   history: LawHistory[]
   committees: Committee[]
   relatedDocuments: RelatedDocument[]
+  isNew?: boolean
 }
 
 export interface LawHistory {

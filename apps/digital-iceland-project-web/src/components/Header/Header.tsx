@@ -6,8 +6,8 @@ import {
   GridContainer,
   Menu,
   Icon,
+  LinkV2,
 } from '@island.is/island-ui/core'
-import { Link } from 'react-router-dom'
 import { useLanguage } from '../../contexts/language/LanguageContext'
 import './Header.css'
 
@@ -99,7 +99,7 @@ const Header = () => {
         rowGap={[3, 0, 0]}
         width="full"
       >
-        <Link to="/">
+        <LinkV2 href="/">
           <Box
             className="logo-container"
             display="flex"
@@ -108,7 +108,7 @@ const Header = () => {
           >
             <Logo width={120} />
           </Box>
-        </Link>
+        </LinkV2>
         <Box
           display="flex"
           alignItems="center"
@@ -170,6 +170,7 @@ const Header = () => {
                     type="outline"
                     color="blue400"
                     size="small"
+                    aria-label="Valmynd"
                   />
                 </Box>
               </Box>

@@ -1,4 +1,4 @@
-import { Box, Text, Button, Link } from '@island.is/island-ui/core'
+import { Box, Text, Button, LinkV2 } from '@island.is/island-ui/core'
 
 interface LegislationHeaderProps {
   title: string
@@ -39,16 +39,16 @@ export const LegislationHeader = ({
       <Text>{description}</Text>
     </Box>
     <Box marginBottom={[1, 1, 2]}>
-      <Link href={originalDocumentUrl} newTab>
+      <LinkV2 href={originalDocumentUrl} newTab>
         <Button size="small">Sjá frumvarp</Button>
-      </Link>
+      </LinkV2>
     </Box>
     <Box marginBottom={[1, 1, 2]}>
       {relatedDocuments.map((doc, i) => (
         <Box key={i} marginBottom={[0, 0, 1]}>
-          <Link href={doc.url} color="blue400" newTab>
+          <LinkV2 href={doc.url} color="blue400" newTab>
             {doc.title}
-          </Link>
+          </LinkV2>
         </Box>
       ))}
     </Box>

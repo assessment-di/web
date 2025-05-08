@@ -1,4 +1,4 @@
-import { Box, Text, Link } from '@island.is/island-ui/core'
+import { Box, Text, LinkV2 } from '@island.is/island-ui/core'
 import { agendaItems } from '../../mockData/home'
 import { useLanguage } from '../../contexts/language/LanguageContext'
 
@@ -59,17 +59,17 @@ export const AgendaTab = () => {
                   )}
                 </Text>
                 {item.link && (
-                  <Link href={item.link.href}>
+                  <LinkV2 href={item.link.href}>
                     <u>{item.link.label[language]}</u>
-                  </Link>
+                  </LinkV2>
                 )}
                 {item.description && (
                   <Text as="div" color="dark400" marginBottom={1}>
                     {item.description[language]}{' '}
                     {item.extraLink && (
-                      <Link href={item.extraLink.href}>
+                      <LinkV2 href={item.extraLink.href}>
                         <u>{item.extraLink.label[language]}</u>
-                      </Link>
+                      </LinkV2>
                     )}
                   </Text>
                 )}

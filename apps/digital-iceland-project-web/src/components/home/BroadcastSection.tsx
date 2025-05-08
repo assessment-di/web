@@ -1,4 +1,4 @@
-import { Box, Text, Link as IslandLink } from '@island.is/island-ui/core'
+import { Box, Text, LinkV2 } from '@island.is/island-ui/core'
 import { SimpleVideoPlayer } from '../videoPlayer/SimpleVideoPlayer'
 import { useLanguage } from '../../contexts/language/LanguageContext'
 
@@ -49,8 +49,8 @@ export const BroadcastSection = ({ title, viewAllText }: BroadcastSectionProps) 
           {t('home.broadcast.nextSession')}
         </Text>
         <Box marginTop={2} display="flex" style={{ gap: 16 }}>
-          <IslandLink href="#">{viewAllText}</IslandLink>
-          <IslandLink href="#">{t('home.broadcast.recordings')}</IslandLink>
+          <LinkV2 href="#">{viewAllText}</LinkV2>
+          <LinkV2 href="#">{t('home.broadcast.recordings')}</LinkV2>
         </Box>
       </Box>
     </Box>

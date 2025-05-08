@@ -55,6 +55,7 @@ export const SimpleVideoPlayer: FC<Props> = ({
           autoPlay={!controls || autoPlay}
           muted={!controls || autoPlay}
           style={{ display: 'block' }}
+          aria-label={title || 'Myndband'}
         >
           <source src={url} />
           Your browser does not support the video tag.

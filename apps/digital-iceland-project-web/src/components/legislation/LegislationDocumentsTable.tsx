@@ -1,4 +1,4 @@
-import { Table, Link } from '@island.is/island-ui/core'
+import { Table, LinkV2 } from '@island.is/island-ui/core'
 
 interface LegislationDocumentsTableProps {
   date: string
@@ -19,9 +19,9 @@ export const LegislationDocumentsTable = ({ date, originalDocumentUrl, proposer 
       <Table.Row>
         <Table.Data>{date}</Table.Data>
         <Table.Data>
-          <Link href={originalDocumentUrl} color="blue400" newTab>
+          <LinkV2 href={originalDocumentUrl} color="blue400" newTab>
             Þingskjal
-          </Link>
+          </LinkV2>
         </Table.Data>
         <Table.Data>{proposer}</Table.Data>
       </Table.Row>

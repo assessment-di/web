@@ -1,5 +1,4 @@
-import { Table } from '@island.is/island-ui/core'
-import Link from 'next/link'
+import { Table, Box, Text, LinkV2 } from '@island.is/island-ui/core'
 import { LegislationTableProps } from '../../types/legislation'
 
 export const LegislationTable = ({ laws }: LegislationTableProps) => {
@@ -20,18 +19,22 @@ export const LegislationTable = ({ laws }: LegislationTableProps) => {
             <Table.Data>{row.caseNumber}</Table.Data>
             <Table.Data>{row.date}</Table.Data>
             <Table.Data>
-              <Link
-                href={`/legislation/${row.caseNumber}`}
-                style={{ color: '#0061FF' }}
-              >
-                {row.title}{' '}
-                {row.subtitle && (
-                  <span style={{ color: '#6D6D6D', fontWeight: 400 }}>
-                    {' '}
-                    {row.subtitle}
-                  </span>
-                )}
-              </Link>
+              <Box style={{ color: '#0061FF' }}>
+                <LinkV2 href={`/legislation/${row.caseNumber}`}>
+                  {row.title}
+                  {row.isNew && (
+                    <span
+                      style={{
+                        marginLeft: '8px',
+                        fontSize: '12px',
+                        color: '#0061FF',
+                      }}
+                    >
+                      (Nýtt)
+                    </span>
+                  )}
+                </LinkV2>
+              </Box>
             </Table.Data>
             <Table.Data>{row.proposer}</Table.Data>
             <Table.Data>{row.status}</Table.Data>

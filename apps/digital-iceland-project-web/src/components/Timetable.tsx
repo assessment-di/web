@@ -1,4 +1,4 @@
-import { Box, Text, Stack, Link as IslandLink } from '@island.is/island-ui/core'
+import { Box, Text, Stack, LinkV2 } from '@island.is/island-ui/core'
 
 const Timetable = () => {
   return (
@@ -8,22 +8,22 @@ const Timetable = () => {
       </Text>
       <Stack space={1}>
         <Text>
-          Kl. 09:00 <IslandLink href="#">Halda áfram</IslandLink>
+          Kl. 09:00 <LinkV2 href="#">Halda áfram</LinkV2>
         </Text>
         <Text>
-          Kl. 09:00 <IslandLink href="#">Halda áfram</IslandLink>
+          Kl. 09:00 <LinkV2 href="#">Halda áfram</LinkV2>
         </Text>
         <Text>
-          Kl. 09:00 <IslandLink href="#">Halda áfram</IslandLink>
+          Kl. 09:00 <LinkV2 href="#">Halda áfram</LinkV2>
         </Text>
         <Text>
-          Kl. 09:00 <IslandLink href="#">Halda áfram</IslandLink>
+          Kl. 09:00 <LinkV2 href="#">Halda áfram</LinkV2>
         </Text>
         <Text>
-          Kl. 10:30 <IslandLink href="#">Halda áfram</IslandLink>
+          Kl. 10:30 <LinkV2 href="#">Halda áfram</LinkV2>
         </Text>
         <Text>
-          Kl. 13:30 <IslandLink href="#">Halda áfram</IslandLink>
+          Kl. 13:30 <LinkV2 href="#">Halda áfram</LinkV2>
         </Text>
       </Stack>
       <Box marginTop={2}>
