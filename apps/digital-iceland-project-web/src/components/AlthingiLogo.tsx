@@ -13,7 +13,7 @@ const AlthingiLogo = () => {
       style={{ maxWidth: 120, maxHeight: 120 }}
     >
       <img
-        src="assets/althingi-logo.png"
+        src="https://cdn.brandfetch.io/idSyXhoh8v/w/820/h/673/theme/dark/logo.png?c=1dxbfHSJFAPEGdCLU4o5B"
         alt="Althingi Logo"
         style={{
           width: '100%',
@@ -26,4 +26,4 @@ const AlthingiLogo = () => {
   )
 }
 
-export default AlthingiLogo 
+export default AlthingiLogo
