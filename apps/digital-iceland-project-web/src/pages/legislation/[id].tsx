@@ -24,94 +24,86 @@ const LawDetails = () => {
   }
 
   return (
-    <Box
-      background="blue100"
-      style={{ minHeight: '100vh' }}
-      paddingY={[8, 10, 12]}
-      paddingX={[2, 3, 4]}
-    >
-      <WebReader readId="law-details" language="is" />
-      <Box width="full" margin="auto" style={{ maxWidth: '900px' }}>
-        <Box
-          id="law-details"
-          background="white"
-          borderRadius="large"
-          boxShadow="medium"
-          paddingY={[6, 8, 10]}
-          paddingX={[4, 8, 10]}
-        >
-          <Stack space={8}>
-            <Box
-              display="flex"
-              flexDirection={['column', 'column', 'row']}
-              justifyContent="spaceBetween"
-              alignItems={['flexStart', 'flexStart', 'flexStart']}
-            >
-              <Box flexGrow={1}>
-                <LegislationHeader
-                  title={law.title}
-                  subtitle={law.subtitle}
-                  date={law.date}
-                  proposer={law.proposer}
-                  description={law.description}
-                  originalDocumentUrl={law.originalDocumentUrl}
-                  relatedDocuments={law.relatedDocuments}
-                />
-              </Box>
-              <Box
-                style={{ minWidth: 320, maxWidth: 320 }}
-                marginTop={[4, 0, 0]}
-                marginLeft={[0, 8, 8]}
-              >
-                <LegislationStepper status={law.status} />
-              </Box>
-            </Box>
+    <Box width="full" margin="auto" style={{ maxWidth: '900px' }}>
+      <Box
+        id="law-details"
+        background="white"
+        paddingY={[6, 8, 10]}
+        paddingX={[2, 4, 5]}
+      >
+        <WebReader readId="law-details" language="is" />
 
-            <Box marginTop={6}>
-              <span
-                style={{
-                  fontWeight: 600,
-                  fontSize: 24,
-                  marginBottom: 16,
-                  display: 'block',
-                }}
-              >
-                1. umræða
-              </span>
-              <LegislationDocumentsTable
+        <Stack space={2}>
+          <Box
+            display="flex"
+            flexDirection={['column', 'column', 'row']}
+            justifyContent="spaceBetween"
+            alignItems={['flexStart', 'flexStart', 'flexStart']}
+          >
+            <Box flexGrow={1}>
+              <LegislationHeader
+                title={law.title}
+                subtitle={law.subtitle}
                 date={law.date}
-                originalDocumentUrl={law.originalDocumentUrl}
                 proposer={law.proposer}
+                description={law.description}
+                originalDocumentUrl={law.originalDocumentUrl}
+                relatedDocuments={law.relatedDocuments}
               />
             </Box>
-
-            <Box marginTop={6}>
-              <span
-                style={{
-                  fontWeight: 500,
-                  fontSize: 20,
-                  marginBottom: 16,
-                  display: 'block',
-                }}
-              >
-                Umræða í þingsal
-              </span>
-              <LegislationDebateTable
-                history={law.history}
-                lawTitle={law.title}
-              />
+            <Box
+              style={{ minWidth: 320, maxWidth: 320 }}
+              marginTop={[4, 0, 0]}
+              marginLeft={[0, 4, 4]}
+            >
+              <LegislationStepper status={law.status} />
             </Box>
+          </Box>
 
-            <Accordion>
-              <AccordionItem id="committees" label="Umfjöllun í nefndum">
-                <LegislationCommitteesTable committees={law.committees || []} />
-              </AccordionItem>
-              <AccordionItem id="subscribe" label="Áskriftir">
-                <LegislationSubscribe />
-              </AccordionItem>
-            </Accordion>
-          </Stack>
-        </Box>
+          <Box marginTop={6}>
+            <span
+              style={{
+                fontWeight: 600,
+                fontSize: 24,
+                marginBottom: 16,
+                display: 'block',
+              }}
+            >
+              1. umræða
+            </span>
+            <LegislationDocumentsTable
+              date={law.date}
+              originalDocumentUrl={law.originalDocumentUrl}
+              proposer={law.proposer}
+            />
+          </Box>
+
+          <Box marginTop={6}>
+            <span
+              style={{
+                fontWeight: 500,
+                fontSize: 20,
+                marginBottom: 16,
+                display: 'block',
+              }}
+            >
+              Umræða í þingsal
+            </span>
+            <LegislationDebateTable
+              history={law.history}
+              lawTitle={law.title}
+            />
+          </Box>
+
+          <Accordion>
+            <AccordionItem id="committees" label="Umfjöllun í nefndum">
+              <LegislationCommitteesTable committees={law.committees || []} />
+            </AccordionItem>
+            <AccordionItem id="subscribe" label="Áskriftir">
+              <LegislationSubscribe />
+            </AccordionItem>
+          </Accordion>
+        </Stack>
       </Box>
     </Box>
   )

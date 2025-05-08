@@ -1,5 +1,5 @@
 import { Breadcrumbs, Box } from '@island.is/island-ui/core'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
 import { useLanguage } from '../contexts/language/LanguageContext'
 
 const breadcrumbSegmentMap: Record<string, string> = {
@@ -7,6 +7,8 @@ const breadcrumbSegmentMap: Record<string, string> = {
   legislation: 'home.breadcrumbs.legislation',
   members: 'home.breadcrumbs.members',
   details: 'home.breadcrumbs.details',
+  'parliament-manuals': 'menu.main.manuals',
+  'annual-reports': 'menu.main.annual-reports',
 }
 
 const capitalize = (word: string) => {
@@ -16,15 +18,29 @@ const capitalize = (word: string) => {
 
 const BreadCrumbs = () => {
   const location = useLocation()
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const segments = location.pathname.split('/').filter(Boolean)
-  const items = segments.map((segment, index) => {
-    const path = '/' + segments.slice(0, index + 1).join('/')
-    const translationKey = breadcrumbSegmentMap[segment] || 'home.breadcrumbs.unknown'
-    const label = t(translationKey as any)
-    return {
-      title: capitalize(label),
-      href: path,
+
+  const items = [
+    {
+      title: capitalize(t('home.breadcrumbs.home')),
+      href: `/${language}`,
+    },
+  ]
+
+  segments.forEach((segment, index) => {
+    const path = `/${language}/` + segments.slice(0, index + 1).join('/')
+    let label = ''
+    if (breadcrumbSegmentMap[segment]) {
+      label = t(breadcrumbSegmentMap[segment] as any)
+    } else {
+      label = segment
+    }
+    if (segment !== '') {
+      items.push({
+        title: capitalize(label),
+        href: path,
+      })
     }
   })
 
