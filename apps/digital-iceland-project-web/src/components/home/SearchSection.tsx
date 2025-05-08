@@ -98,46 +98,71 @@ export const SearchSection = ({
           <Box
             background="white"
             borderRadius="large"
-            padding={2}
+            padding={3}
             marginTop={1}
             style={{
               position: 'absolute',
               width: '100%',
               zIndex: 1,
-              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+              maxHeight: '400px',
+              overflowY: 'auto',
             }}
           >
-            <Stack space={2}>
+            <Stack space={3}>
               {searchResults.map((result) => (
-                <LinkV2 key={`${result.type}-${result.id}`} href={`/${language}${result.link}`}>
-                  <Box style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <Text variant="h4" as="h2">
-                      {result.title}
-                    </Text>
-                    {result.subtitle && (
-                      <Text color="dark400" variant="small">
-                        {result.subtitle}
-                      </Text>
-                    )}
-                    {result.status && (
-                      <Box
-                        display="inlineBlock"
-                        background="blue100"
-                        borderRadius="large"
-                        paddingY={1}
-                        paddingX={2}
-                        marginTop={1}
-                      >
-                        <Text color="blue600" variant="small" fontWeight="semiBold">
-                          {result.status}
+                <LinkV2 
+                  key={`${result.type}-${result.id}`} 
+                  href={`/${language}${result.link}`}
+                >
+                  <Box 
+                    padding={2}
+                    borderRadius="large"
+                    style={{ 
+                      transition: 'background-color 0.2s ease',
+                      textDecoration: 'none',
+                      color: 'inherit',
+                      cursor: 'pointer',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = '#f5f5f5'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = 'transparent'
+                    }}
+                  >
+                    <Box display="flex" justifyContent="spaceBetween" alignItems="flexStart">
+                      <Box>
+                        <Text variant="h4" as="h2" marginBottom={1}>
+                          {result.title}
                         </Text>
+                        {result.subtitle && (
+                          <Text color="dark400" variant="default" marginBottom={1}>
+                            {result.subtitle}
+                          </Text>
+                        )}
+                        <Box display="flex" alignItems="center" style={{ gap: 8 }}>
+                          {result.status && (
+                            <Box
+                              display="inlineBlock"
+                              background="blue100"
+                              borderRadius="large"
+                              paddingY={1}
+                              paddingX={2}
+                            >
+                              <Text color="blue600" variant="small" fontWeight="semiBold">
+                                {result.status}
+                              </Text>
+                            </Box>
+                          )}
+                          <Text color="blue400" variant="small">
+                            {result.type === 'law'
+                              ? t('home.search.resultType.law')
+                              : t('home.search.resultType.member')}
+                          </Text>
+                        </Box>
                       </Box>
-                    )}
-                    <Text color="blue400" variant="small">
-                      {result.type === 'law'
-                        ? t('home.search.resultType.law')
-                        : t('home.search.resultType.member')}
-                    </Text>
+                    </Box>
                   </Box>
                 </LinkV2>
               ))}
