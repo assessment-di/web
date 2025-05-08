@@ -90,6 +90,7 @@ export type TranslationKey =
   | 'menu.main.laws'
   | 'menu.main.about'
   | 'menu.main.manuals'
+  | 'menu.main.annual-reports'
   | 'menu.extra.status'
   | 'menu.extra.budget'
   | 'menu.main.title'

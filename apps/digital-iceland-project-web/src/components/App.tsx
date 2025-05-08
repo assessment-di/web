@@ -1,4 +1,5 @@
 'use client'
+import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import {
   Box,
@@ -19,6 +20,7 @@ import LawDetails from '../pages/legislation/[id]'
 import Header from './Header/Header'
 import { LanguageProvider } from '../contexts/language/LanguageContext'
 import ParliamentManuals from '../pages/ParliamentManuals'
+import AnnualReports from './annual-reports/AnnualReports'
 
 const App = () => {
   return (
@@ -51,6 +53,7 @@ const App = () => {
               <Route path="/legislation" element={<Legislation />} />
               <Route path="/legislation/:id" element={<LawDetails />} />
               <Route path="/parliament-manuals" element={<ParliamentManuals />} />
+              <Route path="/annual-reports" element={<AnnualReports />} />
             </Routes>
           </GridColumn>
         </GridRow>
