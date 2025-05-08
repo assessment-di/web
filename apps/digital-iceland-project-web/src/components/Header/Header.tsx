@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   Logo,
   Box,
@@ -63,7 +63,22 @@ const asideBottomLinks = [
   { href: '#', text: 'Tekjusagan' },
 ]
 
+const LANGUAGE_KEY = 'selected-language'
+
 const Header = () => {
+  const [currentLanguage, setCurrentLanguage] = useState<'is' | 'en'>(() => {
+    const savedLanguage = localStorage.getItem(LANGUAGE_KEY)
+    return (savedLanguage as 'is' | 'en') || 'is'
+  })
+
+  useEffect(() => {
+    localStorage.setItem(LANGUAGE_KEY, currentLanguage)
+  }, [currentLanguage])
+
+  const toggleLanguage = () => {
+    setCurrentLanguage(currentLanguage === 'is' ? 'en' : 'is')
+  }
+
   return (
     <GridContainer>
       <Box
@@ -78,6 +93,14 @@ const Header = () => {
           </Box>
         </Link>
         <Box display="flex" alignItems="center" columnGap={[2, 2, 5]}>
+          <Button
+            variant="text"
+            size="small"
+            colorScheme="light"
+            onClick={toggleLanguage}
+          >
+            {currentLanguage === 'is' ? 'EN' : 'IS'}
+          </Button>
           <Menu
             baseId="story"
             mainTitle="Þjónustuflokkar"
@@ -85,7 +108,7 @@ const Header = () => {
             asideTopLinks={asideTopLinks}
             asideBottomTitle="Aðrir opinberir vefir"
             asideBottomLinks={asideBottomLinks}
-            languageSwitchText="EN"
+            languageSwitchText={currentLanguage === 'is' ? 'EN' : 'IS'}
             myPagesText="Mínar síður"
             menuButton={
               <Box
