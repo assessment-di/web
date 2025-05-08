@@ -2,7 +2,6 @@
 import { Routes, Route } from 'react-router-dom'
 import {
   Box,
-  Header,
   GridContainer,
   GridRow,
   GridColumn,
@@ -16,6 +15,7 @@ import { mainMenu, extraMenu } from '../mockData/menu'
 import AlthingiLogo from './AlthingiLogo'
 import Legislation from '../pages/legislation'
 import LawDetails from '../pages/legislation/[id]'
+import Header from './Header/Header'
 
 const App = () => {
   return (
