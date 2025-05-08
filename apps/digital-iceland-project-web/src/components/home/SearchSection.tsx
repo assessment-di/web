@@ -10,6 +10,7 @@ interface SearchResult {
   title: string
   subtitle?: string
   link: string
+  status?: string
 }
 
 interface SearchSectionProps {
@@ -26,7 +27,7 @@ export const SearchSection = ({
   const [searchValue, setSearchValue] = useState('')
   const [searchResults, setSearchResults] = useState<SearchResult[]>([])
   const [showResults, setShowResults] = useState(false)
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
   useEffect(() => {
     if (searchValue.length > 0) {
@@ -44,6 +45,7 @@ export const SearchSection = ({
             title: law.title,
             subtitle: law.subtitle,
             link: `/legislation/${law.caseNumber}`,
+            status: law.status,
           })
         }
       })
@@ -107,7 +109,7 @@ export const SearchSection = ({
           >
             <Stack space={2}>
               {searchResults.map((result) => (
-                <LinkV2 key={`${result.type}-${result.id}`} href={result.link}>
+                <LinkV2 key={`${result.type}-${result.id}`} href={`/${language}${result.link}`}>
                   <Box style={{ textDecoration: 'none', color: 'inherit' }}>
                     <Text variant="h4" as="h2">
                       {result.title}
@@ -116,6 +118,20 @@ export const SearchSection = ({
                       <Text color="dark400" variant="small">
                         {result.subtitle}
                       </Text>
+                    )}
+                    {result.status && (
+                      <Box
+                        display="inlineBlock"
+                        background="blue100"
+                        borderRadius="large"
+                        paddingY={1}
+                        paddingX={2}
+                        marginTop={1}
+                      >
+                        <Text color="blue600" variant="small" fontWeight="semiBold">
+                          {result.status}
+                        </Text>
+                      </Box>
                     )}
                     <Text color="blue400" variant="small">
                       {result.type === 'law'
