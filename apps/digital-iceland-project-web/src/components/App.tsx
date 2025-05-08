@@ -5,6 +5,7 @@ import {
   GridContainer,
   GridRow,
   GridColumn,
+  Footer,
 } from '@island.is/island-ui/core'
 import Home from '../pages'
 import Members from '../pages/members'
@@ -51,6 +52,7 @@ const App = () => {
           </GridColumn>
         </GridRow>
       </GridContainer>
+      <Footer />
     </>
   )
 }
