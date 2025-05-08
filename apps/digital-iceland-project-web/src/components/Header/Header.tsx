@@ -7,7 +7,9 @@ import {
   Text,
   GridContainer,
   Menu,
+  Icon,
 } from '@island.is/island-ui/core'
+import { Link } from 'react-router-dom'
 
 const mainLinks = [
   { href: '#', text: 'Akstur og bifreiðar' },
@@ -31,11 +33,11 @@ const mainLinks = [
 ]
 
 const asideTopLinks = [
-  { href: '#', text: 'Stofнанir' },
+  { href: '#', text: 'Stofnanir' },
   { href: '#', text: 'Stafrænt Ísland' },
   {
     href: '#',
-    text: 'Þróун',
+    text: 'Þróun',
     sub: [
       { href: '#', text: 'Viskuausan' },
       { href: '#', text: 'Ísland UI' },
@@ -46,9 +48,7 @@ const asideTopLinks = [
   {
     href: '#',
     text: 'Upplýsingarsvæði',
-    sub: [
-      { href: '#', text: 'linkur á eitthvað' },
-    ],
+    sub: [{ href: '#', text: 'linkur á eitthvað' }],
   },
 ]
 
@@ -71,66 +71,10 @@ const Header = () => {
         justifyContent="spaceBetween"
         paddingY={3}
       >
-        {/* Логотип */}
-        <Logo width={180} />
-
-        <Box display="flex" alignItems="center" columnGap={2}>
-          <Box
-            display="flex"
-            alignItems="center"
-            background="blue100"
-            borderRadius="large"
-            borderColor="blue200"
-            borderWidth="standard"
-            borderStyle="solid"
-            paddingLeft={4}
-            paddingRight={2}
-            paddingY={2}
-          >
-            <Input
-              name="search"
-              placeholder="Search"
-              size="sm"
-              backgroundColor="blue"
-              icon={{ name: 'search', type: 'outline' }}
-            />
-          </Box>
-
-          <Box
-            display="flex"
-            alignItems="center"
-            background="blue100"
-            borderRadius="large"
-            borderColor="blue200"
-            borderWidth="standard"
-            borderStyle="solid"
-            paddingX={4}
-            paddingY={2}
-          >
-            <Button
-              variant="text"
-              icon="person"
-              iconType="outline"
-              size="small"
-            >
-              <Text fontWeight="semiBold" color="blue400">Login</Text>
-            </Button>
-          </Box>
-
-          <Box
-            display="flex"
-            alignItems="center"
-            background="blue100"
-            borderRadius="large"
-            borderColor="blue200"
-            borderWidth="standard"
-            borderStyle="solid"
-            paddingX={4}
-            paddingY={2}
-          >
-            <Text fontWeight="semiBold" color="blue400">IS</Text>
-          </Box>
-
+        <Link to="/">
+          <Logo width={180} />
+        </Link>
+        <Box display="flex" alignItems="center" columnGap={5}>
           <Menu
             baseId="story"
             mainTitle="Þjónustuflokkar"
@@ -143,24 +87,39 @@ const Header = () => {
             menuButton={
               <Box
                 display="flex"
+                flexDirection="row"
                 alignItems="center"
+                justifyContent="center"
                 background="blue100"
                 borderRadius="large"
                 borderColor="blue200"
                 borderWidth="standard"
                 borderStyle="solid"
-                paddingX={4}
-                paddingY={2}
-                style={{ cursor: 'pointer' }}
+                paddingX={3}
+                paddingY={1}
+                style={{
+                  minWidth: 64,
+                  minHeight: 40,
+                  cursor: 'pointer',
+                  position: 'relative',
+                }}
               >
-                <Button
-                  variant="text"
-                  icon="menu"
-                  iconType="outline"
-                  size="small"
+                <Text
+                  fontWeight="semiBold"
+                  color="blue400"
+                  variant="small"
+                  textAlign="center"
                 >
-                  <Text fontWeight="semiBold" color="blue400">Menu</Text>
-                </Button>
+                  Valmynd
+                </Text>
+                <Box paddingLeft={1} alignItems="center">
+                  <Icon
+                    icon="menu"
+                    type="outline"
+                    color="blue400"
+                    size="small"
+                  />
+                </Box>
               </Box>
             }
           />
@@ -170,4 +129,4 @@ const Header = () => {
   )
 }
 
-export default Header 
+export default Header
