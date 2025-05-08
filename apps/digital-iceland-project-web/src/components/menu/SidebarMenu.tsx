@@ -8,6 +8,16 @@ const styles = `
       --sidebar-width: 90%;
     }
   }
+  @media (max-width: 768px) {
+    .sidebar-menu {
+      flex-direction: column !important;
+      row-gap: 16px !important;
+      column-gap: 0 !important;
+    }
+    .sidebar-menu > div {
+      width: 100% !important;
+    }
+  }
 `
 
 interface MenuItem {
@@ -29,11 +39,11 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
   extraMenu,
   mainTitle = 'Valmynd',
   extraTitle = 'Tengt efni',
-  mainMenuColor = '#1b4c9a',
-  extraMenuColor = '#6a1bbd',
+  mainMenuColor = '#F2F7FF',
+  extraMenuColor = '#F6F6FD',
 }) => {
   return (
-    <Box>
+    <Box style={{ width: '100%' }}>
       <style>{styles}</style>
       <Box
         className="sidebar-menu"
