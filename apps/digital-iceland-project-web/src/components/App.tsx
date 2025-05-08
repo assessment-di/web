@@ -18,6 +18,7 @@ import Legislation from '../pages/legislation'
 import LawDetails from '../pages/legislation/[id]'
 import Header from './Header/Header'
 import { LanguageProvider } from '../contexts/language/LanguageContext'
+import ParliamentManuals from '../pages/ParliamentManuals'
 
 const App = () => {
   return (
@@ -49,6 +50,7 @@ const App = () => {
               <Route path="/members/:id" element={<Details />} />
               <Route path="/legislation" element={<Legislation />} />
               <Route path="/legislation/:id" element={<LawDetails />} />
+              <Route path="/parliament-manuals" element={<ParliamentManuals />} />
             </Routes>
           </GridColumn>
         </GridRow>

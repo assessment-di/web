@@ -89,6 +89,7 @@ export type TranslationKey =
   | 'menu.main.committees'
   | 'menu.main.laws'
   | 'menu.main.about'
+  | 'menu.main.manuals'
   | 'menu.extra.status'
   | 'menu.extra.budget'
   | 'menu.main.title'

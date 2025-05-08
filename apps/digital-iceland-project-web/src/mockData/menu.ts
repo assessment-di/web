@@ -1,6 +1,7 @@
 export const mainMenu = [
   { label: 'menu.main.legislation', href: '/legislation' },
   { label: 'menu.main.members', href: '/members' },
+  { label: 'menu.main.manuals', href: '/parliament-manuals' },
   { label: 'menu.main.committees', href: '/' },
   { label: 'menu.main.laws', href: '/' },
   { label: 'menu.main.about', href: '/' },
