@@ -11,7 +11,7 @@ import LegislationSubscribe from '../../components/legislation/LegislationSubscr
 
 const LawDetails = () => {
   const { id } = useParams<{ id: string }>()
-  const law = mockLaws.find((l) => l.caseNumber === id)
+  const law = id ? mockLaws.find((l) => l.caseNumber === id.toString()) : undefined
 
   if (!law) {
     return (

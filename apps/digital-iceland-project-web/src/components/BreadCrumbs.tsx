@@ -10,6 +10,7 @@ const breadcrumbSegmentMap: Record<string, string> = {
 }
 
 const capitalize = (word: string) => {
+  if (!word) return ''
   return word.charAt(0).toUpperCase() + word.slice(1)
 }
 
@@ -19,7 +20,8 @@ const BreadCrumbs = () => {
   const segments = location.pathname.split('/').filter(Boolean)
   const items = segments.map((segment, index) => {
     const path = '/' + segments.slice(0, index + 1).join('/')
-    const label = t(breadcrumbSegmentMap[segment] as any)
+    const translationKey = breadcrumbSegmentMap[segment] || 'home.breadcrumbs.unknown'
+    const label = t(translationKey as any)
     return {
       title: capitalize(label),
       href: path,

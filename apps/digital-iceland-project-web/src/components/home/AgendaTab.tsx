@@ -6,7 +6,7 @@ export const AgendaTab = () => {
   const { t, language } = useLanguage()
 
   return (
-    <Box background="blue100" borderRadius="large" padding={2}>
+    <Box background="blue100" borderRadius="large" padding={[2, 4]}>
       <Text variant="h3" as="h2" marginBottom={1}>
         {t('home.agenda.title')}
       </Text>
