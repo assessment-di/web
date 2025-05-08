@@ -1,6 +1,6 @@
 import { Box, Text, Link as IslandLink } from '@island.is/island-ui/core'
 import { SimpleVideoPlayer } from '../videoPlayer/SimpleVideoPlayer'
-import { useLanguage } from '../../contexts/LanguageContext'
+import { useLanguage } from '../../contexts/language/LanguageContext'
 
 interface BroadcastSectionProps {
   title: string

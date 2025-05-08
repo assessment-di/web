@@ -1,5 +1,5 @@
 import { Box, Text, GridRow, GridColumn, CategoryCard } from '@island.is/island-ui/core'
-import { useLanguage } from '../../contexts/LanguageContext'
+import { useLanguage } from '../../contexts/language/LanguageContext'
 
 interface NewOnTheWebSectionProps {
   title: string

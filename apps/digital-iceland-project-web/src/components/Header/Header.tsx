@@ -8,7 +8,7 @@ import {
   Icon,
 } from '@island.is/island-ui/core'
 import { Link } from 'react-router-dom'
-import { useLanguage } from '../../contexts/LanguageContext'
+import { useLanguage } from '../../contexts/language/LanguageContext'
 import './Header.css'
 
 const mainLinks = [
@@ -101,7 +101,15 @@ const Header = () => {
             <Logo width={120} />
           </Box>
         </Link>
-        <Box display="flex" alignItems="center" columnGap={[2, 2, 5]}>
+        <Box
+          display="flex"
+          alignItems="center"
+          columnGap={[2, 2, 5]}
+          background="blue100"
+          borderRadius="large"
+          borderColor="blue200"
+          borderStyle="solid"
+        >
           <Button
             variant="text"
             size="small"

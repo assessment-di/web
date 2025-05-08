@@ -1,18 +1,14 @@
 import {
   Box,
   GridContainer,
-  CategoryCard,
-  GridRow,
-  GridColumn,
-  Text,
 } from '@island.is/island-ui/core'
-import { useLanguage } from '../contexts/LanguageContext'
 import WebReader from '../components/WebReader'
 import { SimpleVideoPlayer } from '../components/videoPlayer/SimpleVideoPlayer'
 import { SearchSection } from '../components/home/SearchSection'
 import { TabsSection } from '../components/home/TabsSection'
 import { BroadcastSection } from '../components/home/BroadcastSection'
 import NewOnTheWebSection from '../components/home/NewOnTheWebSection'
+import { useLanguage } from '../contexts/language/LanguageContext'
 
 const Home = () => {
   const { t } = useLanguage()

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { mockLaws } from '../../mockData/legislation'
 import { parliamentMembers } from '../../mockData/members'
-import { useLanguage } from '../../contexts/LanguageContext'
+import { useLanguage } from '../../contexts/language/LanguageContext'
 
 interface SearchResult {
   type: 'law' | 'member'

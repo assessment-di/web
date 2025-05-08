@@ -1,7 +1,7 @@
 import { Box, Text, Tag, Stack } from '@island.is/island-ui/core'
 import { mockMeetings } from '../../mockData/home'
 import { MeetingItem } from './MeetingItem'
-import { useLanguage } from '../../contexts/LanguageContext'
+import { useLanguage } from '../../contexts/language/LanguageContext'
 
 export const MeetingsTab = () => {
   const { t } = useLanguage()
@@ -30,4 +30,4 @@ export const MeetingsTab = () => {
       </Stack>
     </Box>
   )
-} 
+}

@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react'
 import { Box } from '@island.is/island-ui/core'
-import { useLanguage } from '../contexts/LanguageContext'
+import { useLanguage } from '../contexts/language/LanguageContext'
 
 const CUSTOMER_ID = '11963'
 const SCRIPT_URL = `//cdn1.readspeaker.com/script/${CUSTOMER_ID}/webReader/webReader.js?pids=wr`

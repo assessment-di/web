@@ -7,7 +7,6 @@ import {
   GridColumn,
   Footer,
 } from '@island.is/island-ui/core'
-import { LanguageProvider } from '../contexts/LanguageContext'
 import Home from '../pages'
 import Members from '../pages/members'
 import Details from '../pages/members/[id]'
@@ -18,6 +17,7 @@ import AlthingiLogo from './AlthingiLogo'
 import Legislation from '../pages/legislation'
 import LawDetails from '../pages/legislation/[id]'
 import Header from './Header/Header'
+import { LanguageProvider } from '../contexts/language/LanguageContext'
 
 const App = () => {
   return (

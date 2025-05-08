@@ -1,5 +1,5 @@
 import { Text, Link as IslandLink } from '@island.is/island-ui/core'
-import { useLanguage } from '../../contexts/LanguageContext'
+import { useLanguage } from '../../contexts/language/LanguageContext'
 
 interface MeetingItemProps {
   time: string

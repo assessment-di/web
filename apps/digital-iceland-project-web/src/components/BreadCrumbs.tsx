@@ -1,6 +1,6 @@
 import { Breadcrumbs, Box } from '@island.is/island-ui/core'
 import { useLocation } from 'react-router-dom'
-import { useLanguage } from '../contexts/LanguageContext'
+import { useLanguage } from '../contexts/language/LanguageContext'
 
 const breadcrumbSegmentMap: Record<string, string> = {
   '': 'home.breadcrumbs.home',

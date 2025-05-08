@@ -2,7 +2,7 @@ import { Box, Tabs } from '@island.is/island-ui/core'
 import { useState } from 'react'
 import { MeetingsTab } from './MeetingsTab'
 import { AgendaTab } from './AgendaTab'
-import { useLanguage } from '../../contexts/LanguageContext'
+import { useLanguage } from '../../contexts/language/LanguageContext'
 
 interface TabsSectionProps {
   popularText: string

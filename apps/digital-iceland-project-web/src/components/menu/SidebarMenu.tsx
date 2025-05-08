@@ -1,7 +1,7 @@
 import { Box } from '@island.is/island-ui/core'
 import React from 'react'
 import MenuSection from './MenuSection'
-import { useLanguage } from '../../contexts/LanguageContext'
+import { useLanguage } from '../../contexts/language/LanguageContext'
 
 const styles = `
   @media (max-width: 1100px) {

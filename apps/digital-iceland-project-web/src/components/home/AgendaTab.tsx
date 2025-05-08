@@ -1,6 +1,6 @@
 import { Box, Text, Link } from '@island.is/island-ui/core'
 import { agendaItems } from '../../mockData/home'
-import { useLanguage } from '../../contexts/LanguageContext'
+import { useLanguage } from '../../contexts/language/LanguageContext'
 
 export const AgendaTab = () => {
   const { t, language } = useLanguage()
@@ -52,7 +52,11 @@ export const AgendaTab = () => {
                   variant="h5"
                   marginBottom={1}
                 >
-                  {item.underline ? <u>{item.title[language]}</u> : item.title[language]}
+                  {item.underline ? (
+                    <u>{item.title[language]}</u>
+                  ) : (
+                    item.title[language]
+                  )}
                 </Text>
                 {item.link && (
                   <Link href={item.link.href}>
