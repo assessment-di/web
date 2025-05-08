@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Text, Link } from '@island.is/island-ui/core'
+import { Box, Text, Link, Stack } from '@island.is/island-ui/core'
 
 interface Report {
   year: number
@@ -14,23 +14,26 @@ interface AnnualReportsListProps {
 
 const AnnualReportsList = ({ reports }: AnnualReportsListProps) => {
   return (
-    <Box>
+    <Stack space={3}>
       {reports.map((report) => (
-        <Box key={report.year} marginBottom={3}>
-          {report.disabled ? (
-            <Text variant="h3" as="h3" color="dark300">
+        <Box
+          key={report.year}
+          padding={3}
+          background="white"
+          borderRadius="large"
+          border="standard"
+        >
+          <Stack space={1}>
+            <Text variant="h3" as="h3">
               {report.title}
             </Text>
-          ) : (
-            <Link href={report.url}>
-              <Text variant="h3" as="h3">
-                {report.title}
-              </Text>
+            <Link href={report.url} color="blue400" underline="normal">
+              View Report
             </Link>
-          )}
+          </Stack>
         </Box>
       ))}
-    </Box>
+    </Stack>
   )
 }
 
