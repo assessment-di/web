@@ -20,10 +20,11 @@ export const MemberHeader = ({ member }: MemberHeaderProps) => {
       style={{ gap: 24 }}
       id="member-details"
     >
-      <Box 
-        display="flex" 
+      <Box
+        display="flex"
         flexDirection={['column', 'column', 'row']}
         alignItems={['center', 'center', 'flexStart']}
+        paddingTop={4}
         style={{ gap: 24 }}
         width="full"
       >
@@ -32,18 +33,18 @@ export const MemberHeader = ({ member }: MemberHeaderProps) => {
             src={member.image}
             alt={member.name}
             style={{
-              width: 120,
-              height: 120,
-              borderRadius: '50%',
+              width: 180,
+              height: 240,
+              borderRadius: 24,
               objectFit: 'cover',
             }}
           />
         ) : (
           <div
             style={{
-              width: 120,
-              height: 120,
-              borderRadius: '50%',
+              width: 180,
+              height: 240,
+              borderRadius: 24,
               background: '#eee',
             }}
           />
@@ -95,14 +96,10 @@ export const MemberHeader = ({ member }: MemberHeaderProps) => {
         </Box>
       </Box>
       <Box display="flex" justifyContent={['center', 'center', 'flexStart']}>
-        <Button 
-          icon="share" 
-          variant="ghost" 
-          size="small"
-        >
+        <Button icon="share" variant="ghost" size="default" nowrap>
           Deila prófíli
         </Button>
       </Box>
     </Box>
   )
-} 
+}

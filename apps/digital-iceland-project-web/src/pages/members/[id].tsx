@@ -1,4 +1,10 @@
-import { Box, Text, GridContainer, Accordion, AccordionItem } from '@island.is/island-ui/core'
+import {
+  Box,
+  Text,
+  GridContainer,
+  Accordion,
+  AccordionItem,
+} from '@island.is/island-ui/core'
 import { useParams } from 'react-router-dom'
 import { parliamentMembers } from '../../mockData/members'
 import WebReader from '../../components/WebReader'
@@ -22,24 +28,19 @@ const Details = () => {
 
   return (
     <GridContainer>
-      <Box 
-        display="flex" 
+      <Box
+        display="flex"
         flexDirection={['column', 'column', 'row']}
         width="full"
         paddingX={[2, 2, 0]}
+        paddingY={[2, 2, 2]}
       >
-        <Box 
-          flexGrow={1}
-          width="full"
-        >
+        <Box flexGrow={1} width="full">
           <WebReader readId="member-details" language="en" />
           <MemberHeader member={member} />
 
           <Accordion>
-            <AccordionItem
-              id="parliamentary-career"
-              label="Þingferill"
-            >
+            <AccordionItem id="parliamentary-career" label="Þingferill">
               <Text>{member.parliamentaryCareer}</Text>
             </AccordionItem>
             <AccordionItem id="title" label="Titill">

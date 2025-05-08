@@ -100,7 +100,12 @@ const Header = () => {
         width="full"
       >
         <Link to="/">
-          <Box className="logo-container" display="flex" justifyContent="center" width="full">
+          <Box
+            className="logo-container"
+            display="flex"
+            justifyContent="center"
+            width="full"
+          >
             <Logo width={120} />
           </Box>
         </Link>
@@ -112,7 +117,7 @@ const Header = () => {
           borderColor="blue200"
           borderStyle="solid"
           width="full"
-          justifyContent="center"
+          justifyContent={['center', 'center', 'flexEnd']}
         >
           <Button
             variant="text"
@@ -159,7 +164,7 @@ const Header = () => {
                 >
                   Valmynd
                 </Text>
-                <Box paddingLeft={1} alignItems="center">
+                <Box paddingLeft={1} paddingTop={1} alignItems="center">
                   <Icon
                     icon="menu"
                     type="outline"
