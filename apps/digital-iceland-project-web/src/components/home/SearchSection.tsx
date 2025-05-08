@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { mockLaws } from '../../mockData/legislation'
 import { parliamentMembers } from '../../mockData/members'
+import { useLanguage } from '../../contexts/LanguageContext'
 
 interface SearchResult {
   type: 'law' | 'member'
@@ -12,12 +13,18 @@ interface SearchResult {
   link: string
 }
 
+interface SearchSectionProps {
+  placeholder: string
+  buttonText: string
+}
+
 const searchSuggestions = ['Alma', 'Arna', 'Loftslag']
 
-export const SearchSection = () => {
+export const SearchSection = ({ placeholder, buttonText }: SearchSectionProps) => {
   const [searchValue, setSearchValue] = useState('')
   const [searchResults, setSearchResults] = useState<SearchResult[]>([])
   const [showResults, setShowResults] = useState(false)
+  const { t } = useLanguage()
 
   useEffect(() => {
     if (searchValue.length > 0) {
@@ -66,16 +73,16 @@ export const SearchSection = () => {
   return (
     <Box style={{ position: 'relative', width: '100%' }}>
       <Text variant="h1" as="h1" marginBottom={2}>
-        Alþingi
+        {t('home.search.title')}
       </Text>
       <Text marginBottom={4} color="dark400" variant="default">
-        Löggjöf er aðalverkefni Alþingis, sem hefur einnig umfangsmikið eftirlit
+        {t('home.search.subtitle')}
       </Text>
       <Box marginBottom={2}>
         <Input
           name="search"
           icon={{ name: 'search' }}
-          placeholder="Leita á Alþingi"
+          placeholder={placeholder}
           size="md"
           backgroundColor="blue"
           autoComplete="off"
@@ -118,7 +125,7 @@ export const SearchSection = () => {
                       </Text>
                     )}
                     <Text color="blue400" variant="small">
-                      {result.type === 'law' ? 'Löggjöf' : 'Þingmaður'}
+                      {result.type === 'law' ? t('home.search.resultType.law') : t('home.search.resultType.member')}
                     </Text>
                   </Box>
                 </Link>

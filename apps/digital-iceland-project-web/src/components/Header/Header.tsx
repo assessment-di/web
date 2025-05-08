@@ -1,83 +1,93 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import {
   Logo,
   Box,
   Button,
-  Input,
   Text,
   GridContainer,
   Menu,
   Icon,
 } from '@island.is/island-ui/core'
 import { Link } from 'react-router-dom'
+import { useLanguage } from '../../contexts/LanguageContext'
 import './Header.css'
 
 const mainLinks = [
-  { href: '#', text: 'Akstur og bifreiðar' },
-  { href: '#', text: 'Atvinnurekstur og sjálfstætt starfandi' },
-  { href: '#', text: 'Dómstólar og réttarfar' },
-  { href: '#', text: 'Fjármál og skattar' },
-  { href: '#', text: 'Fjölskylda og velferð' },
-  { href: '#', text: 'Heilbrigðismál' },
-  { href: '#', text: 'Húsnæðismál' },
-  { href: '#', text: 'Iðnaður' },
-  { href: '#', text: 'Innflytjendamál' },
-  { href: '#', text: 'Launþegi, réttindi og lífeyrir' },
-  { href: '#', text: 'Málefni fatlaðs fólks' },
-  { href: '#', text: 'Menntun' },
-  { href: '#', text: 'Neytendamál' },
-  { href: '#', text: 'Samfélag og réttindi' },
-  { href: '#', text: 'Samgöngur' },
-  { href: '#', text: 'Umhverfismál' },
-  { href: '#', text: 'Vegabréf, ferðalög og búseta erlendis' },
-  { href: '#', text: 'Vörur og þjónusta Ísland.is' },
+  { href: '#', text: 'home.menu.driving' },
+  { href: '#', text: 'home.menu.business' },
+  { href: '#', text: 'home.menu.courts' },
+  { href: '#', text: 'home.menu.finance' },
+  { href: '#', text: 'home.menu.family' },
+  { href: '#', text: 'home.menu.health' },
+  { href: '#', text: 'home.menu.housing' },
+  { href: '#', text: 'home.menu.industry' },
+  { href: '#', text: 'home.menu.immigration' },
+  { href: '#', text: 'home.menu.employment' },
+  { href: '#', text: 'home.menu.disability' },
+  { href: '#', text: 'home.menu.education' },
+  { href: '#', text: 'home.menu.consumer' },
+  { href: '#', text: 'home.menu.society' },
+  { href: '#', text: 'home.menu.transport' },
+  { href: '#', text: 'home.menu.environment' },
+  { href: '#', text: 'home.menu.travel' },
+  { href: '#', text: 'home.menu.services' },
 ]
 
 const asideTopLinks = [
-  { href: '#', text: 'Stofnanir' },
-  { href: '#', text: 'Stafrænt Ísland' },
+  { href: '#', text: 'home.menu.institutions' },
+  { href: '#', text: 'home.menu.digital' },
   {
     href: '#',
-    text: 'Þróun',
+    text: 'home.menu.development',
     sub: [
-      { href: '#', text: 'Viskuausan' },
-      { href: '#', text: 'Ísland UI' },
-      { href: '#', text: 'Hönnunarkerfi' },
-      { href: '#', text: 'Efnisstefna' },
+      { href: '#', text: 'home.menu.development.wisdom' },
+      { href: '#', text: 'home.menu.development.ui' },
+      { href: '#', text: 'home.menu.development.design' },
+      { href: '#', text: 'home.menu.development.content' },
     ],
   },
   {
     href: '#',
-    text: 'Upplýsingarsvæði',
-    sub: [{ href: '#', text: 'linkur á eitthvað' }],
+    text: 'home.menu.information',
+    sub: [{ href: '#', text: 'home.menu.information.link' }],
   },
 ]
 
 const asideBottomLinks = [
-  { href: '#', text: 'Heilsuvera' },
-  { href: '#', text: 'Samráðsgátt' },
-  { href: '#', text: 'Mannanöfn' },
-  { href: '#', text: 'Undirskriftarlistar' },
-  { href: '#', text: 'Opin gögn' },
-  { href: '#', text: 'Opinber nýsköpun' },
-  { href: '#', text: 'Tekjusagan' },
+  { href: '#', text: 'home.menu.health' },
+  { href: '#', text: 'home.menu.consultation' },
+  { href: '#', text: 'home.menu.names' },
+  { href: '#', text: 'home.menu.petitions' },
+  { href: '#', text: 'home.menu.openData' },
+  { href: '#', text: 'home.menu.innovation' },
+  { href: '#', text: 'home.menu.income' },
 ]
 
-const LANGUAGE_KEY = 'selected-language'
-
 const Header = () => {
-  const [currentLanguage, setCurrentLanguage] = useState<'is' | 'en'>(() => {
-    const savedLanguage = localStorage.getItem(LANGUAGE_KEY)
-    return (savedLanguage as 'is' | 'en') || 'is'
-  })
-
-  useEffect(() => {
-    localStorage.setItem(LANGUAGE_KEY, currentLanguage)
-  }, [currentLanguage])
+  const { language, setLanguage, t } = useLanguage()
 
   const toggleLanguage = () => {
-    setCurrentLanguage(currentLanguage === 'is' ? 'en' : 'is')
+    setLanguage(language === 'is' ? 'en' : 'is')
   }
+
+  const translatedMainLinks = mainLinks.map(link => ({
+    ...link,
+    text: t(link.text as any)
+  }))
+
+  const translatedAsideTopLinks = asideTopLinks.map(link => ({
+    ...link,
+    text: t(link.text as any),
+    sub: link.sub?.map(subLink => ({
+      ...subLink,
+      text: t(subLink.text as any)
+    }))
+  }))
+
+  const translatedAsideBottomLinks = asideBottomLinks.map(link => ({
+    ...link,
+    text: t(link.text as any)
+  }))
 
   return (
     <GridContainer>
@@ -99,17 +109,17 @@ const Header = () => {
             colorScheme="light"
             onClick={toggleLanguage}
           >
-            {currentLanguage === 'is' ? 'EN' : 'IS'}
+            {language === 'is' ? 'EN' : 'IS'}
           </Button>
           <Menu
             baseId="story"
-            mainTitle="Þjónustuflokkar"
-            mainLinks={mainLinks}
-            asideTopLinks={asideTopLinks}
-            asideBottomTitle="Aðrir opinberir vefir"
-            asideBottomLinks={asideBottomLinks}
-            languageSwitchText={currentLanguage === 'is' ? 'EN' : 'IS'}
-            myPagesText="Mínar síður"
+            mainTitle={t('home.menu.title')}
+            mainLinks={translatedMainLinks}
+            asideTopLinks={translatedAsideTopLinks}
+            asideBottomTitle={t('home.menu.otherSites')}
+            asideBottomLinks={translatedAsideBottomLinks}
+            languageSwitchText={language === 'is' ? 'EN' : 'IS'}
+            myPagesText={t('home.menu.myPages')}
             menuButton={
               <Box
                 display="flex"

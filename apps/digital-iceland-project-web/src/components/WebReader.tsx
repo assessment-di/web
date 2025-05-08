@@ -1,5 +1,6 @@
 import { FC, useEffect, useState } from 'react'
 import { Box } from '@island.is/island-ui/core'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const CUSTOMER_ID = '11963'
 const SCRIPT_URL = `//cdn1.readspeaker.com/script/${CUSTOMER_ID}/webReader/webReader.js?pids=wr`
@@ -16,6 +17,7 @@ const WebReader: FC<WebReaderProps> = ({
   language = 'en',
 }) => {
   const [href, setHref] = useState('')
+  const { t } = useLanguage()
 
   useEffect(() => {
     if (!window?.rsConf) {
@@ -58,11 +60,8 @@ const WebReader: FC<WebReaderProps> = ({
     setHref(h)
   }, [readId, readClass, language])
 
-  const buttonLabel = language === 'is' ? 'Hlusta' : 'Listen'
-  const buttonTitle =
-    language === 'is'
-      ? 'Hlustaðu á þessa síðu lesna af ReadSpeaker webReader'
-      : 'Listen to this page using ReadSpeaker'
+  const buttonLabel = t('home.webReader.listen')
+  const buttonTitle = t('home.webReader.title')
 
   return (
     <Box printHidden={true}>

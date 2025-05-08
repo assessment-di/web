@@ -1,7 +1,15 @@
 import { Box, Text, Link as IslandLink } from '@island.is/island-ui/core'
 import { SimpleVideoPlayer } from '../videoPlayer/SimpleVideoPlayer'
+import { useLanguage } from '../../contexts/LanguageContext'
 
-export const BroadcastSection = () => {
+interface BroadcastSectionProps {
+  title: string
+  viewAllText: string
+}
+
+export const BroadcastSection = ({ title, viewAllText }: BroadcastSectionProps) => {
+  const { t } = useLanguage()
+
   return (
     <Box
       marginTop={6}
@@ -30,19 +38,19 @@ export const BroadcastSection = () => {
             marginRight={2}
           >
             <Text color="red600" fontWeight="semiBold" variant="small">
-              Beint
+              {t('home.broadcast.live')}
             </Text>
           </Box>
           <Text variant="h5" as="h3">
-            Útsending
+            {title}
           </Text>
         </Box>
         <Text>
-          Næsta þingsetning verður á miðvikudaginn 7. maí klukkan 15:00
+          {t('home.broadcast.nextSession')}
         </Text>
         <Box marginTop={2} display="flex" style={{ gap: 16 }}>
-          <IslandLink href="#">Aðrar útsendingarmöguleikar</IslandLink>
-          <IslandLink href="#">Upptökur</IslandLink>
+          <IslandLink href="#">{viewAllText}</IslandLink>
+          <IslandLink href="#">{t('home.broadcast.recordings')}</IslandLink>
         </Box>
       </Box>
     </Box>

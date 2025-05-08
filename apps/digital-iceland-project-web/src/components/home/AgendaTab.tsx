@@ -1,14 +1,17 @@
 import { Box, Text, Link } from '@island.is/island-ui/core'
 import { agendaItems } from '../../mockData/home'
+import { useLanguage } from '../../contexts/LanguageContext'
 
 export const AgendaTab = () => {
+  const { t } = useLanguage()
+
   return (
     <Box background="blue100" borderRadius="large" padding={2}>
       <Text variant="h3" as="h2" marginBottom={1}>
-        Dagskrá 35. þingfundar
+        {t('home.agenda.title')}
       </Text>
       <Text color="dark400" marginBottom={4}>
-        Þriðjudaginn 6. maí, fundur hófst kl. 13:30
+        {t('home.agenda.subtitle')}
       </Text>
       <Box display="flex">
         <Box position="relative" marginRight={4}>

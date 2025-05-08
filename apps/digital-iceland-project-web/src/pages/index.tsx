@@ -6,6 +6,7 @@ import {
   GridColumn,
   Text,
 } from '@island.is/island-ui/core'
+import { useLanguage } from '../contexts/LanguageContext'
 import WebReader from '../components/WebReader'
 import { SimpleVideoPlayer } from '../components/videoPlayer/SimpleVideoPlayer'
 import { SearchSection } from '../components/home/SearchSection'
@@ -14,6 +15,8 @@ import { BroadcastSection } from '../components/home/BroadcastSection'
 import NewOnTheWebSection from '../components/home/NewOnTheWebSection'
 
 const Home = () => {
+  const { t } = useLanguage()
+
   return (
     <Box>
       <WebReader readId="main-content" />
@@ -26,7 +29,10 @@ const Home = () => {
             style={{ gap: 24 }}
             marginX={4}
           >
-            <SearchSection />
+            <SearchSection 
+              placeholder={t('home.search.placeholder')}
+              buttonText={t('home.search.button')}
+            />
             <Box display={['none', 'none', 'block']}>
               <SimpleVideoPlayer
                 controls={false}
@@ -35,9 +41,19 @@ const Home = () => {
               />
             </Box>
           </Box>
-          <TabsSection />
-          <BroadcastSection />
-          <NewOnTheWebSection />
+          <TabsSection 
+            popularText={t('home.tabs.popular')}
+            newText={t('home.tabs.new')}
+            allText={t('home.tabs.all')}
+          />
+          <BroadcastSection 
+            title={t('home.broadcast.title')}
+            viewAllText={t('home.broadcast.viewAll')}
+          />
+          <NewOnTheWebSection 
+            title={t('home.newOnWeb.title')}
+            viewAllText={t('home.newOnWeb.viewAll')}
+          />
         </Box>
       </GridContainer>
     </Box>

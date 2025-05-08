@@ -1,8 +1,11 @@
 import { Box, Text, Tag, Stack } from '@island.is/island-ui/core'
 import { mockMeetings } from '../../mockData/home'
 import { MeetingItem } from './MeetingItem'
+import { useLanguage } from '../../contexts/LanguageContext'
 
 export const MeetingsTab = () => {
+  const { t } = useLanguage()
+
   return (
     <Box paddingY={6} paddingX={[2, 6]}>
       <Box
@@ -12,11 +15,11 @@ export const MeetingsTab = () => {
         marginBottom={5}
       >
         <Text variant="h3" as="h2" marginBottom={0}>
-          Miðvikudagur, 7. maí
+          {t('home.meetings.date')}
         </Text>
         <Box style={{ fontSize: 18 }}>
           <Tag variant="mint" outlined>
-            Sigurjón
+            {t('home.meetings.speaker')}
           </Tag>
         </Box>
       </Box>

@@ -7,6 +7,7 @@ import {
   GridColumn,
   Footer,
 } from '@island.is/island-ui/core'
+import { LanguageProvider } from '../contexts/LanguageContext'
 import Home from '../pages'
 import Members from '../pages/members'
 import Details from '../pages/members/[id]'
@@ -20,7 +21,7 @@ import Header from './Header/Header'
 
 const App = () => {
   return (
-    <>
+    <LanguageProvider>
       <Box paddingX={6}>
         <Header />
       </Box>
@@ -53,7 +54,7 @@ const App = () => {
         </GridRow>
       </GridContainer>
       <Footer />
-    </>
+    </LanguageProvider>
   )
 }
 
