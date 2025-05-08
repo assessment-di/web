@@ -1,12 +1,12 @@
 export const mainMenu = [
-  { label: 'Þingfundir og mál', href: '/legislation' },
-  { label: 'Þingmenn', href: '/members' },
-  { label: 'Nefndir', href: '/' },
-  { label: 'Lagasafn', href: '/' },
-  { label: 'Um Alþingi', href: '/' },
+  { label: 'menu.main.legislation', href: '/legislation' },
+  { label: 'menu.main.members', href: '/members' },
+  { label: 'menu.main.committees', href: '/' },
+  { label: 'menu.main.laws', href: '/' },
+  { label: 'menu.main.about', href: '/' },
 ]
 
 export const extraMenu = [
-  { label: 'Staða mála', href: '/' },
-  { label: 'Fjárlög 2024', href: '/' },
+  { label: 'menu.extra.status', href: '/' },
+  { label: 'menu.extra.budget', href: '/' },
 ]

@@ -3,7 +3,7 @@ import { agendaItems } from '../../mockData/home'
 import { useLanguage } from '../../contexts/LanguageContext'
 
 export const AgendaTab = () => {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
   return (
     <Box background="blue100" borderRadius="large" padding={2}>
@@ -52,19 +52,19 @@ export const AgendaTab = () => {
                   variant="h5"
                   marginBottom={1}
                 >
-                  {item.underline ? <u>{item.title}</u> : item.title}
+                  {item.underline ? <u>{item.title[language]}</u> : item.title[language]}
                 </Text>
                 {item.link && (
                   <Link href={item.link.href}>
-                    <u>{item.link.label}</u>
+                    <u>{item.link.label[language]}</u>
                   </Link>
                 )}
                 {item.description && (
                   <Text as="div" color="dark400" marginBottom={1}>
-                    {item.description}{' '}
+                    {item.description[language]}{' '}
                     {item.extraLink && (
                       <Link href={item.extraLink.href}>
-                        <u>{item.extraLink.label}</u>
+                        <u>{item.extraLink.label[language]}</u>
                       </Link>
                     )}
                   </Text>

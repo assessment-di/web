@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import {
   Logo,
   Box,
@@ -70,23 +69,23 @@ const Header = () => {
     setLanguage(language === 'is' ? 'en' : 'is')
   }
 
-  const translatedMainLinks = mainLinks.map(link => ({
-    ...link,
-    text: t(link.text as any)
-  }))
-
-  const translatedAsideTopLinks = asideTopLinks.map(link => ({
+  const translatedMainLinks = mainLinks.map((link) => ({
     ...link,
     text: t(link.text as any),
-    sub: link.sub?.map(subLink => ({
-      ...subLink,
-      text: t(subLink.text as any)
-    }))
   }))
 
-  const translatedAsideBottomLinks = asideBottomLinks.map(link => ({
+  const translatedAsideTopLinks = asideTopLinks.map((link) => ({
     ...link,
-    text: t(link.text as any)
+    text: t(link.text as any),
+    sub: link.sub?.map((subLink) => ({
+      ...subLink,
+      text: t(subLink.text as any),
+    })),
+  }))
+
+  const translatedAsideBottomLinks = asideBottomLinks.map((link) => ({
+    ...link,
+    text: t(link.text as any),
   }))
 
   return (
@@ -109,7 +108,7 @@ const Header = () => {
             colorScheme="light"
             onClick={toggleLanguage}
           >
-            {language === 'is' ? 'EN' : 'IS'}
+            {language === 'is' ? 'IS' : 'EN'}
           </Button>
           <Menu
             baseId="story"

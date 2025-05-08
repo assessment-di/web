@@ -1,6 +1,7 @@
 import { Box } from '@island.is/island-ui/core'
 import React from 'react'
 import MenuSection from './MenuSection'
+import { useLanguage } from '../../contexts/LanguageContext'
 
 const styles = `
   @media (max-width: 1100px) {
@@ -37,11 +38,23 @@ interface SidebarMenuProps {
 const SidebarMenu: React.FC<SidebarMenuProps> = ({
   mainMenu,
   extraMenu,
-  mainTitle = 'Valmynd',
-  extraTitle = 'Tengt efni',
+  mainTitle = 'menu.main.title',
+  extraTitle = 'menu.extra.title',
   mainMenuColor = '#F2F7FF',
   extraMenuColor = '#F6F6FD',
 }) => {
+  const { t } = useLanguage()
+
+  const translatedMainMenu = mainMenu.map(item => ({
+    ...item,
+    label: t(item.label as any)
+  }))
+
+  const translatedExtraMenu = extraMenu.map(item => ({
+    ...item,
+    label: t(item.label as any)
+  }))
+
   return (
     <Box style={{ width: '100%' }}>
       <style>{styles}</style>
@@ -54,8 +67,8 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
       >
         <Box style={{ width: 'var(--sidebar-width, 100%)' }}>
           <MenuSection
-            items={mainMenu}
-            title={mainTitle}
+            items={translatedMainMenu}
+            title={t(mainTitle as any)}
             linkColor={mainMenuColor}
             titleVariant="h4"
             backgroundColor="blue100"
@@ -63,8 +76,8 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
         </Box>
         <Box style={{ width: 'var(--sidebar-width, 100%)' }}>
           <MenuSection
-            items={extraMenu}
-            title={extraTitle}
+            items={translatedExtraMenu}
+            title={t(extraTitle as any)}
             titleVariant="medium"
             linkColor={extraMenuColor}
             backgroundColor="purple100"

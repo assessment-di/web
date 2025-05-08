@@ -86,6 +86,15 @@ type TranslationKey =
   | 'home.breadcrumbs.details'
   | 'home.webReader.listen'
   | 'home.webReader.title'
+  | 'menu.main.legislation'
+  | 'menu.main.members'
+  | 'menu.main.committees'
+  | 'menu.main.laws'
+  | 'menu.main.about'
+  | 'menu.extra.status'
+  | 'menu.extra.budget'
+  | 'menu.main.title'
+  | 'menu.extra.title'
 
 type Translations = {
   [key in TranslationKey]: string
@@ -181,7 +190,16 @@ const translations: Record<Language, Translations> = {
     'home.breadcrumbs.members': 'Þingmenn',
     'home.breadcrumbs.details': 'Nánar',
     'home.webReader.listen': 'Hlusta',
-    'home.webReader.title': 'Hlustaðu á þessa síðu lesna af ReadSpeaker webReader'
+    'home.webReader.title': 'Hlustaðu á þessa síðu lesna af ReadSpeaker webReader',
+    'menu.main.legislation': 'Þingfundir og mál',
+    'menu.main.members': 'Þingmenn',
+    'menu.main.committees': 'Nefndir',
+    'menu.main.laws': 'Lagasafn',
+    'menu.main.about': 'Um Alþingi',
+    'menu.extra.status': 'Staða mála',
+    'menu.extra.budget': 'Fjárlög 2024',
+    'menu.main.title': 'Valmynd',
+    'menu.extra.title': 'Tengt efni',
   },
   en: {
     'home.search.placeholder': 'Search for services or information',
@@ -266,7 +284,16 @@ const translations: Record<Language, Translations> = {
     'home.breadcrumbs.members': 'Members of Parliament',
     'home.breadcrumbs.details': 'Details',
     'home.webReader.listen': 'Listen',
-    'home.webReader.title': 'Listen to this page using ReadSpeaker'
+    'home.webReader.title': 'Listen to this page using ReadSpeaker',
+    'menu.main.legislation': 'Parliamentary Sessions and Cases',
+    'menu.main.members': 'Members of Parliament',
+    'menu.main.committees': 'Committees',
+    'menu.main.laws': 'Law Collection',
+    'menu.main.about': 'About Althingi',
+    'menu.extra.status': 'Case Status',
+    'menu.extra.budget': 'Budget 2024',
+    'menu.main.title': 'Menu',
+    'menu.extra.title': 'Related Content',
   }
 }
 

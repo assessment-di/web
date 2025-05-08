@@ -58,7 +58,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({
       background={backgroundColor}
       borderRadius="large"
       paddingX={isMobile ? 2 : 4}
-      paddingY={1}
+      paddingY={isMobile ? 1 : 3}
       style={
         isMobile
           ? {
@@ -124,7 +124,15 @@ const MenuSection: React.FC<MenuSectionProps> = ({
           </span>
         )}
       </Box>
-
+      {!isMobile && (
+        <Box
+          marginTop={2}
+          marginBottom={2}
+          width="full"
+          background="blue100"
+          style={{ backgroundColor: '#eaf0fb', height: '1px' }}
+        />
+      )}
       {(!isMobile || open) && (
         <Box
           marginTop={2}
@@ -147,7 +155,12 @@ const MenuSection: React.FC<MenuSectionProps> = ({
           }
         >
           {items.map((item, index) => (
-            <Box key={index} marginBottom={2} paddingX={4} width="full">
+            <Box
+              key={index}
+              marginBottom={2}
+              paddingX={isMobile ? 4 : 0}
+              width="full"
+            >
               <a
                 href={item.href}
                 style={
