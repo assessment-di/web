@@ -23,7 +23,6 @@ const App = () => {
       <Box paddingX={6}>
         <Header />
       </Box>
-      <BreadCrumbs />
       <GridContainer>
         <GridRow>
           <GridColumn span={['12/12', '12/12', '3/12']}>
@@ -34,12 +33,14 @@ const App = () => {
               width="full"
               flexDirection="column"
               marginBottom={[4, 4, 0]}
+              marginY={4}
             >
               <AlthingiLogo />
               <SidebarMenu mainMenu={mainMenu} extraMenu={extraMenu} />
             </Box>
           </GridColumn>
           <GridColumn span={['12/12', '12/12', '9/12']}>
+            <BreadCrumbs />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/members" element={<Members />} />

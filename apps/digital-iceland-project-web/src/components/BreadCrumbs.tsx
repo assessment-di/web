@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom'
 
 const breadcrumbSegmentMap: Record<string, string> = {
   '': 'Heim',
+  legislation: 'Þingfundir og mál',
   members: 'Þingmenn',
   details: 'Nánar',
 }
@@ -37,7 +38,7 @@ const BreadCrumbs = () => {
   }
 
   return (
-    <Box paddingTop={1} paddingBottom={3} paddingX={8}>
+    <Box paddingTop={1} paddingBottom={3}>
       <Breadcrumbs items={crumbs} />
     </Box>
   )

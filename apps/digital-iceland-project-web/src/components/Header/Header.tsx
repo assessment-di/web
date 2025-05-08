@@ -10,6 +10,7 @@ import {
   Icon,
 } from '@island.is/island-ui/core'
 import { Link } from 'react-router-dom'
+import './Header.css'
 
 const mainLinks = [
   { href: '#', text: 'Akstur og bifreiðar' },
@@ -69,12 +70,14 @@ const Header = () => {
         display="flex"
         alignItems="center"
         justifyContent="spaceBetween"
-        paddingY={3}
+        paddingY={[2, 2, 3]}
       >
         <Link to="/">
-          <Logo width={180} />
+          <Box className="logo-container">
+            <Logo width={120} />
+          </Box>
         </Link>
-        <Box display="flex" alignItems="center" columnGap={5}>
+        <Box display="flex" alignItems="center" columnGap={[2, 2, 5]}>
           <Menu
             baseId="story"
             mainTitle="Þjónustuflokkar"
@@ -95,11 +98,11 @@ const Header = () => {
                 borderColor="blue200"
                 borderWidth="standard"
                 borderStyle="solid"
-                paddingX={3}
+                paddingX={[2, 2, 3]}
                 paddingY={1}
                 style={{
-                  minWidth: 64,
-                  minHeight: 40,
+                  minWidth: 48,
+                  minHeight: 32,
                   cursor: 'pointer',
                   position: 'relative',
                 }}
