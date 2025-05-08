@@ -92,12 +92,15 @@ const Header = () => {
     <GridContainer>
       <Box
         display="flex"
-        alignItems="center"
+        flexDirection={['column', 'row', 'row']}
+        alignItems={['center', 'center', 'center']}
         justifyContent="spaceBetween"
         paddingY={[2, 2, 3]}
+        rowGap={[3, 0, 0]}
+        width="full"
       >
         <Link to="/">
-          <Box className="logo-container">
+          <Box className="logo-container" display="flex" justifyContent="center" width="full">
             <Logo width={120} />
           </Box>
         </Link>
@@ -105,10 +108,11 @@ const Header = () => {
           display="flex"
           alignItems="center"
           columnGap={[2, 2, 5]}
-          background="blue100"
           borderRadius="large"
           borderColor="blue200"
           borderStyle="solid"
+          width="full"
+          justifyContent="center"
         >
           <Button
             variant="text"

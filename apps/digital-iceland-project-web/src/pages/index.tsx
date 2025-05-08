@@ -1,7 +1,4 @@
-import {
-  Box,
-  GridContainer,
-} from '@island.is/island-ui/core'
+import { Box, GridContainer } from '@island.is/island-ui/core'
 import WebReader from '../components/WebReader'
 import { SimpleVideoPlayer } from '../components/videoPlayer/SimpleVideoPlayer'
 import { SearchSection } from '../components/home/SearchSection'
@@ -23,9 +20,9 @@ const Home = () => {
             flexDirection={['column', 'row']}
             alignItems="center"
             style={{ gap: 24 }}
-            marginX={4}
+            marginX={[0, 4]}
           >
-            <SearchSection 
+            <SearchSection
               placeholder={t('home.search.placeholder')}
               buttonText={t('home.search.button')}
             />
@@ -37,16 +34,16 @@ const Home = () => {
               />
             </Box>
           </Box>
-          <TabsSection 
+          <TabsSection
             popularText={t('home.tabs.popular')}
             newText={t('home.tabs.new')}
             allText={t('home.tabs.all')}
           />
-          <BroadcastSection 
+          <BroadcastSection
             title={t('home.broadcast.title')}
             viewAllText={t('home.broadcast.viewAll')}
           />
-          <NewOnTheWebSection 
+          <NewOnTheWebSection
             title={t('home.newOnWeb.title')}
             viewAllText={t('home.newOnWeb.viewAll')}
           />
