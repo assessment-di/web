@@ -15,6 +15,7 @@ import SidebarMenu from './menu/SidebarMenu'
 import { mainMenu, extraMenu } from '../mockData/menu'
 import AlthingiLogo from './AlthingiLogo'
 import Legislation from '../pages/legislation'
+import LawDetails from '../pages/legislation/[id]'
 
 const App = () => {
   return (
@@ -44,6 +45,7 @@ const App = () => {
               <Route path="/members" element={<Members />} />
               <Route path="/members/:id" element={<Details />} />
               <Route path="/legislation" element={<Legislation />} />
+              <Route path="/legislation/:id" element={<LawDetails />} />
             </Routes>
           </GridColumn>
         </GridRow>
